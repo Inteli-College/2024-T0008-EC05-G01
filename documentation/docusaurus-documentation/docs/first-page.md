@@ -1,8 +1,11 @@
 ---
-title: Our First Page
+title: Solution
 sidebar_position: 1
 ---
 
-# First Page
+# Solution
 
-This is the first page.
+This is the page where all the general information about our solution will be available
+
+## Group
+### Members
