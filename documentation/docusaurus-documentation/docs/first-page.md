@@ -1,6 +1,7 @@
 ---
 title: Solution
 sidebar_position: 1
+slug: "/" 
 ---
 
 # Solution
