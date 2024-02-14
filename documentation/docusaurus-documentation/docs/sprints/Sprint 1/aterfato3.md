@@ -86,9 +86,31 @@ sidebar_position: 3
 
 **RNF08**: O sistema deve relatar o estado da execução da tarefa, informando ao usuário quando a montagem do kit começar e quando houver o término dessa tarefa.
 
+
+# Diagram de blocos da arquitetura do sistema
+&emsp;A arquitetura de sistema é uma representação abstrata e conceitual que aborda a estrutura organizacional e o design fundamental de um sistema. Nela, são definidas as interações e relações entre os componentes do sistema para atender aos requisitos funcionais e não funcionais. Essa visão de alto nível orienta o desenvolvimento do sistema, assegurando a coesão entre todos os elementos para alcançar os objetivos do projeto. [4]
+
+&emsp;Dessa maneira, a arquitetura dos sistema baseado no diagrama em blocos para essa solução pode ser vista no Quadro 3.
+<p align="center"><b>Quadro 3 - Diagrama de blocos da arquitetura do sistema</b> </p>
+
+<center>![Nao encontrei a imagem](../../../static/img/arquitetura.png) </center>
+
+
+<p align="center"><b>Fonte: Elaborado pelos próprios autores </b> </p>
+
+&emsp;Em resumo, a solução será utilizada pelo usuário (persona) ao acessar o sistema (aplicação WEB), permitindo que ele configure pré-movimentos do braço mecânico, caso não haja um layout específico de algum kit. Isso atenderá ao requisito RNF01, proporcionando mais liberdade ao usuário. Além disso, se já existir um kit pré-definido, o usuário deverá selecioná-lo no sistema para que o braço robótico execute a tarefa configurada, atendendo assim ao requisito RF01. Por possuir diferentes kits pré-definidos que podem ser selecionados, atende também ao requisito RF04, permitindo a montagem de kits distintos.
+
+&emsp;Na configuração dos medicamentos a serem retirados, a aplicação Web enviará para o servidor os itens que foram coletados pelo braço robótico e armazenados nele (banco de dados), contemplando o requisito RF03. Além dessas funcionalidades, o braço robótico deve enviar para o sistema seu estado atual, permitindo que o usuário saiba o que está acontecendo, atendendo ao requisito RNF08.
+
+&emsp;Durante a execução para a montagem do kit, o braço robótico precisa garantir a precisão da disposição dos medicamentos dentro do kit, conforme indicado no requisito RNF05. Contudo, em caso de erro durante a tarefa, o braço robótico deve enviar mensagens de falha para o sistema, conforme sugerido nos requisitos RNF04, e outra mensagem indicando "Falha em pegar um medicamento" se houver erro no momento de coletar o medicamento, conforme sinalizado no requisito RNF07.
+
+
 ## Bibliografia:
 ‌[1] CASA DO DEENVOLVEDOR. Requisitos funcionais e não funcionais: o que são e como identificar? Disponível em: [https://blog.casadodesenvolvedor.com.br/requisitos-funcionais-e-nao-funcionais/](https://blog.casadodesenvolvedor.com.br/requisitos-funcionais-e-nao-funcionais). Acesso em: 7 fev. 2024.
 
 [2] Requisitos Funcionais e Requisitos Não Funcionais do Surpreendente ChatGPT. Disponível em: [https://giganteconsultoria.com.br/2023/04/09/requisitos-funcionais-e-requisitos-nao-funcionais-do-surpreendente-chatgpt/](https://giganteconsultoria.com.br/2023/04/09/requisitos-funcionais-e-requisitos-nao-funcionais-do-surpreendente-chatgpt). Acesso em: 7 fev. 2024.
 
 ‌[3] SILVA, R. ISO/IEC 25010 e a qualidade de software - Blog One Day Testing. Disponível em: [https://blog.onedaytesting.com.br/iso-iec-25010/](https://blog.onedaytesting.com.br/iso-iec-25010/). Acesso em: 7 fev. 2024.
+
+[4] REDAÇÃO XP EDUCAÇÃO. O que é arquitetura de software? Veja definição e aplicação no mundo corporativo. Disponível em: [https://blog.xpeducacao.com.br/o-que-e-arquitetura-de-software/](https://blog.xpeducacao.com.br/o-que-e-arquitetura-de-software/). Acesso em: 11 fev. 2024.
+
