@@ -8,19 +8,19 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Grupo 1',
-  tagline: 'Dinosaurs are cool',
+  title: 'Arm',
+  tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://github.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Inteli-College/2024-T0008-EC05-G01/',
+  baseUrl: '/2024-T0008-EC05-G01/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pnages, you don't need these.
-  organizationName: 'Intelihub', // Usually your GitHub org/user name.
+  organizationName: 'Arm', // Usually your GitHub org/user name.
   projectName: '2024-T0008-EC05-G01', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -63,9 +63,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Grupo 1',
+        title: 'Arm',
         logo: {
-          alt: 'Grupo 1 Logo',
+          alt: 'Arm Logo',
           src: 'img/logo.svg',
         },
         items: [], // To add new items in the principal header
