@@ -8,9 +8,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Arm',
+  title: 'ARM',
   tagline: '',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo_arm.png',
 
   // Set the production url of your site here
   url: 'https://github.com/',
@@ -63,10 +63,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Arm',
+        title: 'ARM',
         logo: {
-          alt: 'Arm Logo',
-          src: 'img/logo.svg',
+          alt: 'ARM Logo',
+          src: 'img/logo_arm.png',
         },
         items: [], // To add new items in the principal header
       },
