@@ -2,14 +2,13 @@
 title: Artefato - Negócios
 sidebar_position: 1
 ---
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Matriz de avaliação de valor Oceano Azul
 
 &emsp;O conceito de Oceano Azul, desenvolvido por Renée Mauborgne e W. Chan Kim, é uma abordagem inovadora nos negócios, conforme detalhado em seu livro de título correspondente. Ao invés de buscar constantemente superar a concorrência, a proposta central é explorar mercados inexplorados como estratégia primordial.
 
 &emsp;Para implementar essa abordagem, é crucial utilizar ferramentas que possibilitem o monitoramento e a tomada de decisões voltadas para a Inovação de Valor. Entre essas ferramentas, destaca-se a Matriz de Avaliação de Valor, a qual permite que as empresas realizem uma análise detalhada de como cada segmento de seu negócio proporciona valor aos clientes. Essa matriz abrange avaliações criteriosas de fatores como preço, qualidade, segurança e outras características relevantes. Além disso, deve-se diferenciar cada atributo da concorrência por meio das ações Reduzir, Eliminar, Aumentar e Criar.
-<<<<<<< Updated upstream
-=======
 
 <p align="center"><b> Tabela 1 - Tabela Matriz de avaliação de valor Oceano Azul </b> </p>
 
@@ -94,6 +93,8 @@ sidebar_position: 1
 
 &emsp;É importante notar que os ganhos do projeto impactam diretamente que os benefícios do projeto repercutem diretamente em um atendimento mais eficiente aos pacientes, proporcionando maior satisfação. Esses ganhos também têm impacto nos processos legais que o hospital poderia enfrentar devido a erros médicos, conferindo uma maior segurança para evitar gastos imprevistos nesse sentido.
 
+---
+
 # Value Proposition Canvas
 
 &emsp;O Value Proposition Canvas é uma ferramenta utilizada para garantir que haja compatibilidade entre o produto desenvolvido e o mercado. Ele consiste em dois componentes principais: o perfil do cliente, que descreve os segmentos de clientes, suas necessidades e tarefas, e a proposta de valor, que detalha os benefícios oferecidos e como atendem às necessidades dos clientes. Essa abordagem técnica corrobora para a criação de produtos e serviços mais alinhados com as expectativas do mercado-alvo. 
@@ -109,9 +110,10 @@ sidebar_position: 1
 
 &emsp;O segmento do cliente compreende "Ganhos", "Tarefas do Cliente" e "Dores". Os "Ganhos" envolvem benefícios como eficiência na montagem, flexibilidade e agilidade, otimização da logística e rastreamento preciso dos insumos. A "Tarefa do Cliente" consiste em ser adaptável nas mudanças de layouts, fazer o monitoramento de itens e a montagem dos carrinhos. As "Dores" são representadas pela falta de rastreamento interno para os insumos, a ausência de flexibilidade e o tempo gasto na montagem manual dos kits e carrinhos de emergência.
 
+---
+
 ## Bibliografia:
 
 SOLAR, N. Preço da energia elétrica CPFL 2023. Disponível em: https://www.ngsolar.com.br/single-post/preco-kwh-cpfl#:~:text=Com%20o%20reajuste%20de%202023.
 
 LTDA, I. B. A. DE I. Salário de Auxiliar De Farmácia Hospitalar | Infojobs. Disponível em: https://www.infojobs.com.br/salario/auxiliar-farmacia-hospitalar. Acesso em: 16 fev. 2024.
->>>>>>> Stashed changes
