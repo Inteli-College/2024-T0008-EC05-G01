@@ -31,7 +31,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 </div>
 
 
-## Reduzir:
+## Reduzir
 
 &emsp;**Preço:** Cada robô custa cerca de 32.000 reais. Considerando que este é um gasto único, a longo prazo, essa é uma solução mais econômica. Atualmente, cada auxiliar de farmácia custa 2.500 reais, sendo necessários 10 auxiliares para realizar esse trabalho mensalmente. Assim, o gasto do hospital em um único mês é de 25.000 reais apenas com as montagens dos kits de emergência.
 
@@ -40,11 +40,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 &emsp;**Intervenção Humana:** O MVP permite que a montagem dos kits seja totalmente automatizada. É necessário apenas que um auxiliar de farmácia configure a disposição dos medicamentos no kit e prepare o material.
 
 
-## Eliminar:
+## Eliminar
 
 &emsp;**Montagem Manual:** O MVP permite que a montagem dos kits seja totalmente automatizada, sem a necessidade de interferência externa.
 
-## Aumentar:
+## Aumentar
 
 &emsp;**Precisão:** A cliente mencionou que é comum ocorrerem erros nas montagens dos kits devido ao desvio de atenção dos auxiliares de farmácia responsáveis pela verificação de qualidade e montagem. Esse tipo de erro seria consideravelmente reduzido, pois o braço robótico segue sempre o mesmo padrão, tornando os erros na montagem casos isolados.
 
@@ -52,12 +52,13 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;**Previsibilidade:** O robô não requer manutenção frequente, embora seja essencial para manter o bom funcionamento e a durabilidade do equipamento. Por outro lado, o trabalho manual possui o risco de o trabalhador faltar ao serviço por diversos motivos ou até mesmo ser demitido, gerando a necessidade de grandes mudanças e preocupações.
 
-## Criar:
+## Criar
 
 &emsp;**Praticidade:** O processo atual é pouco prático e consome muito tempo dos auxiliares, que poderiam estar realizando outras tarefas. O MVP torna o processo mais prático para os auxiliares, sendo a presença deles necessária apenas para iniciar e finalizar o processo.
 
 &emsp;Analisando a matriz, observa-se o potencial do projeto para transformar significativamente o processo na farmácia hospitalar, beneficiando diversos pacientes e direcionando o tempo de trabalho dos auxiliares de farmácia para tarefas onde a presença humana é realmente essencial.
 
+---
 
 # Análise Financeira
 
@@ -129,13 +130,13 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Com o intuito de melhorar a clareza da imagem, procedemos à transcrição dos textos nela contidos e os estruturamos em tópicos separados, da seguinte maneira:
 
-## Riscos potenciais:
+## Riscos potenciais
 
 - Deixar de atender todas as dores que o cliente trouxe até nós, como a automação na montagem dos kits (Probabilidade: Muito Baixa 10% X Impacto: Muito Alto)
 - A solução IOT não atender e agregar valor ao cliente (Probabilidade: Moderada 50% X Impacto: Muito alto);
 - Complexidade do projeto ser muito alta, consequentemente fugindo da capacidade de realizar (Probabilidade: Moderada 70% X Impacto: Muito alto);
 
-## Riscos reais:
+## Riscos reais
 
 - O tempo de 10 semanas  ser curto para realizar o MVP devido a complexidade (Probabilidade: Alta 70% X Impacto: Muito baixo);
 - Não conseguirmos integrar o robô com a aplicação WEB (Probabilidade: Média 50% X Impacto: Alto);
@@ -146,9 +147,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 - O projeto não diminuir o tempo de montagem de um carrinho de parada no hospital (Probabilidade: Muito Baixa 30% X Impacto: Alto)
 - O cliente não conseguir implementar sozinho a nossa solução lendo a documentação (Probabilidade: Média 50% X Impacto: Moderado)
 
-## Plano de ação e resposta para todos os riscos:
+## Plano de ação e resposta para todos os riscos
 
-## Potenciais:
+### Potenciais
 
 - Criar um cronograma realista e atribuir tarefas específicas para a equipe e mantê-la bem atualizada sobre o escopo do projeto e as expectativas do cliente, incentivando a busca por melhorias e aperfeiçoamento contínuo, para que os objetivos sejam alcançados dentro do prazo estabelecido.
 
@@ -156,7 +157,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 - Sempre que necessário pedir auxílio aos instrutores para conseguir entender e superar os desafios que iremos enfrentar durante o módulo, dessa forma, alcançaremos a conclusão do MVP.
 
-## Reais:
+### Reais:
 
 - Ao não seguir um bom planejamento e se atentar a organização do projeto pode vir a ocorrer a falta de tempo, entretanto, para que isso não seja um problema e não venha a ocorrer, a equipe optou por trabalhar com a metodologia Agile e Kanban, o que permitirá a divisão eficiente das tarefas e sua conclusão dentro do prazo estabelecido.
 

@@ -83,6 +83,7 @@ sidebar_position: 3
 
 **RNF07**: O sistema deve relatar o estado da execução da tarefa, informando ao usuário quando a montagem do kit começar e quando houver o término dessa tarefa.
 
+---
 
 # Diagrama de blocos da arquitetura do sistema
 &emsp;A arquitetura de sistema é uma representação abstrata e conceitual que aborda a estrutura organizacional e o design fundamental de um sistema. Nela, são definidas as interações e relações entre os componentes do sistema para atender aos requisitos funcionais e não funcionais. Essa visão de alto nível orienta o desenvolvimento do sistema, assegurando a coesão entre todos os elementos para alcançar os objetivos do projeto. [4]
@@ -100,6 +101,8 @@ sidebar_position: 3
 &emsp;Na configuração dos medicamentos a serem retirados, a interface enviará para o servidor os itens que foram coletados pelo braço robótico e armazenados nele (banco de dados), contemplando o requisito RF03. Além dessas funcionalidades, o braço robótico deve enviar para o sistema seu estado atual, permitindo que o usuário saiba o que está acontecendo, atendendo ao requisito RNF08.
 
 &emsp;Durante a execução para a montagem do kit, o braço robótico precisa garantir a precisão da disposição dos medicamentos dentro do kit, conforme indicado no requisito RNF04. Contudo, em caso de erro durante a tarefa, o braço robótico deve enviar mensagens de falha para o sistema, conforme sugerido nos requisitos RNF03, e outra mensagem indicando "Falha em pegar um medicamento" se houver erro no momento de coletar o medicamento, conforme sinalizado no requisito RNF06.
+
+---
 
 # Proposta de baixo acoplamento e alta mutabilidade
 &emsp;A proposta de baixo acoplamento e alta mutabilidade é uma abordagem que visa aprimorar a arquitetura de software, tornando-a mais flexível e adaptável a mudanças. O baixo acoplamento refere-se à redução da dependência entre os módulos do sistema, permitindo que eles possam ser modificados sem afetar outros componentes. Já a alta mutabilidade refere-se à capacidade do sistema de se adaptar a mudanças, permitindo que novas funcionalidades possam ser adicionadas ou removidas sem impactar o sistema como um todo.
@@ -129,7 +132,7 @@ sidebar_position: 3
 - Testes e Qualidade: Implementar uma estratégia de testes rigorosa para garantir que todos os requisitos sejam atendidos e que o sistema funcione conforme esperado sob diversas condições.
 - Segurança: Integrar medidas de segurança robustas para proteger os dados e operações do sistema (atributo de segurança da ISO 25010).
 
-
+---
 
 ## Bibliografia:
 ‌[1] CASA DO DEENVOLVEDOR. Requisitos funcionais e não funcionais: o que são e como identificar? Disponível em: [https://blog.casadodesenvolvedor.com.br/requisitos-funcionais-e-nao-funcionais/](https://blog.casadodesenvolvedor.com.br/requisitos-funcionais-e-nao-funcionais). Acesso em: 7 fev. 2024.
