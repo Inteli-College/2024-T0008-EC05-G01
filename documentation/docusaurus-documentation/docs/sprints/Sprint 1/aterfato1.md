@@ -118,7 +118,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;A matriz de risco desempenha um papel fundamental ao avaliar e gerenciar riscos em projetos ou implementações. Desse modo, uma matriz bem elaborada possibilita à equipe priorizar os riscos mais críticos, tornando mais fácil a implementação de medidas preventivas e corretivas apropriadas. Desta maneira, os impactos negativos possíveis são reduzidos. Considerando as particularidades da equipe e do projeto em questão, apresento a seguir uma análise de riscos específica para este empreendimento.
 
-&emsp;No caso do projeto, essa matriz guia organicamente o grupo XX para voltar a atenção em relação a possibilidades de riscos e oportunidades.
+&emsp;No caso do projeto, essa matriz guia organicamente o grupo ARM para voltar a atenção em relação a possibilidades de riscos e oportunidades.
 
 <p align="center"><b>Quadro 2 - Matriz de Risco</b> </p>
 
@@ -173,7 +173,42 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 - Marcar encontros de validação com o cliente para que possamos entender da melhor forma possível o que ele realmente precisa e assim entregar a melhor personalização da solução para tal. 
 
 - Trabalhar em uma documentação clara e concisa desde o início do projeto é fundamental para que o cliente possa dar continuidade em nosso MVP e implementar em larga escala. Portanto, sempre que for preciso iremos formatar a documentação para que ela fique com o entendimento o mais claro possível, passando por revisões e reestruturações periodicamente.
-  
+
+## Oportunidades potenciais:
+
+- Desenvolvimento de Parcerias Estratégicas com empresas de automação (Probabilidade: Baixa 30% x Impacto: Alto)
+- Feedback Positivo do Cliente (Probabilidade: Alta 70% x Impacto: Muito Alto)
+
+## Oportunidades reais:
+
+- Aprendizado Técnico da Equipe durante o desenvolvimento (Probabilidade: Alta 90% x Impacto: Alto)
+- Inovação na Automação de Montagem de Kits (Probabilidade: Média 50% x Impacto: Muito Alto)
+- Colaboração Eficiente com o Cliente para melhoras no projeto (Probabilidade: Alta 90% x Impacto: Muito Alto)
+- Desenvolvimento de Habilidades Ágeis (Probabilidade: Muito Alta 90% x Impacto: Alto)
+- Documentação Eficaz como Diferencial Competitivo (Probabilidade: Alta 90% x Impacto: Moderado)
+
+## Plano de ação e resposta para todas as oportunidades:
+
+## Potenciais:
+
+- Identificar empresas estratégicas no setor de automação, analisar e iniciar negociações para estabelecer parcerias duradouras. Isso inclui realizar pesquisa de mercado, agendar reuniões exploratórias e desenvolver propostas de parceria personalizadas.
+
+- Aproveitar os encontros com o parceiro para implementar uma abordagem ágil para coleta contínua de feedback e personalizar a solução conforme preferências do cliente e garantir canais eficazes de comunicação. Isso envolve incorporar os feedback em cada parte do projeto, realizar reuniões regulares e ajustar a solução conforme o feedback recebido.
+
+## Reais:
+
+- Encorajar a equipe a ver desafios técnicos como oportunidades de aprendizado e fomentar no grupo uma cultura de aprendizado contínuo. Isso inclui identificar tópicos mais desafiadores a cada sprint e estabelecer um ambiente seguro para a troca de conhecimento.
+
+- Gastar mais tempo em pesquisas em tecnologias inovadoras, realizar análises de benchmarking, sempre buscando ao máximo experimentar protótipos inovadores.
+
+- Estabelecer canais de comunicação abertos, utilizar dos encontros de validação para implementar uma abordagem colaborativa na adaptação da solução.
+
+- Utilizar a metodologia SCRUM no processo de desenvolvimento, promover a divisão eficiente de tarefas, a realização das dailies e incentivar a colaboração em equipe.
+
+- Estabelecer uma abordagem para a criação e manutenção de documentação clara e concisa, realizar revisões periódicas e posicionar a documentação como recurso valioso para o cliente. 
+
+&emsp;Portanto, a análise detalhada da matriz de risco oferece uma perspectiva valiosa para a gestão eficaz do projeto em parceria com o Hospital Sírio-Libanês. Ao destacar riscos potenciais e oportunidades estratégicas, estamos melhor posicionados para adotar medidas preventivas, superar desafios e otimizar os benefícios ao longo do desenvolvimento do projeto. Essa abordagem proativa não apenas fortalece a resiliência operacional, mas também promove uma colaboração sólida, visando o sucesso duradouro da iniciativa e a criação de valor sustentável para todas as partes envolvidas.
+
 ---
 
 ## Bibliografia:
