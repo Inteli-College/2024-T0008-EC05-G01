@@ -28,6 +28,40 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ---
 
+# Personas
+
+&emsp;A persona, um retrato fictício do cliente ideal de um negócio, é elaborada com base em informações e características reais do público-alvo. Essa ferramenta constroi representações fictícias de clientes ideais, baseadas em dados reais e pesquisas com o público-alvo. Elas ajudam a entender melhor as necessidades, dores, objetivos e comportamentos dos usuários finais.
+
+&emsp;Desenvolver personas pode ajudar uma equipe a formular um IoT para o Hospital Sírio-Libanês. Isso porque, ao criar personas, a equipe pode se colocar no lugar dos usuários e criar soluções mais adequadas e personalizadas para eles. Como parte deste projeto, foram desenvolvidas representações visuais ilustrativas de duas personas principais identificadas abaixo:
+
+<p align="center">Figura 2 - Persona Baruc </p>
+<img title="Baruc" alt="Persona Baruc" src={useBaseUrl("/img/personaBaruc.png")}></img>
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
+<p align="center">Figura 2 - Persona Mariana </p>
+<img title="Mariana" alt="Persona Mariana" src={useBaseUrl("/img/personaMariana.png")}></img>
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
+&emsp;Em resumo, a criação de personas é mais do que uma simples representação gráfica de usuários; é um processo dinâmico e estratégico que amplia a compreensão das necessidades, expectativas e desafios que nossos clientes enfrentam. Ao desenvolver personas significativas, não apenas moldamos produtos e serviços mais alinhados com as demandas reais, mas também cultivamos uma conexão mais profunda e empática com nosso público.
+
+&emsp;Portanto, a construção de personas transcende a esfera do design e se estende a toda a estratégia empresarial, orientando-nos na busca constante pela satisfação do cliente e pela inovação centrada nas pessoas. Dessa maneira, destaca-se o público raiz que vai utilizar a solução: profissionais da saúde e equipes de gestão. Com isso em mente, a equipe pode guiar o desenvolvimento com objetivos claros e palpáveis.
+
+---
+
+# Jornada do Usuário
+
+&emsp;O Mapa de Jornada do Usuário é uma ferramenta visual que retrata a sequência de interações que um usuário tem com um produto ou serviço. Ele fornece uma narrativa clara e organizada das experiências, sentimentos, pontos de dor e pontos de satisfação de um usuário ao longo de um processo. Esta ferramenta é essencial para identificar oportunidades de melhoria e otimização da experiência do usuário.[4]
+
+&emsp;A jornada do usuário consiste em mais do que um auxílio para compreender como se dá a interação do usuário com a solução: é uma grande aliada para mapear os pontos de atrito desse contato. Isso se torna essencial para o desenvolvimento do projeto, porque cria-se tempo para resolver esses pontos de frustração a tempo. Para o caso da solução planejada para o Hospital Sírio-Libanês(HSL), o parceiro de negócios, foi elaborada uma jornada de usuário com base na persona do Baruc, como é possível ver abaixo:
+
+<p align="center">Figura 3 - Mapa de Jornada do Usuário </p>
+<img title="Mapa de Jornada do Usuário" alt="Mapa de Jornada do Usuário" src={useBaseUrl("/img/jornadaDoUsuario.jpg")}></img>
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
+&emsp;Esse mapa de jornada do usuário foi elaborado em cinco principais fases, sendo elas: "Reconhecimento do problema", em que o usuário percebe o demasiado tempo gasto na tarefa; "Recebimento dos pedidos de montagem", em que ocorre a primeira interação do usuário com a solução a ser desenvolvida; "Envio dos pedidos para o braço robótico", em que o usuário final vai, de fato, se valer de uma das principais funcionalidades da solução; "Vistoria dos kits montados", em que o usuário confirma a organização dos kits; e "Entrega dos kits para os enfermeiros", fase na qual o usuário final vai distribuir os kits montados pelo braço robótico para os respectivos enfermeiros que os solicitaram.
+
+---
+
 # User Stories
 
 &emsp;As User Stories são uma técnica fundamental dentro da metodologia ágil, desenvolvidas para compreender as necessidades e aspirações dos usuários finais no contexto do desenvolvimento de produtos ou serviços. Elas são boas ferramentas para capturar os requisitos que o sistema precisa ter no ponto de vista do usuário, ao esboçar funcionalidades e atributos desejados e fornecer uma visão precisa e concisa das expectativas dos usuários. [3]
@@ -67,40 +101,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 &emsp;Já o auxiliar de enfermagem Baruc deve atuar muito mais em contato com todo o sistema autônomo, principalmente com a parte da aplicação web. O papel do Baruc é fundamental no processo de montagem dos kits, pois cabe a ele montar o kit o mais rápido possível e sem cometer erros. A partir da utilização do sistema autônomo, ele poderá atuar monitorando o funcionamento do robô a partir da aplicação web, sem precisar realizar trabalhos manuais e repetitivos de organizar os kits um por um manualmente, o que posteriormente ajudará a enfermeira Mariana no atendimento ao paciente.
 
 &emsp;Dessa forma, é possível realizar a criação de User Stories para identificar quais são os pontos de vista do usuário e criar soluções a partir das necessidades e dos desejos existentes. As declarações tanto de Mariana quanto de Baruc foram fundamentais à equipe, por terem permitido o entendimento de quais aspectos são os mais importantes do projeto, para que o desenvolvimento e a conclusão do projeto tenham êxito, e principalmente, que contribuam positivamente para as operações do hospital.
-
----
-
-# Personas
-
-&emsp;A persona, um retrato fictício do cliente ideal de um negócio, é elaborada com base em informações e características reais do público-alvo. Essa ferramenta constroi representações fictícias de clientes ideais, baseadas em dados reais e pesquisas com o público-alvo. Elas ajudam a entender melhor as necessidades, dores, objetivos e comportamentos dos usuários finais.
-
-&emsp;Desenvolver personas pode ajudar uma equipe a formular um IoT para o Hospital Sírio-Libanês. Isso porque, ao criar personas, a equipe pode se colocar no lugar dos usuários e criar soluções mais adequadas e personalizadas para eles. Como parte deste projeto, foram desenvolvidas representações visuais ilustrativas de duas personas principais identificadas abaixo:
-
-<p align="center">Figura 2 - Persona Baruc </p>
-<img title="Baruc" alt="Persona Baruc" src={useBaseUrl("/img/personaBaruc.png")}></img>
-<p align="center">Fonte: Elaborado pelos próprios autores </p>
-
-<p align="center">Figura 2 - Persona Mariana </p>
-<img title="Mariana" alt="Persona Mariana" src={useBaseUrl("/img/personaMariana.png")}></img>
-<p align="center">Fonte: Elaborado pelos próprios autores </p>
-
-&emsp;Em resumo, a criação de personas é mais do que uma simples representação gráfica de usuários; é um processo dinâmico e estratégico que amplia a compreensão das necessidades, expectativas e desafios que nossos clientes enfrentam. Ao desenvolver personas significativas, não apenas moldamos produtos e serviços mais alinhados com as demandas reais, mas também cultivamos uma conexão mais profunda e empática com nosso público.
-
-&emsp;Portanto, a construção de personas transcende a esfera do design e se estende a toda a estratégia empresarial, orientando-nos na busca constante pela satisfação do cliente e pela inovação centrada nas pessoas. Dessa maneira, destaca-se o público raiz que vai utilizar a solução: profissionais da saúde e equipes de gestão. Com isso em mente, a equipe pode guiar o desenvolvimento com objetivos claros e palpáveis.
-
----
-
-# Jornada do Usuário
-
-&emsp;O Mapa de Jornada do Usuário é uma ferramenta visual que retrata a sequência de interações que um usuário tem com um produto ou serviço. Ele fornece uma narrativa clara e organizada das experiências, sentimentos, pontos de dor e pontos de satisfação de um usuário ao longo de um processo. Esta ferramenta é essencial para identificar oportunidades de melhoria e otimização da experiência do usuário.[4]
-
-&emsp;A jornada do usuário consiste em mais do que um auxílio para compreender como se dá a interação do usuário com a solução: é uma grande aliada para mapear os pontos de atrito desse contato. Isso se torna essencial para o desenvolvimento do projeto, porque cria-se tempo para resolver esses pontos de frustração a tempo. Para o caso da solução planejada para o Hospital Sírio-Libanês(HSL), o parceiro de negócios, foi elaborada uma jornada de usuário com base na persona do Baruc, como é possível ver abaixo:
-
-<p align="center">Figura 3 - Mapa de Jornada do Usuário </p>
-<img title="Mapa de Jornada do Usuário" alt="Mapa de Jornada do Usuário" src={useBaseUrl("/img/jornadaDoUsuario.jpg")}></img>
-<p align="center">Fonte: Elaborado pelos próprios autores </p>
-
-&emsp;Esse mapa de jornada do usuário foi elaborado em cinco principais fases, sendo elas: "Reconhecimento do problema", em que o usuário percebe o demasiado tempo gasto na tarefa; "Recebimento dos pedidos de montagem", em que ocorre a primeira interação do usuário com a solução a ser desenvolvida; "Envio dos pedidos para o braço robótico", em que o usuário final vai, de fato, se valer de uma das principais funcionalidades da solução; "Vistoria dos kits montados", em que o usuário confirma a organização dos kits; e "Entrega dos kits para os enfermeiros", fase na qual o usuário final vai distribuir os kits montados pelo braço robótico para os respectivos enfermeiros que os solicitaram.
 
 ---
 
