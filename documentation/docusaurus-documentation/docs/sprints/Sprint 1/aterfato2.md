@@ -5,6 +5,14 @@ sidebar_position: 2
 
 # Personas
 
+&emsp;A persona, um retrato fictício do cliente ideal de um negócio, é elaborada com base em informações e características reais do público-alvo. Essa ferramenta constroi representações fictícias de clientes ideais, baseadas em dados reais e pesquisas com o público-alvo. Elas ajudam a entender melhor as necessidades, dores, objetivos e comportamentos dos usuários finais.
+
+&emsp;Desenvolver personas pode ajudar uma equipe a formular um IoT para o Hospital Sírio-Libanês. Isso porque, ao criar personas, a equipe pode se colocar no lugar dos usuários e criar soluções mais adequadas e personalizadas para eles. Como parte deste projeto, foram desenvolvidas representações visuais ilustrativas de duas personas principais identificadas abaixo:
+
+<p align="center">Figura 2 - Persona Baruc </p>
+<img title="Baruc" alt="Persona Baruc" src="../../../static/img/personaBaruc.png">
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
 <p align="center">Figura 2 - Persona Mariana </p>
 <img title="Mariana" alt="Persona Mariana" src="../../../static/img/personaMariana.png">
 <p align="center">Fonte: Elaborado pelos próprios autores </p>
