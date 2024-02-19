@@ -79,6 +79,14 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      
+      customCss: `
+      @media screen and (min-width: 1900px) {
+        html {
+          zoom: 60%;
+        }
+      }
+    `,
     }),
 };
 
