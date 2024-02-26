@@ -34,7 +34,7 @@ class RobotWrapper:
 		self.update_pos()
 	
 	def move_J(self, j1: float, j2: float, j3: float, j4: float) -> None:
-		self.robot.move_to(j1, j2, j3, j4, wait=True)
+		self.robot.move_to_J(j1, j2, j3, j4, wait=True)
 		self.update_pos()
 
 	def current(self) -> dict[str, float]:
