@@ -6,12 +6,17 @@ from pydobot import Dobot
 
 
 class RobotWrapper:
-	def __init__(self):
+	def init(self):
 		print(f"[{Fore.YELLOW}ROBOT{Style.RESET_ALL}] Estabelecendo conexão com o robô...")
 		self.port = self.scan_ports()
 		self.robot = Dobot(port=self.port) #! Depois mudar isso pra escanear portas direito no windows.
 		print(f"[{Fore.YELLOW}ROBOT{Style.RESET_ALL}] Conectado ao robô na porta {Fore.GREEN}{self.port}{Style.RESET_ALL}")
 		self.update_pos()
+		self.inicalazed = True
+	
+	def __init__(self):
+		self.inicalazed = False
+		print("iniciando")
 
 	def scan_ports(self) -> str:
 		ports = list_ports.comports()
@@ -48,3 +53,9 @@ class RobotWrapper:
 	def put_item(self, put_pos):
 		self.move(put_pos.x, put_pos.y, put_pos.z)
 		self.robot._set_end_effector_suction_cup(False)
+
+	def atuador_on(self):
+		self.robot.suck(True)
+
+	def atuador_off(self):
+		self.robot.suck(False)
