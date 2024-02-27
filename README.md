@@ -39,10 +39,53 @@
 
 ## 📁 Estrutura de pastas
 
+```
+.
+├── .github
+│   └── workflows
+├── documentation
+│   └── docusaurus-documentation
+│       ├── blog
+│       ├── docs
+│       │   └── sprints
+│       ├── src
+│       └── static
+│           └── img
+├── src
+│   ├── classes
+│   ├── commands
+│   ├── kits
+│   └── pydobot
+└── README.md
+```
+
 &emsp;&emsp;Dentre os arquivos e pastas presentes na raiz do projeto, define-se:
 
 - <b>.github</b>: nesta pasta há o arquivo de deploy do repositório, que faz a documentação do projeto ser exibida no GitHub Pages
 
-- <b>documentation</b>: aqui estão todos os documentos do projeto, incluindo a documentação e os códigos das Sprints, e futuramente será adicionado o manual de instruções
+- <b>documentation</b>: aqui estão todos os documentos do projeto, incluindo a documentação das Sprints e as imagens utilizadas. Futuramente o manual de instruções será adicionado
+
+- <b>src</b>: pasta com todos os códigos e base de dados utilizados no projeto
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto 
+
+## 🔧 Instalação
+
+Para iniciar a documentação do projeto, instale o repositório no dispositivo. Abra o Prompt de Comando e digite ```cd .\documentacao\docusaurus-documentation``` para entrar na pasta da documentação.
+Digite ```npm i``` para instalar todas dependências e aguarde enquanto a instalação é feita.
+Para concluir, digite ```npm start``` para iniciar a documentação, e aguarde até a página ser carregada.
+
+## 🗃 Histórico de lançamentos
+
+* Versão 2.0 - 01/03/2024
+    * Mapeamento do Fluxo de Utilização da Solução;
+    * Sistema de Automação.
+
+* Versão 1.0 - 16/02/2024
+    * Entendimento do Negócio;
+    * UX Research;
+    * Proposta de Arquitetura do Sistema.
+
+## 📋 Licença/License
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Inteli-College/2024-T0008-EC05-G01">Arm</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/InteliProjects">Inteli</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/breno-santos-0843131b8/">Breno Santos</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/eduardo-henrique-dos-santos-8b24451b8/">Eduardo Henrique</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/gabrielle-mitoso-6253a219b/">Gabrielle Mitoso</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/gustavo-widman/">Gustavo Widman</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/isabelle-beatriz-vasquez-oliveira-55a19626a/">Isabelle Vasquez</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/naruto/">Ivan Ferreira</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/luiz-fernando-villaça-leão-930568271/">Luiz Fernando Villaça Leão</a>, <a property="dct:title" rel="cc:attributionURL" href="https://www.linkedin.com/in/marco-antonio-rizzi-620b56257/">Marco Rizzi</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
