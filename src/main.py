@@ -2,7 +2,7 @@ from classes.robot import RobotWrapper
 from classes.kit import KitLoader
 from colorama import Fore, Style
 import inquirer
-import yaspin
+from yaspin import yaspin
 import typer
 import os
 
@@ -60,7 +60,10 @@ def processar(dados, robot, choices):
     match comando:
         case "back_home":
             spinner.start()
-            robot.move(-10, 235, 140)
+            robot.move(18.443, 240.97, 152.04)
+
+            if "back_home" in choices:
+                choices.remove("back_home")
             spinner.stop()
 
         case "atuador_on":
