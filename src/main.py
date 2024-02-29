@@ -33,22 +33,26 @@ def whereami():
 
     print(f"[{Fore.YELLOW}ROBOT{Style.RESET_ALL}] Eu estou em X: {Fore.MAGENTA}{curr_pos['x']}{Style.RESET_ALL}, Y: {Fore.MAGENTA}{curr_pos['y']}{Style.RESET_ALL}, Z: {Fore.MAGENTA}{curr_pos['z']}{Style.RESET_ALL}")
 
-# @app.command('execute-kit')
-# def execute_kit(robot):
-    # kits = [x.replace(".json", "") for x in os.listdir("kits") if x.endswith(".json")]
 
-    # perguntas = [
-    #     inquirer.List("kit", message="Escolha o kit que você quer executar", choices=kits)
-    # ]
 
-    # respostas = inquirer.prompt(perguntas)
-    # robot = RobotWrapper()
+"""" Codigo será utilizado futuramente, por isso foi deixado nessa parte da Sprint
+@app.command('execute-kit')
+def execute_kit(robot):
+    kits = [x.replace(".json", "") for x in os.listdir("kits") if x.endswith(".json")]
 
-    # kit_name = respostas["kit"]
+    perguntas = [
+        inquirer.List("kit", message="Escolha o kit que você quer executar", choices=kits)
+    ]
 
-    # kit_loader = KitLoader(f"kits/{kit_name}.json")
-    # kit_loader.execute_kit(robot)
-    # print(f"[{Fore.YELLOW}APP{Style.RESET_ALL}] Kit {Fore.GREEN}{kit_name}{Style.RESET_ALL} executado com sucesso!")
+    respostas = inquirer.prompt(perguntas)
+    robot = RobotWrapper()
+
+    kit_name = respostas["kit"]
+
+    kit_loader = KitLoader(f"kits/{kit_name}.json")
+    kit_loader.execute_kit(robot)
+    print(f"[{Fore.YELLOW}APP{Style.RESET_ALL}] Kit {Fore.GREEN}{kit_name}{Style.RESET_ALL} executado com sucesso!")
+    """
 
 def processar(dados, robot, choices):
     comando = dados["interface"]
