@@ -115,7 +115,6 @@ def execute_kit(robot):
     ]
 
     respostas = inquirer.prompt(perguntas)
-    print(respostas)
 
     with open("./medicamentos.json", "r") as arquivo:
         dados = json.load(arquivo)
@@ -128,10 +127,7 @@ def execute_kit(robot):
 
                 robot.move(float(medicamento['posicao']['x'][i]),float(medicamento['posicao']['y'][i]),float(medicamento['posicao']['z'][i]),float(medicamento['posicao']['r'][i]))
 
-                if(i >= 5):
-                    robot.move_to_J()
-
-                if(i == len(medicamento['posicao']['x']) - 1):
+                if i == 4:
                     robot.atuador_off()
 
 if __name__ == "__main__":
