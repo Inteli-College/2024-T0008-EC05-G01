@@ -3,6 +3,8 @@ from colorama import Fore, Style
 # import dobotJson
 # from robot import KitItem, Pos
 from pydobot import Dobot
+from serial.serialutil import SerialException
+from utils.ports import serial_ports
 
 
 class RobotWrapper:
@@ -18,18 +20,35 @@ class RobotWrapper:
 		self.inicalazed = False
 		print("iniciando")
 
+	# def scan_ports(self) -> str:
+	# 	ports = list_ports.comports()
+	# 	for port in ports:
+	# 		# print(f"Trying port {port.device}")
+	# 		try:
+	# 			robot = Dobot(port=port.device)
+	# 			robot.close()
+	# 			# print(f"Found robot at {port.device}")
+	# 			return port.device
+	# 		except:
+	# 			print(f"No robot found at {port.device}")
+	# 	raise Exception("No robot found")
+	
 	def scan_ports(self) -> str:
-		ports = list_ports.comports()
+		ports = serial_ports()
 		for port in ports:
-			# print(f"Trying port {port.device}")
 			try:
-				robot = Dobot(port=port.device)
-				robot.close()
-				# print(f"Found robot at {port.device}")
-				return port.device
-			except:
-				print(f"No robot found at {port.device}")
-		raise Exception("No robot found")
+				Dobot(port=port).close()
+
+				print(f"[&6ROBOT&f] &aRobô encontrado na porta &5{port}")
+
+				return port
+			except SerialException as e:
+				if ("Permission denied" in str(e)):
+					print(f"[&6ROBOT&f] &cErro de permissão, tente rodar o programa como administrador.")
+				else: continue
+
+		print("[&6ROBOT&f] &cNenhum robô foi encontrado, por favor, verifique a conexão ou conecte um robô para prosseguir.")
+
 
 	def update_pos(self) -> None:
 		self.x, self.y, self.z, self.r, self.j1, self.j2, self.j3, self.j4 = self.robot.pose()
