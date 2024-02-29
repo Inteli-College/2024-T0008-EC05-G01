@@ -4,7 +4,7 @@ import json
 with open("medicamentos.json", "r") as arquivo:
     dados = json.load(arquivo)
 
-dobot = Dobot(port="COM9")
+dobot = Dobot(port="COM5")
 
 
 

@@ -5,6 +5,7 @@ import inquirer
 from yaspin import yaspin
 import typer
 import os
+import json
 
 from commands.moveto import app as moveto_app
 
@@ -32,22 +33,22 @@ def whereami():
 
     print(f"[{Fore.YELLOW}ROBOT{Style.RESET_ALL}] Eu estou em X: {Fore.MAGENTA}{curr_pos['x']}{Style.RESET_ALL}, Y: {Fore.MAGENTA}{curr_pos['y']}{Style.RESET_ALL}, Z: {Fore.MAGENTA}{curr_pos['z']}{Style.RESET_ALL}")
 
-@app.command('execute-kit')
-def execute_kit():
-    kits = [x.replace(".json", "") for x in os.listdir("kits") if x.endswith(".json")]
+# @app.command('execute-kit')
+# def execute_kit(robot):
+    # kits = [x.replace(".json", "") for x in os.listdir("kits") if x.endswith(".json")]
 
-    perguntas = [
-        inquirer.List("kit", message="Escolha o kit que você quer executar", choices=kits)
-    ]
+    # perguntas = [
+    #     inquirer.List("kit", message="Escolha o kit que você quer executar", choices=kits)
+    # ]
 
-    respostas = inquirer.prompt(perguntas)
-    robot = RobotWrapper()
+    # respostas = inquirer.prompt(perguntas)
+    # robot = RobotWrapper()
 
-    kit_name = respostas["kit"]
+    # kit_name = respostas["kit"]
 
-    kit_loader = KitLoader(f"kits/{kit_name}.json")
-    kit_loader.execute_kit(robot)
-    print(f"[{Fore.YELLOW}APP{Style.RESET_ALL}] Kit {Fore.GREEN}{kit_name}{Style.RESET_ALL} executado com sucesso!")
+    # kit_loader = KitLoader(f"kits/{kit_name}.json")
+    # kit_loader.execute_kit(robot)
+    # print(f"[{Fore.YELLOW}APP{Style.RESET_ALL}] Kit {Fore.GREEN}{kit_name}{Style.RESET_ALL} executado com sucesso!")
 
 def processar(dados, robot, choices):
     comando = dados["interface"]
@@ -60,7 +61,7 @@ def processar(dados, robot, choices):
     match comando:
         case "back_home":
             spinner.start()
-            robot.move(18.443, 240.97, 152.04)
+            robot.move(243.84, 5.12, 157.94)
 
             if "back_home" in choices:
                 choices.remove("back_home")
@@ -101,10 +102,37 @@ def processar(dados, robot, choices):
 
         case "montar_kit":
             spinner.start()
-            execute_kit()
-            spinner.start()
+            execute_kit(robot)
+            spinner.stop()
 
     return choices
+
+def execute_kit(robot):
+    kits = ["MedicamentoA", "MedicamentoB"]
+
+    perguntas = [
+        inquirer.List("kit", message="Escolha o médicamento do kit que você quer executar", choices=kits)
+    ]
+
+    respostas = inquirer.prompt(perguntas)
+    print(respostas)
+
+    with open("./medicamentos.json", "r") as arquivo:
+        dados = json.load(arquivo)
+
+    for medicamento in dados.get("medicamentos", []):
+        if medicamento['nome'] == respostas['kit']:
+            for i in range(len(medicamento['posicao']['x'])):
+                if(i == 1):
+                    robot.atuador_on()
+
+                robot.move(float(medicamento['posicao']['x'][i]),float(medicamento['posicao']['y'][i]),float(medicamento['posicao']['z'][i]),float(medicamento['posicao']['r'][i]))
+
+                if(i >= 5):
+                    robot.move_to_J()
+
+                if(i == len(medicamento['posicao']['x']) - 1):
+                    robot.atuador_off()
 
 if __name__ == "__main__":
     app()

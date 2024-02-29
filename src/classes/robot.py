@@ -34,8 +34,9 @@ class RobotWrapper:
 	def update_pos(self) -> None:
 		self.x, self.y, self.z, self.r, self.j1, self.j2, self.j3, self.j4 = self.robot.pose()
 
-	def move(self, x: float, y: float, z: float) -> None:
-		self.robot.move_to(x, y, z, self.r, wait=True)
+	def move(self, x: float, y: float, z: float, r: float = None) -> None:
+		if not r: r = self.r
+		self.robot.move_to(x, y, z, r, wait=True)
 		self.update_pos()
 	
 	def move_J(self, j1: float, j2: float, j3: float, j4: float) -> None:
