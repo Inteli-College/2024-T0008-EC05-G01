@@ -71,7 +71,7 @@
 
 ## 🔧 Instalação
 
-Para iniciar a documentação do projeto, instale o repositório no dispositivo. Abra o Prompt de Comando e digite ```cd .\documentacao\docusaurus-documentation``` para entrar na pasta da documentação.
+Para iniciar a documentação do projeto, instale o repositório no dispositivo. Abra o Prompt de Comando e digite ```cd .\documentation\docusaurus-documentation``` para entrar na pasta da documentação.
 Digite ```npm i``` para instalar todas dependências e aguarde enquanto a instalação é feita.
 Para concluir, digite ```npm start``` para iniciar a documentação, e aguarde até a página ser carregada.
 
