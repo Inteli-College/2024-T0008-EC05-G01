@@ -1,141 +1,22 @@
-from classes.robot import RobotWrapper
-from classes.kit import KitLoader
-from colorama import Fore, Style
-import inquirer
-from yaspin import yaspin
 import typer
-import os
-import json
 
-from commands.moveto import app as moveto_app
+from commands.interface import app as interface
+from commands.mover import app as mover
+from commands.atual import app as atual
+from commands.ferramenta import app as ferramenta
+from commands.home import app as home
+from commands.montar_kit import app as montar_kit
 
-spinner = yaspin(text="Processando...", color="red")
 app = typer.Typer()
-app.add_typer(moveto_app)
 
-@app.command()
-def interface():
-    robot = RobotWrapper()
-    choices=["atuador_on", "movimentar", "montar_kit", "posição_atual", "sair"]
-    while True:
-        perguntas_main = [
-            inquirer.List("interface", message="Qual comando você quer executar ?", choices=choices),
-        ]
+app.registered_commands += interface.registered_commands
+app.registered_commands += mover.registered_commands
+app.registered_commands += atual.registered_commands
+app.registered_commands += ferramenta.registered_commands
+app.registered_commands += montar_kit.registered_commands
+app.registered_commands += home.registered_commands
 
-        respostas_main = inquirer.prompt(perguntas_main)
-
-        choices = processar(respostas_main, robot, choices)
-
-@app.command()
-def whereami():
-    robot = RobotWrapper()
-    curr_pos = robot.current()
-
-    print(f"[{Fore.YELLOW}ROBOT{Style.RESET_ALL}] Eu estou em X: {Fore.MAGENTA}{curr_pos['x']}{Style.RESET_ALL}, Y: {Fore.MAGENTA}{curr_pos['y']}{Style.RESET_ALL}, Z: {Fore.MAGENTA}{curr_pos['z']}{Style.RESET_ALL}")
-
-
-
-"""" Codigo será utilizado futuramente, por isso foi deixado nessa parte da Sprint
-@app.command('execute-kit')
-def execute_kit(robot):
-    kits = [x.replace(".json", "") for x in os.listdir("kits") if x.endswith(".json")]
-
-    perguntas = [
-        inquirer.List("kit", message="Escolha o kit que você quer executar", choices=kits)
-    ]
-
-    respostas = inquirer.prompt(perguntas)
-    robot = RobotWrapper()
-
-    kit_name = respostas["kit"]
-
-    kit_loader = KitLoader(f"kits/{kit_name}.json")
-    kit_loader.execute_kit(robot)
-    print(f"[{Fore.YELLOW}APP{Style.RESET_ALL}] Kit {Fore.GREEN}{kit_name}{Style.RESET_ALL} executado com sucesso!")
-    """
-
-def processar(dados, robot, choices):
-    comando = dados["interface"]
-
-    if comando == "sair": os._exit(0)
-
-    if robot.inicalazed == False:
-        robot.init()
-
-    match comando:
-        case "back_home":
-            spinner.start()
-            robot.move(243.84, 5.12, 157.94)
-
-            if "back_home" in choices:
-                choices.remove("back_home")
-            spinner.stop()
-
-        case "atuador_on":
-            spinner.start()
-            robot.atuador_on()
-            spinner.stop()
-
-            if "atuador_on" in choices:
-                choices.remove("atuador_on")
-                choices.insert(0, "atuador_off")
-        
-        case "atuador_off":
-            spinner.start()
-            robot.atuador_off()
-            spinner.stop()
-
-            if "atuador_off" in choices:
-                choices.remove("atuador_off")
-                choices.insert(0, "atuador_on")
-        
-        case "movimentar":
-            x = float(typer.prompt("Digite a distância a ser movida no eixo X:"))
-            y = float(typer.prompt("Digite a distância a ser movida no eixo Y:"))
-            z = float(typer.prompt("Digite a distância a ser movida no eixo Z:"))
-
-            if "back_home" not in choices:
-                choices.insert(4, "back_home")
-            
-            spinner.start()
-            robot.move(x,y,z) 
-            spinner.stop()
-
-        case "posição_atual":	
-            print(robot.current())
-
-        case "montar_kit":
-            spinner.start()
-            execute_kit(robot)
-            spinner.stop()
-
-    return choices
-
-def execute_kit(robot):
-    kits = ["MedicamentoA", "MedicamentoB"]
-
-    perguntas = [
-        inquirer.List("kit", message="Escolha o médicamento do kit que você quer executar", choices=kits)
-    ]
-
-    respostas = inquirer.prompt(perguntas)
-
-    with open("./medicamentos.json", "r") as arquivo:
-        dados = json.load(arquivo)
-
-    for medicamento in dados.get("medicamentos", []):
-        if medicamento['nome'] == respostas['kit']:
-            for i in range(len(medicamento['posicao']['x'])):
-                if(i == 1):
-                    robot.atuador_on()
-
-                robot.move(float(medicamento['posicao']['x'][i]),float(medicamento['posicao']['y'][i]),float(medicamento['posicao']['z'][i]),float(medicamento['posicao']['r'][i]))
-
-                if i == 4:
-                    robot.atuador_off()
 
 if __name__ == "__main__":
-    app()
-
-
-
+	print("") #? Isso é só pra dar um espaço entre o prompt e o texto
+	app()

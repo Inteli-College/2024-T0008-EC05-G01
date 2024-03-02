@@ -5,12 +5,12 @@ from serial.tools import list_ports
 
 def serial_ports():
     """
-        Lists serial port names
+        Lista os dispositivos seriais disponíveis no sistema
 
         :raises EnvironmentError:
-            On unsupported or unknown platforms
+            Em caso de erro na detecção do sistema operacional
         :returns:
-            A list of the serial ports available on the system
+            Uma lista de portas seriais disponíveis
     """
 
     #? Windows
@@ -23,16 +23,13 @@ def serial_ports():
     elif sys.platform.startswith('darwin'): ports = glob.glob('/dev/tty.*')
     else: raise EnvironmentError('Unsupported platform')
 
-    if not sys.platform.startswith('win'):
-        result = []
-        for port in ports:
-            try:
-                s = serial.Serial(port)
-                s.close()
-                result.append(port)
-            except (OSError, serial.SerialException):
-                pass
-    else: result = ports
-    
-    print(result)
+    result = []
+    for port in ports:
+        try:
+            s = serial.Serial(port)
+            s.close()
+            result.append(port)
+        except (OSError, serial.SerialException):
+            pass
+
     return result
