@@ -34,12 +34,16 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Desenvolver personas pode ajudar uma equipe a formular um IoT para o Hospital Sírio-Libanês. Isso porque, ao criar personas, a equipe pode se colocar no lugar dos usuários e criar soluções mais adequadas e personalizadas para eles. Como parte deste projeto, foram desenvolvidas representações visuais ilustrativas de duas personas principais identificadas abaixo:
 
-<p align="center">Figura 2 - Persona Baruc </p>
+<p align="center">Figura 1 - Persona Baruc </p>
 <img title="Baruc" alt="Persona Baruc" src={useBaseUrl("/img/personaBaruc.png")}></img>
 <p align="center">Fonte: Elaborado pelos próprios autores </p>
 
 <p align="center">Figura 2 - Persona Mariana </p>
 <img title="Mariana" alt="Persona Mariana" src={useBaseUrl("/img/personaMariana.png")}></img>
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
+<p align="center">Figura 3 - Persona Helena </p>
+<img title="Helena" alt="Persona Helena" src={useBaseUrl("/img/personaHelena.png")}></img>
 <p align="center">Fonte: Elaborado pelos próprios autores </p>
 
 &emsp;Em resumo, a criação de personas é mais do que uma simples representação gráfica de usuários; é um processo dinâmico e estratégico que amplia a compreensão das necessidades, expectativas e desafios que nossos clientes enfrentam. Ao desenvolver personas significativas, não apenas moldamos produtos e serviços mais alinhados com as demandas reais, mas também cultivamos uma conexão mais profunda e empática com nosso público.
