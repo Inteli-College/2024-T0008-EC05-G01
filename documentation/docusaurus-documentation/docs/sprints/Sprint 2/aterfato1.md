@@ -75,7 +75,9 @@ sidebar_position: 1
 <center>![wireflowFarmacologista](../../../static/img/userFlowFarmaceutico.png) </center>
 <p align="center"><b>Fonte: Elaborado pelos próprios autores </b> </p>
 
-O "wireflow", como é possível visualizar na imagem acima, apresenta o fluxo de maneira ampla e de fácil assimilação. Uma vez terminada a interação com a aplicação web, o farmacologista segue, então, para a próxima fase de sua jornada. Dessa maneira, o "wireflow" cumpre o seu papel de facilitar o desenvolvimento do projeto no que concerne a "User Experience(UX)", ou, simplesmente, experiência do usuário.
+&emsp;Ao acessar a solução como farmacêutica, Helena tem a possibilidade de criar um novo kit, caso haja novas necessidades no hospital. Ao finalizar a criação desse novo kit, a tela retorna ao início, e a farmacêutica pode editar este novo kit ou kits já existentes. Se a escolha for pela edição, o sistema é redirecionado a uma nova tela. Nessa tela, o farmacêutico deve selecionar a posição do kit que deseja editar e, em seguida, um pop-up surgirá na tela, onde o medicamento e a quantidade do mesmo devem ser selecionados. Ao concluir a edição, é necessário clicar no botão "Concluir edição" para então ser redirecionado à tela inicial.
+
+&emsp;O "wireflow", como é possível visualizar na imagem acima, apresenta o fluxo de maneira ampla e de fácil assimilação. Uma vez terminada a interação com a aplicação web, o farmacologista segue, então, para a próxima fase de sua jornada. Dessa maneira, o "wireflow" cumpre o seu papel de facilitar o desenvolvimento do projeto no que concerne a "User Experience(UX)", ou, simplesmente, experiência do usuário.
 
 ---
 
@@ -108,10 +110,12 @@ O "wireflow", como é possível visualizar na imagem acima, apresenta o fluxo de
 &emsp;Similarmente ao mapeamento do fluxo de utilização do farmacologista, o fluxo de utilização do auxiliar de farmácia pode ser representado de maneira ampla e de fácil compreensão por meio do "wireflow".
 
 <p align="center"><b> Quadro 14 - Wireflow Auxiliar de Farmácia </b> </p>
-<center>![wireflowAuxiliar](../../../static/img/userFlowAuxiliar.png) </center>
+<center>![wireflowAuxiliar](../../../static/img/userFlowAuxiliar.jpg) </center>
 <p align="center"><b>Fonte: Elaborado pelos próprios autores </b> </p>
 
-&emsp;Como é possível observar na imagem acima, o "wireflow" do fluxo de utilização do auxiliar de farmácia contempla as telas com que ele pode interagir, bem como o curso que segue essa interação. Dessa maneira, é possível melhor direcionar o desenvolvimento do projeto nas capacidades de UX, em especial na aplicação web, que é por onde se dará a maior parte de toda interação com a solução projetada para o Hospital Sírio-Libanês.
+&emsp;Ao acessar a solução como Auxiliar de Farmácia, Baruc tem acesso à visualização de todos os kits necessários no hospital. Nessa primeira tela, ele pode adicionar kits à fila de montagem do braço robótico, conferir se o kit está montado corretamente e, em seguida, confirmar que o estoque está abastecido clicando em "Reabastecido", para que o robô inicie a montagem.
+
+&emsp;Como é possível observar na imagem acima, o "wireflow" do fluxo de utilização do auxiliar de farmácia contempla as telas com que ele pode interagir, bem como o curso que segue essa interação. Dessa maneira, é possível melhor direcionar o desenvolvimento do projeto nas capacidades de UX, em especial na aplicação web, que é por onde se dará a maior parte de interação com a solução projetada para o Hospital Sírio-Libanês.
 
 # Bibliografia:
 [1] SA, G. Fluxo de usuário (User Flow): O que é? Como fazer? - 7bits - Medium. Disponível em: [https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534). Acesso em: 26 fev. 2024.
