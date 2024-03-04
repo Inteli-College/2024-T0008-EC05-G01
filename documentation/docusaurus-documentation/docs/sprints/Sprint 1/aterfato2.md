@@ -34,12 +34,16 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Desenvolver personas pode ajudar uma equipe a formular um IoT para o Hospital Sírio-Libanês. Isso porque, ao criar personas, a equipe pode se colocar no lugar dos usuários e criar soluções mais adequadas e personalizadas para eles. Como parte deste projeto, foram desenvolvidas representações visuais ilustrativas de duas personas principais identificadas abaixo:
 
-<p align="center">Figura 2 - Persona Baruc </p>
+<p align="center">Figura 1 - Persona Baruc </p>
 <img title="Baruc" alt="Persona Baruc" src={useBaseUrl("/img/personaBaruc.png")}></img>
 <p align="center">Fonte: Elaborado pelos próprios autores </p>
 
 <p align="center">Figura 2 - Persona Mariana </p>
 <img title="Mariana" alt="Persona Mariana" src={useBaseUrl("/img/personaMariana.png")}></img>
+<p align="center">Fonte: Elaborado pelos próprios autores </p>
+
+<p align="center">Figura 3 - Persona Helena </p>
+<img title="Helena" alt="Persona Helena" src={useBaseUrl("/img/personaHelena.png")}></img>
 <p align="center">Fonte: Elaborado pelos próprios autores </p>
 
 &emsp;Em resumo, a criação de personas é mais do que uma simples representação gráfica de usuários; é um processo dinâmico e estratégico que amplia a compreensão das necessidades, expectativas e desafios que nossos clientes enfrentam. Ao desenvolver personas significativas, não apenas moldamos produtos e serviços mais alinhados com as demandas reais, mas também cultivamos uma conexão mais profunda e empática com nosso público.
@@ -96,11 +100,25 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 <p align="center"><b>Fonte: Elaborado pelos próprios autores </b> </p>
 
+<p align="center"><b> Quadro 3 - User Stories - Helena </b> </p>
+
+| Número | Descrição concisa                                                                                                             | Critérios de Aceitação                                                                                        | Prioridade | Estimativa de Esforço |
+|--------|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|------------|-----------------------|
+| 1      | Como farmacêutica, quero uma interface intuitiva para reorganizar rapidamente os layouts dos kits e do carrinho de emergência. | A interface permite a reorganização eficiente dos layouts e é possível realizar a tarefa em menos tempo.       | Alta       | Média                 |
+| 2      | Como farmacêutica, quero uma interface que me permita criar novos kits, controlar e atualizar os layouts dos kits de maneira centralizada. | A plataforma proporciona controle centralizado e atualização em tempo real dos layouts; Helena consegue verificar e atualizar os layouts de qualquer local no hospital. | Alta | Alta                 |
+| 3      | Como farmacêutica, quero uma funcionalidade que me permita monitorar a distribuição dos medicamentos nos kits. | A funcionalidade permite que Helena monitore a distribuição dos medicamentos, garantindo precisão e segurança na preparação dos kits. | Média | Média               |
+| 4      | Como farmacêutica, quero opções de personalização na interface para facilitar a execução das tarefas diárias. | A interface oferece opções de personalização que se adequam às preferências de Helena, melhorando a eficiência e usabilidade. | Média | Baixa              |
+| 5      | Como farmacêutica, quero uma solução que reduza significativamente o tempo necessário para montar e atualizar os layouts. | A implementação reduz o tempo necessário para realizar as tarefas relacionadas aos layouts; Helena percebe uma melhoria significativa na eficiência. | Alta | Alta             |
+
+<p align="center"><b>Fonte: Elaborado pelos próprios autores </b> </p>
+
 &emsp;É possível dizer que a enfermeira Mariana possui necessidades relacionadas principalmente às consequências positivas que o funcionamento do braço robótico pode proporcionar para o trabalho dela. Por ser relativamente experiente na área de enfermagem do hospital, ela sabe quais processos precisam ser melhorados na preparação dos kits para ajudá-la nos momentos de atenção aos pacientes, como em situações de emergência. Mesmo com esta bagagem no ambiente hospitalar, ela pode sofrer com a implementação de novas tecnologias, pois o letramento digital dela não é dos mais avançados, então é fundamental que a operação geral do braço robótico não seja tão complicada, para que ela consiga acompanhar os processos.
 
 &emsp;Já o auxiliar de enfermagem Baruc deve atuar muito mais em contato com todo o sistema autônomo, principalmente com a parte da aplicação web. O papel do Baruc é fundamental no processo de montagem dos kits, pois cabe a ele montar o kit o mais rápido possível e sem cometer erros. A partir da utilização do sistema autônomo, ele poderá atuar monitorando o funcionamento do robô a partir da aplicação web, sem precisar realizar trabalhos manuais e repetitivos de organizar os kits um por um manualmente, o que posteriormente ajudará a enfermeira Mariana no atendimento ao paciente.
 
-&emsp;Dessa forma, é possível realizar a criação de User Stories para identificar quais são os pontos de vista do usuário e criar soluções a partir das necessidades e dos desejos existentes. As declarações tanto de Mariana quanto de Baruc foram fundamentais à equipe, por terem permitido o entendimento de quais aspectos são os mais importantes do projeto, para que o desenvolvimento e a conclusão do projeto tenham êxito, e principalmente, que contribuam positivamente para as operações do hospital.
+&emsp;Além disso, a farmacêutica Helena destaca a importância de uma interface intuitiva e eficiente para reorganizar layouts de kits e carrinho de emergência. Ela busca uma plataforma que permita o controle centralizado e em tempo real dos layouts, facilitando a criação de novos kits e a monitorização da distribuição de medicamentos nos kits. Helena também enfatiza a necessidade de opções de personalização na interface para otimizar suas tarefas diárias, visando reduzir significativamente o tempo necessário para montar e atualizar os layouts.
+
+&emsp;Dessa forma, é possível realizar a criação de User Stories para identificar quais são os pontos de vista do usuário e criar soluções a partir das necessidades e dos desejos existentes. As declarações tanto de Mariana quanto de Baruc e Helena foram fundamentais à equipe, por terem permitido o entendimento de quais aspectos são os mais importantes do projeto, para que o desenvolvimento e a conclusão do projeto tenham êxito, e principalmente, que contribuam positivamente para as operações do hospital.
 
 ---
 
