@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "itemId": "medlsFx",
+            "categoria": "Medicamento",
+            "nome": "Ibuprofeno 400mg",
+            "descrição": "Ibuprofeno 400mg - Descrição detalhada do produto.",
+            "dataCompra": "2024-07-08T02:38:35",
+            "dataValidade": "2026-07-08T02:38:35",
+            "lote": "LOIAIFH",
+            "codigoBarras": 6629877633319
+        },
+        {
+            "itemId": "medzXhD",
+            "categoria": "Medicamento",
+            "nome": "Paracetamol 500mg",
+            "descrição": "Paracetamol 500mg - Descrição detalhada do produto.",
+            "dataCompra": "2024-01-17T20:16:38",
+            "dataValidade": "2026-01-16T20:16:38",
+            "lote": "LNRTQOG",
+            "codigoBarras": 3669495580877
+        },
+        {
+            "itemId": "equsVxP",
+            "categoria": "Equipamento",
+            "nome": "Bisturi elétrico",
+            "descrição": "Bisturi elétrico - Descrição detalhada do produto.",
+            "dataCompra": "2024-02-20T05:13:12",
+            "dataValidade": "2029-02-19T05:13:12",
+            "lote": "LRCJFZO",
+            "codigoBarras": 5191260700923
+        },
+        {
+            "itemId": "equWDaG",
+            "categoria": "Equipamento",
+            "nome": "Mesa cirúrgica ajustável",
+            "descrição": "Mesa cirúrgica ajustável - Descrição detalhada do produto.",
+            "dataCompra": "2024-06-13T11:24:07",
+            "dataValidade": "2029-06-12T11:24:07",
+            "lote": "LXTBGKO",
+            "codigoBarras": 4907719472162
+        },
+        {
+            "itemId": "acesgJy",
+            "categoria": "Acessório",
+            "nome": "Seringas descartáveis",
+            "descrição": "Seringas descartáveis - Descrição detalhada do produto.",
+            "dataCompra": "2024-03-26T09:47:51",
+            "dataValidade": "2026-03-25T09:47:51",
+            "lote": "LDGKYPB",
+            "codigoBarras": 1357902468102
+        },
+        {
+            "itemId": "acepDkM",
+            "categoria": "Acessório",
+            "nome": "Bolsas de soro",
+            "descrição": "Bolsas de soro - Descrição detalhada do produto.",
+            "dataCompra": "2024-08-20T08:25:22",
+            "dataValidade": "2026-08-20T08:25:22",
+            "lote": "LUAWITR",
+            "codigoBarras": 9859393007940
+        }
+    ]
+}
