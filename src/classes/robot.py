@@ -2,7 +2,8 @@ from serial.serialutil import SerialException
 from yaspin import yaspin
 from utils.text import cstring, printc
 from utils.ports import serial_ports
-from lib.pydobot import Dobot
+import pydobot
+from pydobot import Dobot
 import time
 import json
 import os
@@ -91,6 +92,8 @@ class RobotWrapper:
 		self.spinner.stop()
 		self.update_pos()
 
+	def movej_to(self, x, y, z, r, wait=False):
+		self.robot._set_ptp_cmd(x, y, z, r, mode=pydobot.enums.PTPMode.MOVJ_XYZ, wait=wait)
 
 	def current(self) -> dict[str, float]:
 		self.update_pos()
