@@ -1,9 +1,14 @@
 from flask import Flask, jsonify
 from qreader import QReader
+from tinydb import TinyDB, Query
 import cv2
 import threading
 import time
 import json
+
+db_medicamentos =TinyDB("db_medicamentos.json")
+db = TinyDB("db_completo.json")
+# table = db.table("data")
 
 # Create a QReader instance
 qreader = QReader(
@@ -14,52 +19,75 @@ qreader = QReader(
 app = Flask(__name__)
 
 # Lista para armazenar os dados dos QR codes
-qr_data_list = []
+qr_data_lock = threading.Lock()
+medicamentos_data_lock = threading.Lock()
 
-# Função para ler e armazenar os QR codes
-def read_qr_codes():
+
+def perpetually_read():
+    print("Iniciando a câmera")
+    camera = cv2.VideoCapture(index=1) # 0 para câmera integrada, 1 para câmera externa
+    print("Câmera iniciada")
     last_decoded_text = None  # Variável para armazenar o texto decodificado da última leitura
-    while True:
-        start_time = time.time()
+    try:
+        while True:
+            _, image = camera.read()
 
-        camera = cv2.VideoCapture(1)
-        _, image = camera.read()
-        cv2.imwrite("qrcode.png", image)
+            decoded, time_taken = detect_qr_code(image)
+
+            # Se o tempo de processamento for menor que 0.1 segundos, espere um pouco
+            if time_taken < 0.1: time.sleep(0.1)
+
+            if decoded is None: continue # Se nao existir um QR code, continue
+            if last_decoded_text == decoded: continue # Se o QR code for o mesmo que o último, continue
+            last_decoded_text = decoded # Atualize o último QR code decodificado
+
+            print(f"QR code decodificado: {decoded}")
+
+            # Acha todos os medicamentos com o itemId igual ao QR code decodificado
+            with qr_data_lock: medicamentos = db.search(Query().itemId == decoded)
+
+            if medicamentos and len(medicamentos) > 0:
+                medicamento = medicamentos[0]
+
+                print(f"Medicamento encontrado: {medicamento}")
+
+                # Adicionando os medicamentos ao nosso banco de dados
+                insert_or_update(medicamento)
+
+    except Exception as e: raise e
+    finally:
         camera.release()
-        image = cv2.cvtColor(cv2.imread("qrcode.png"), cv2.COLOR_BGR2RGB)
-        decoded_text = qreader.detect_and_decode(image=image)
-        
+        print("Câmera liberada")
 
-        # Adicione os dados à lista apenas se o texto decodificado for diferente
-        if decoded_text != last_decoded_text and decoded_text != "null":
-            
-            qr_data_list.append(decoded_text)
-            last_decoded_text = decoded_text
+def detect_qr_code(frame):
+    start = time.time()
+    decoded_text = qreader.detect_and_decode(image=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    if decoded_text and len(decoded_text) > 0 and decoded_text[0] is not None and len(decoded_text[0]) > 0:
+        return (decoded_text[0], time.time() - start)
+    else: return (None, time.time() - start)
 
-        end_time = time.time()
+def insert_or_update(medicamento):
+    with medicamentos_data_lock: medicamentos = db_medicamentos.search(Query().identificador == medicamento["itemId"])
 
-        time_spend = end_time - start_time
-
-
-
-
-        with open('dados.json', 'w') as arquivo:
-            # Escreva os dados no arquivo JSON
-            json.dump(qr_data_list, arquivo, indent=2)
-
-
-
-        print(f"Tempo de processamento: {time_spend} segundos")
+    if medicamentos and len(medicamentos) > 0:
+        with medicamentos_data_lock: db_medicamentos.update({
+            "kit": "Kit #?"
+        }, Query().identificador == medicamento["itemId"])
+    else:
+        with medicamentos_data_lock: db_medicamentos.insert({
+            "identificador": medicamento["itemId"],
+            "kit": "Kit #?"
+        })
 
 
 # Inicie a thread para ler os QR codes
-qr_thread = threading.Thread(target=read_qr_codes)
-qr_thread.start()
+qr_thread = threading.Thread(target=perpetually_read).start()
 
 @app.route('/capture')
 def get_qr_data():
     # Retorna os dados mais recentes dos QR codes
-    return jsonify({"dados": qr_data_list})
+    with medicamentos_data_lock: medicamentos = db_medicamentos.all()
+    return jsonify({ "dados": medicamentos })
 
 
 if __name__ == '__main__':
