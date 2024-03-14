@@ -9,6 +9,7 @@ from commands.mover import move
 from commands.ferramenta import interagir_ferramenta
 from commands.atual import atual
 from commands.montar_kit import montar_kit
+from commands.redefinir_pos_kit import redefinir_pos_kit
 
 app = typer.Typer()
 
@@ -27,7 +28,7 @@ def wrapper():
 	interface()
 
 def interface(robot = None):
-	choices=["HOME", "ATUADOR_ON", "MOVIMENTAR", "POS_ATUAL", "MONTAR_KIT", "SAIR"]
+	choices=["HOME", "ATUADOR_ON", "MOVIMENTAR", "POS_ATUAL", "MONTAR_KIT", "REDEFINIR_POS_KIT", "SAIR"]
 	if not robot: robot = RobotWrapper(yaspin.yaspin(color="red"))
 
 	while True:
@@ -67,7 +68,9 @@ def processar(respostas_main, robot, choices):
 
 		case "MONTAR_KIT":
 			montar_kit(robot)
-			if "HOME" not in choices: choices.insert(0, "HOME")
+
+		case "REDEFINIR_POS_KIT":
+			redefinir_pos_kit(robot)
 
 		case "SAIR":
 			raise KeyboardInterrupt
