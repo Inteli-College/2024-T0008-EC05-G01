@@ -13,12 +13,12 @@ def index():
 
 @app.route('/enviando', methods=['POST'])
 def envia_dados():
-    dados = request.json
-    dados = json.loads(dados)
+    dados = request.json # ja transforma em json, nao precisa aplicar json.loads
+    print(dados)
+    # dados = json.loads(dados)
     dado = dados['dado']
-    timestamp = time.time()
-    db_data.insert({'dado': dado, 'timestamp': timestamp})
-    print({'dado': dado, 'timestamp': timestamp})
+    db_data.insert({'dado': dado})
+    print({'dado': dado})
     return 'Dado enviado com sucesso!'
 
 
