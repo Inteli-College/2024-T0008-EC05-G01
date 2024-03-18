@@ -86,7 +86,7 @@ sidebar_position: 1
     <p>Fonte: Elaboração própia</p>
 </div>
 
-&emsp;Realize a conexão entre o GND e a saída de 3V3 da placa na protoboard para poder energizar o circuito, estamos usando o pino xx para a saída de energia e o pino xx para o GND:
+&emsp;Realize a conexão entre o GND e a saída de 3V3 da placa na protoboard para poder energizar o circuito, estamos usando o pino 5 para a saída de energia e o pino 23 para o GND:
 
 <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
     <p>Imagem 04 - Conexão das saídas da placa a protoboard</p>
@@ -211,7 +211,7 @@ sidebar_position: 1
     <p>Fonte: Elaboração própria</p>
 </div>
 
-&emsp;Por último, iremos conectar o sensor à nossa porta lógica xx na placa, da seguinte forma:
+&emsp;Por último, iremos conectar o sensor à nossa porta lógica GP26_AQ(porta 31) na placa, da seguinte forma:
 
 <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
     <p>Imagem 19 - Posicionamento do sensor em uma porta lógica na placa</p>
