@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 
-# WebCam Qr codes
+## WebCam Qr codes
 &emsp;O código qr-code.py (pode ser observado também em Codigo Webcam Qr code), cria um servidor Flask para processar dados de QR codes capturados por uma câmera. Inicialmente, são importadas as bibliotecas necessárias, incluindo Flask para o servidor web, OpenCV para processamento de imagem e TinyDB para armazenamento de dados. Duas instâncias de TinyDB são inicializadas para armazenar informações sobre medicamentos e dados completos dos QR codes.
 
 &emsp;Uma instância do QReader é configurada com parâmetros específicos, como tamanho do modelo e confiança mínima, para lidar com a detecção e decodificação de QR codes. Em seguida, uma função principal chamada “perpetually_read()” é definida. Essa função é responsável por iniciar a câmera, capturar imagens continuamente, detectar QR codes nas imagens e processar os dados dos QR codes encontrados.
@@ -254,3 +254,10 @@ Para remover um medicamento do banco de dados, podemos utilizar o método `remov
 ```python
 medicamentos_db.remove(Query().nome == "Paracetamol")
 ```
+
+## Apresentação Sprint 3
+<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ3qIbOEq8BSlD-ZKAouSGOgQEidCzVeuTL1c-jNZhUR5UxZI9ah9xowzhMtC-csiek5HmO-mDt3J83/pub?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} ></iframe> -->
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ3qIbOEq8BSlD-ZKAouSGOgQEidCzVeuTL1c-jNZhUR5UxZI9ah9xowzhMtC-csiek5HmO-mDt3J83/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
+
+<p><b>Fonte:</b> elaborado por Arm </p>
