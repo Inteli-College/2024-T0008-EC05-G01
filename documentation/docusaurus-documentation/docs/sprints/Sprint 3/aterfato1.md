@@ -46,8 +46,12 @@ sidebar_position: 1
                 <td>3 unidades</td>
             </tr>
             <tr>
+                <td>Buzzer</td>
+                <td>1 unidade</td>
+            </tr>
+            <tr>
                 <td>Jumper macho-macho</td>
-                <td>9 unidades</td>
+                <td>11 unidades</td>
             </tr>
             <tr>
                 <td>Placa Raspberry Pi Pico</td>
@@ -199,16 +203,24 @@ sidebar_position: 1
     <p>Fonte: Elaboração própria</p>
 </div>
 
+&emsp;Para conectar o buzzer, é necessário conectar o positivo ao pino de 3V3 e o negativo ao GND:
+
+<div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
+    <p>Imagem 18 - Conecxão do buzzer</p>
+    ![image](/img/buzzer.jpeg)
+    <p>Fonte: Elaboração própria</p>
+</div>
+
 &emsp;Por último, iremos conectar o sensor à nossa porta lógica xx na placa, da seguinte forma:
 
 <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 18 - Posicionamento do sensor em uma porta lógica na placa</p>
+    <p>Imagem 19 - Posicionamento do sensor em uma porta lógica na placa</p>
     ![image](/img/conexao-pl-infra.jpeg)
     <p>Fonte: Elaboração própria</p>
 </div>
 
 <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 19 - Posicionamento final do sensor na protoboard</p>
+    <p>Imagem 20 - Posicionamento final do sensor na protoboard</p>
     ![image](/img/conexa-final-infra.jpeg)
     <p>Fonte: Elaboração própria</p>
 </div>
@@ -218,7 +230,7 @@ sidebar_position: 1
 &emsp;E por fim, nosso circuito deve estar parecido com algo assim no final de sua montagem (a placa está separada, entretanto as conexões que levam até ela estão posicionadas da mesma maneira descrita):
 
 <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 20 - Montagem final do circuito</p>
+    <p>Imagem 21 - Montagem final do circuito</p>
     ![image](/img/circuito-final.jpeg)
     <p>Fonte: Elaboração própria</p>
 </div>
