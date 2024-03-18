@@ -120,3 +120,137 @@ if __name__ == '__main__':
 
 ```
 <p align="center"><b> Fonte: Elaborado pelos próprios autores </b> </p>
+
+## Documentação do Banco de Dados TinyDB
+
+### Introdução
+
+Esta categoria tem como objetivo descrever como devemos utilizar o banco de dados TinyDB, que é um banco de dados NoSQL que utiliza arquivos JSON para armazenar os dados de uma maneira não relacional. O TinyDB é uma excelente opção para projetos pequenos e médios, pois é simples de utilizar e não requer muita configuração. Por causa de sua natureza não relacional, acabamos criando diversos arquivos JSON para armazenar os dados, que ficam dentro de uma pasta chamada `db`.
+
+### Instalação
+
+Para instalar o TinyDB, basta executar o seguinte comando:
+
+```bash
+pip install tinydb
+```
+
+Não esqueça de entrar em seu ambiente virtual antes de executar o comando, o que pode ser feito com o comando `source env/bin/activate` ou `./env\Scripts\activate` no Windows após a criação do ambiente virtual com o comando `python -m venv env`.
+
+### Tabelas/Arquivos
+
+O TinyDB não possui tabelas, mas sim arquivos JSON que armazenam os dados. Cada arquivo é uma coleção de documentos, que são os registros do banco de dados. Por exemplo, se quisermos armazenar os dados de um usuário, podemos criar um arquivo chamado `users.json` e armazenar os dados do usuário nesse arquivo. No nosso projeto, temos os seguintes arquivos:
+
+- `kits.json`
+- `medicamentos.json`
+- `qrcodes.json`
+
+#### Formato de `medicamentos.json`
+
+O arquivo `medicamentos.json` armazena os medicamentos disponíveis no estoque, além das posições aonde eles estão. O formato de um medicamento é o seguinte:
+
+```json
+{
+    "nome": <str>,		 // Nome do medicamento
+    "quantidade": <int>, // Quantidade de medicamentos no estoque
+    "pos": {			 // Posição do medicamento no estoque, incluindo:
+        "x": <float>,	 // Posição x
+        "y": <float>,	 // Posição y
+        "z": <float>,	 // Posição z
+        "r": <float>	 // Rotação
+    }
+}
+```
+
+#### Formato de `kits.json`
+
+O arquivo `kits.json` armazena os kits, que são conjuntos de medicamentos e as posições aonde eles devem ser colocados. Também armazena a altura do medicamento, que será utilizada para calcular a posição dos próximos medicamentos (assumindo que eles sejam empilhados). O formato de um kit é o seguinte:
+
+```json
+{
+    "nome": <str>,				 // Nome do kit
+    "medicamentos": [			 // Lista de medicamentos no kit
+        {						 // Um de vários medicamentos no kit
+            "nome": <str>,		 // Nome desse medicamento
+            "quantidade": <int>, // Quantidade desse medicamentos no kit
+            "altura": <float>,	 // Altura desse medicamento
+            "pos": {			 // Posição desse medicamento no kit, incluindo:
+                "x": <float>,	 // Posição x
+                "y": <float>,	 // Posição y
+                "z": <float>,	 // Posição z
+                "r": <float>	 // Rotação
+            },
+        },
+        ...
+    ]
+}
+```
+
+#### Formato de `qrcodes.json`
+
+O arquivo `qrcodes.json` armazena os dados dados respectivos aos QR Codes de medicamentos, como o seu identificador e o kit associado. O formato de um QR Code é o seguinte:
+
+```json
+{
+    "identificador": <str>, // Identificador do QR Code (UUID, por exemplo)
+    "kit": <str>			// Nome do kit associado
+}
+```
+
+### Utilização
+
+Para utilizar o TinyDB, basta importar as classes `TinyDB` e `Query` do módulo `tinydb` e criar um objeto `TinyDB` passando o caminho do arquivo JSON que será utilizado. Por exemplo, para criar um objeto `TinyDB` para o arquivo `medicamentos.json`, basta fazer o seguinte:
+
+```python
+from tinydb import TinyDB, Query
+
+medicamentos_db = TinyDB('db/medicamentos.json')
+```
+
+Após criar o objeto `TinyDB`, podemos utilizar os métodos `insert`, `update`, `remove` e `search` para manipular os dados. Por exemplo, para inserir um medicamento no banco de dados, podemos fazer o seguinte:
+
+```python
+medicamento = {
+	"nome": "Paracetamol",
+	"quantidade": 100,
+	"pos": {
+		"x": 1.0,
+		"y": 2.0,
+		"z": 3.0,
+		"r": 4.0
+	}
+}
+
+medicamentos_db.insert(medicamento)
+```
+
+Para buscar medicamentos no banco de dados, podemos utilizar o método `search` passando um objeto `Query` que representa a condição que queremos buscar. Por exemplo, para buscar todos os medicamentos com o nome "Paracetamol", podemos fazer o seguinte:
+
+```python
+medicamentos = medicamentos_db.search(Query().nome == "Paracetamol")
+
+for medicamento in medicamentos:
+	print(medicamento)
+```
+
+Para atualizar um medicamento no banco de dados, podemos utilizar o método `update` passando um objeto `Query` que representa a condição que queremos buscar e um dicionário com os campos que queremos atualizar. Por exemplo, para atualizar a quantidade de todos os medicamentos com o nome "Paracetamol" para 200, podemos fazer o seguinte:
+
+```python
+medicamentos_db.update({"quantidade": 200}, Query().nome == "Paracetamol")
+```
+
+Também podemos atualizar medicamentos levando um objeto medicamento obtido de uma busca. Por exemplo, para atualizar a quantidade de um medicamento para 200, podemos fazer o seguinte:
+
+```python
+medicamento = medicamentos_db.search(Query().nome == "Paracetamol")[0]
+
+medicamento["quantidade"] = 200
+
+medicamentos_db.update(medicamento, Query().nome == "Paracetamol")
+```
+
+Para remover um medicamento do banco de dados, podemos utilizar o método `remove` passando um objeto `Query` que representa a condição que queremos buscar. Por exemplo, para remover todos os medicamentos com o nome "Paracetamol", podemos fazer o seguinte:
+
+```python
+medicamentos_db.remove(Query().nome == "Paracetamol")
+```
