@@ -73,15 +73,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 | **Componente** | **Preço** |
 | :-------------: | :--------: |
 | Braço mecânico - MG400 | R$ 32000,00 |
-| Desenvolvedor Front-end | R$ 4.704,00 |
-| Desenvolvedor Back-end | R$ 7.807,00 |
-| Engenheiro da Computação | R$ 8.052,00 |
-| Programador de Automação Industrial | R$ 5.800,00 |
-| Product Owner (PO) | R$ 13.818,00 |
+| Desenvolvedor Front-end | R$ 4704,00 |
+| Desenvolvedor Back-end | R$ 7807,00 |
+| Engenheiro da Computação | R$ 8052,00 |
+| Programador de Automação Industrial | R$ 5800,00 |
+| Product Owner (PO) | R$ 13818,00 |
 | Manutenção (mensal) | R$ 1600,00 |
 | Raspeberry Pi Pico W | R$ 49,90 |
 | Instalação do MG400 | R$ 1000,00 |
-| Auxiliar De Farmácia Hospitalar | R$ 1.932 |
+| Auxiliar De Farmácia Hospitalar | R$ 1932 |
 
 </p>
 
