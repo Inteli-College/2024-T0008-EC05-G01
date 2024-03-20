@@ -1,12 +1,11 @@
 import asyncio
 from tinydb import TinyDB
 import time
-import portalocker
 import threading
 import random
 
 
-class DBWrapper:
+class DB:
 	_instances = {}  # Class-level dictionary to store instances
 	_lock = threading.Lock()  # Class-level lock for thread-safe singleton creation
 
@@ -23,12 +22,11 @@ class DBWrapper:
 		if hasattr(self, 'is_initialized') and self.is_initialized: return
 
 		self.path = path
+		self.lock = threading.Lock()
 		self.db = TinyDB(self.path)
-		self.lock = portalocker.Lock(path, flags=portalocker.LOCK_EX)
 		self.is_initialized = True  # Flag to prevent reinitialization
 
 	def __enter__(self):
-		# Acquire an exclusive lock on the lockfile
 		self.lock.acquire()
 		return self.db
 
@@ -36,20 +34,20 @@ class DBWrapper:
 		self.lock.release()
 
 # testing to see if the lock works with threads
-def test_lock(i):
-	with DBWrapper('test.json') as db:
-		db.insert({'test': 'test'})
-		print("inserted", i)
+# def test_lock(i):
+# 	with DBWrapper('test.json') as db:
+# 		db.insert({'test': 'test'})
+# 		print("inserted", i)
 
-def main():
-	threads = []
-	for i in range(10):
-		t = threading.Thread(target=test_lock, args=(i,))
-		threads.append(t)
-		t.start()
+# def main():
+# 	threads = []
+# 	for i in range(10):
+# 		t = threading.Thread(target=test_lock, args=(i,))
+# 		threads.append(t)
+# 		t.start()
 
-	for t in threads:
-		t.join()
+# 	for t in threads:
+# 		t.join()
 
-if __name__ == '__main__':
-	main()
+# if __name__ == '__main__':
+# 	main()

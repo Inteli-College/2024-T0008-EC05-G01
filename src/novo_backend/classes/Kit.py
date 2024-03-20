@@ -4,8 +4,7 @@ from classes.Pos import Pos
 from tinydb import TinyDB, Query
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse
-
-kits_db = TinyDB('db/kits.json')
+from database.wrapper import DB
 
 class Kit(pydantic.BaseModel):
 	class Medicamento(pydantic.BaseModel):
@@ -18,24 +17,48 @@ class Kit(pydantic.BaseModel):
 	medicamentos: List[Medicamento]
 
 	def insert(self):
-		if kits_db.search(Query().nome == self.nome) > 0:
-			return HTTPException(
-				status_code=401, detail="Kit já cadastrado"
-			)
+		try:
+			with DB('database/archives/kits.json') as kits_db:
+				if len(kits_db.search(Query().nome == self.nome)) > 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Kit já cadastrado"
+					}, status_code=409)
 
-		else:
-			kits_db.insert(self.dict())
+				self.check_medicamentos(self.medicamentos)
 
-		return
+				kits_db.insert(self.dict())
+
+		except Exception as error:
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao cadastrar o kit: {error}"
+			}, status_code=500)
+
+		return JSONResponse(content={
+			"error": False,
+			"message": "Kit cadastrado com sucesso"
+		}, status_code=201)
 
 	def update(self, Nome: str):
 		try:
-			kits_db.update(self.dict(), Query().nome == Nome)
+			with DB('database/archives/kits.json') as kits_db:
+				if len(kits_db.search(Query().nome == self.nome)) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Kit não cadastrado"
+					}, status_code=404)
+
+				self.check_medicamentos(self.medicamentos)
+
+				kits_db.update(self.dict(), Query().nome == Nome)
+
 		except Exception as error:
-			return HTTPException(
-				status_code=401, detail=f"Erro ao atualizar o kit: {error}"
-			)
-			
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao atualizar o kit: {error}"
+			}, status_code=500)
+
 		return JSONResponse(content={
 			"error": False,
 			"message": "Kit atualizado com sucesso"
@@ -44,13 +67,21 @@ class Kit(pydantic.BaseModel):
 	@classmethod
 	def delete(cls, Nome: str):
 		try:
-			kits_db.remove(Query().nome == Nome)
+			with DB('database/archives/kits.json') as kits_db:
+				if kits_db.search(Query().nome == Nome) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Kit não cadastrado"
+					}, status_code=404)
+
+				kits_db.remove(Query().nome == Nome)
 
 		except Exception as error:
-			return HTTPException(
-				status_code=401, detail=f"Erro ao deletar o kit: {error}"
-			)
-		
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao deletar o kit: {error}"
+			}, status_code=500)
+
 		return JSONResponse(content={
 			"error": False,
 			"message": "Kit deletado com sucesso"
@@ -59,12 +90,20 @@ class Kit(pydantic.BaseModel):
 	@classmethod
 	def select(cls, Nome: str):
 		try:
-			kit = kits_db.search(Query().nome == Nome)[0]
+			with DB('database/archives/kits.json') as kits_db:
+				if kits_db.search(Query().nome == Nome) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Kit não cadastrado"
+					}, status_code=404)
+
+				kit = kits_db.search(Query().nome == Nome)[0]
 
 		except Exception as error:
-			return HTTPException(
-				status_code=401, detail=f"Erro ao carregar o kit: {error}"
-			)
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao carregar o kit: {error}"
+			}, status_code=500)
 
 		return JSONResponse(content={
 			"error": False,
@@ -75,12 +114,14 @@ class Kit(pydantic.BaseModel):
 	@classmethod
 	def select_all(cls):
 		try:
-			kits = kits_db.all()
+			with DB('database/archives/kits.json') as kits_db:
+				kits = kits_db.all()
 
 		except Exception as error:
-			return HTTPException(
-				status_code=401, detail=f"Erro ao carregar os kits: {error}"
-			)
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao carregar os kits: {error}"
+			}, status_code=500)
 
 		return JSONResponse(content={
 			"error": False,
@@ -90,4 +131,35 @@ class Kit(pydantic.BaseModel):
 
 	@classmethod
 	def select_joined(cls, Nome: str):
-		pass
+		try:
+			with DB('database/archives/kits.json') as kits_db:
+				if kits_db.search(Query().nome == Nome) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Kit não cadastrado"
+					}, status_code=404)
+
+				kit = kits_db.search(Query().nome == Nome)[0]
+
+		except Exception as error:
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao carregar o kit: {error}"
+			}, status_code=500)
+
+		# try:
+		# 	with DB('database/archives/medicamentos.json') as medicamentos_db:
+		# 		for nome_medicamento, medicamento in kit['medicamentos']:
+		# 			medicamento['estoque'] = medicamentos_db.search(Query().nome == nome_medicamento)[0]
+
+		# except Exception as error:
+		# 	return JSONResponse(content={
+		# 		"error": True,
+		# 		"message": f"Erro ao carregar os medicamentos do kit: {error}"
+		# 	}, status_code=500)
+
+	def check_medicamentos(self, medicamentos: List[Medicamento]):
+		with DB('database/archives/medicamentos.json') as medicamentos_db:
+			for medicamento in medicamentos:
+				if len(medicamentos_db.search(Query().nome == medicamento.nome)) <= 0:
+					raise Exception(f"Medicamento {medicamento.nome} não cadastrado")
