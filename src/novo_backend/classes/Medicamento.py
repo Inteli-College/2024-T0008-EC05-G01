@@ -32,8 +32,6 @@ class Medicamento(pydantic.BaseModel):
 			"message": "Medicamento inserido com sucesso"
 		}, status_code=201)
 
-
-
 	def update(self, nome: str):
 		try: # tenta mexer no db
 			with DB('database/archives/medicamentos.json') as medicamentos_db: # abre o db
@@ -60,15 +58,54 @@ class Medicamento(pydantic.BaseModel):
 			"message": "Medicamento atualizado com sucesso"
 		}, status_code=200)
 
-
 	@classmethod
 	def delete(cls, Nome: str):
-		pass
+		try:
+			with DB('database/archives/medicamentos.json') as medicamentos_db:
+				medicamentos_db.remove(Query().nome == Nome)
+		except Exception as error:
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao deletar o medicamento: {error}"
+			}, status_code=500)
 
 	@classmethod
 	def select(cls, Nome: str):
-		pass
+		try:
+			with DB('database/archives/medicamentos.json') as medicamentos_db:
+				medicamento = medicamentos_db.search(Query().nome == Nome)
+				if len(medicamento) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Medicamento não encontrado"
+					}, status_code=404)
+
+				medicamento = medicamento[0]
+		except Exception as error:
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao buscar o medicamento: {error}"
+			}, status_code=500)
+
+		return JSONResponse(content={
+			"error": False,
+			"message": "Medicamento encontrado com sucesso",
+			"medicamento": medicamento
+		}, status_code=200)
 
 	@classmethod
 	def select_all(cls):
-		pass
+		try:
+			with DB('database/archives/medicamentos.json') as medicamentos_db:
+				medicamentos = medicamentos_db.all()
+		except Exception as error:
+			return JSONResponse(content={
+				"error": True,
+				"message": f"Erro ao buscar os medicamentos: {error}"
+			}, status_code=500)
+
+		return JSONResponse(content={
+			"error": False,
+			"message": "Medicamentos encontrados com sucesso",
+			"medicamentos": medicamentos
+		}, status_code=200)
