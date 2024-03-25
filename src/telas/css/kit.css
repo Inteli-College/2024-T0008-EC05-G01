@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #F0F7FF;
 }
 
@@ -54,7 +54,11 @@ body{
     color: #F0F7FF;
 }
 
-
+.box1 {
+     background-color: blue;
+     width: 10%;
+     border;
+}
 .adicao {
     font-size: 7em;
     color: #F0F7FF;
@@ -65,27 +69,26 @@ body{
     margin-top: 5%;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centraliza verticalmente */
-    width: 15%; /* Defina a largura desejada */
+    align-items: center;
+    /* Centraliza verticalmente */
+    width: 15%;
+    /* Defina a largura desejada */
     position: relative;
-    left: 43%; /* Ajuste para centralizar horizontalmente */
+    left: 43%;
+    /* Ajuste para centralizar horizontalmente */
     cursor: pointer;
 
 
 }
 
-.triangulo_baixo{
+.triangulo_baixo {
     display: flex;
     bottom: 1px;
     right: 1.95%;
 }
 
-.triangulo_cima{
-    display: flex;
-    bottom: 1px;
-    left: 61%;
-    margin-left: 63%;
-    transform: scaleX(-1);
-    margin-top: -45%;
+.triangulo_cima {
+        position: absolute;
+    bottom: -11px;
+    right: -20%;
 }
-
