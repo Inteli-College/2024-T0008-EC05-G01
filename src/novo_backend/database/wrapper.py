@@ -11,11 +11,7 @@ class DB:
 
 	def __new__(cls, path):
 		with cls._lock:  # Ensure thread-safe singleton pattern
-			if path not in cls._instances:
-				print("Creating new")
-				cls._instances[path] = super(DBWrapper, cls).__new__(cls)
-			else:
-				print("Reusing")
+			if path not in cls._instances: cls._instances[path] = super(DB, cls).__new__(cls)
 			return cls._instances[path]
 
 	def __init__(self, path):

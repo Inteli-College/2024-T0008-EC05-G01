@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from classes.Medicamento import Medicamento
+
+from modules.api.classes.Medicamento import Medicamento
 
 router = APIRouter()
 

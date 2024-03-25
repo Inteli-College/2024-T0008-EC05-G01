@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from classes.Kit import Kit
+
+from modules.api.classes.Kit import Kit
 
 router = APIRouter()
 
@@ -12,7 +13,7 @@ async def read_all():
 	return Kit.select_all()
 
 
-@router.get('/joined')
+@router.get('/joined/{Nome}')
 async def read_joined(Nome: str):
 	return Kit.select_joined(Nome)
 

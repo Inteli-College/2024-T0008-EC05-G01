@@ -1,10 +1,10 @@
 import pydantic
-from classes.Pos import Pos
-from fastapi import HTTPException
-from fastapi.responses import JSONResponse
-from tinydb import TinyDB, Query
-from database.wrapper import DB
 
+from fastapi.responses import JSONResponse
+from tinydb import Query
+
+from modules.api.classes.Pos import Pos
+from database.wrapper import DB
 
 class Medicamento(pydantic.BaseModel):
 	nome: str
@@ -21,6 +21,7 @@ class Medicamento(pydantic.BaseModel):
 					}, status_code=409)
 
 				medicamentos_db.insert(self.dict())
+
 		except Exception as error:
 			return JSONResponse(content={
 				"error": True,
@@ -33,26 +34,39 @@ class Medicamento(pydantic.BaseModel):
 		}, status_code=201)
 
 	def update(self, nome: str):
-		try: # tenta mexer no db
-			with DB('database/archives/medicamentos.json') as medicamentos_db: # abre o db
-				if len(medicamentos_db.search(Query().nome == nome)) <= 0:
-					# erro nosso, criado pelo programador
+		try:
+			with DB('database/archives/medicamentos.json') as medicamentos_db:
+				medicamentos = medicamentos_db.search(Query().nome == nome)
+				if len(medicamentos) <= 0:
 					return JSONResponse(content={
 						"error": True,
 						"message": "Medicamento não encontrado"
 					}, status_code=404)
 
+				if medicamentos[0]['nome'] != self.nome:
+					if len(medicamentos_db.search(Query().nome == self.nome)) > 0:
+						return JSONResponse(content={
+							"error": True,
+							"message": "Nome do medicamento já cadastrado"
+						}, status_code=409)
+					# se o medicamento existe em algum kit, renomear o medicamento em todos os kits
+					with DB('database/archives/kits.json') as kits_db:
+						kits = kits_db.search(Query().medicamentos.any(Query().nome == nome))
+						for kit in kits:
+							medicamentos = kit['medicamentos']
+							for medicamento in medicamentos:
+								if medicamento['nome'] == nome: medicamento['nome'] = self.nome
+							kits_db.update(kit, Query().nome == kit['nome'])
+
+
 				medicamentos_db.update(self.dict(), Query().nome == nome)
 
-			# fechou o db
 		except Exception as error:
-			# erro do sistema, jogado pelo python mas a gente trata antes de parar o app
 			return JSONResponse(content={
 				"error": True,
 				"message": f"Erro ao atualizar o medicamento: {error}"
 			}, status_code=500)
 
-		# caso de sucesso, pq  se ele chegou aqui (ainda nao retornou), nada deu errado
 		return JSONResponse(content={
 			"error": False,
 			"message": "Medicamento atualizado com sucesso"
@@ -62,12 +76,33 @@ class Medicamento(pydantic.BaseModel):
 	def delete(cls, Nome: str):
 		try:
 			with DB('database/archives/medicamentos.json') as medicamentos_db:
+				if len(medicamentos_db.search(Query().nome == Nome)) <= 0:
+					return JSONResponse(content={
+						"error": True,
+						"message": "Medicamento não cadastrado"
+					}, status_code=404)
+
+				with DB('database/archives/kits.json') as kits_db:
+					kits_com_medicamento = kits_db.search(Query().medicamentos.any(Query().nome == Nome))
+					if len(kits_com_medicamento) > 0:
+						nomes_kits = [kit['nome'] for kit in kits_com_medicamento]
+						return JSONResponse(content={
+							"error": True,
+							"message": f"O medicamento está nos kits: {", ".join(nomes_kits)}, por favor, remova-o(s) do(s) kit(s) antes de deletá-lo"
+						}, status_code=409)
+
 				medicamentos_db.remove(Query().nome == Nome)
+
 		except Exception as error:
 			return JSONResponse(content={
 				"error": True,
-				"message": f"Erro ao deletar o medicamento: {error}"
+				"message": f"Erro ao deletar o kit: {error}"
 			}, status_code=500)
+
+		return JSONResponse(content={
+			"error": False,
+			"message": "Kit deletado com sucesso"
+		}, status_code=200)
 
 	@classmethod
 	def select(cls, Nome: str):
@@ -81,6 +116,7 @@ class Medicamento(pydantic.BaseModel):
 					}, status_code=404)
 
 				medicamento = medicamento[0]
+
 		except Exception as error:
 			return JSONResponse(content={
 				"error": True,
@@ -98,6 +134,7 @@ class Medicamento(pydantic.BaseModel):
 		try:
 			with DB('database/archives/medicamentos.json') as medicamentos_db:
 				medicamentos = medicamentos_db.all()
+
 		except Exception as error:
 			return JSONResponse(content={
 				"error": True,

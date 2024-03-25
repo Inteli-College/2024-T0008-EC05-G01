@@ -1,0 +1,31 @@
+{
+	"_default": {
+		"1": {
+			"nome": "Kit #1",
+			"medicamentos": [
+				{
+					"nome": "Fentanyl",
+					"quantidade": 2,
+					"altura": 2.3,
+					"pos": {
+						"x": 20.0,
+						"y": 20.0,
+						"z": 20.0,
+						"r": 1.0
+					}
+				},
+				{
+					"nome": "Paracetamol",
+					"quantidade": 1,
+					"altura": 4.6,
+					"pos": {
+						"x": 26.0,
+						"y": 28.0,
+						"z": 17.0,
+						"r": 1.0
+					}
+				}
+			]
+		}
+	}
+}
