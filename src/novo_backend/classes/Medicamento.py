@@ -5,7 +5,6 @@ from fastapi.responses import JSONResponse
 from tinydb import TinyDB, Query
 from database.wrapper import DB
 
-
 class Medicamento(pydantic.BaseModel):
 	nome: str
 	quantidade: int

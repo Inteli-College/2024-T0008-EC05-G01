@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto HTMX Básico</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Caminho para o arquivo CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <div class="container">
         <div class="logo">
-            <img src="../img/logo_arm.png" alt="not found">
+            <!-- Caminho para a imagem -->
+            <img src="../static/img/logo_arm.png" alt="not found">
             <!-- Conteúdo adicional aqui -->
         </div>
         <div class="login">
@@ -28,25 +31,17 @@
                 </div>
 
                 <div class="botoes">
-                    <button class="farmacalogista">
+                    <button class="farmacalogista" hx-get="http:///telaExclusao.html">
                         Farmacalogista
                     </button>
-
                     <button class="auxiliar">
                         Auxiliar de Farmácia
                     </button>
-
                 </div>
-
             </div>
             <!-- Conteúdo adicional aqui -->
         </div>
     </div>
-
-    <!-- Inclua a biblioteca HTMX -->
-    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
-    <!-- Inclua o seu arquivo de scripts, se houver -->
-    <script src="scripts.js"></script>
 </body>
 
 </html>
