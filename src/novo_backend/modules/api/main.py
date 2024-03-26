@@ -7,6 +7,9 @@ from queue import Queue
 from modules.api.routes.main import router as api_router
 from modules.api.shared import SharedQueue
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
 app = FastAPI()
 
 # origins = ["http://localhost:8005"]
@@ -18,6 +21,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+templates = Jinja2Templates(directory="templates")
 
 app.include_router(api_router)
 

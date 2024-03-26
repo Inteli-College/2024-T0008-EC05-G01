@@ -88,7 +88,7 @@ class Medicamento(pydantic.BaseModel):
 						nomes_kits = [kit['nome'] for kit in kits_com_medicamento]
 						return JSONResponse(content={
 							"error": True,
-							"message": f"O medicamento está nos kits: {", ".join(nomes_kits)}, por favor, remova-o(s) do(s) kit(s) antes de deletá-lo"
+							"message": "O medicamento está nos kits: " + ", ".join(nomes_kits) + ", por favor, remova-o(s) do(s) kit(s) antes de deletá-lo"
 						}, status_code=409)
 
 				medicamentos_db.remove(Query().nome == Nome)
