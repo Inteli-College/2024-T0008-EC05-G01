@@ -49,9 +49,48 @@ body {
     bottom: 5px;
 }
 
+.linha {
+    display: flex;
+    /* Organiza os elementos na mesma linha */
+}
 
 .novo_kit {
     color: #F0F7FF;
+}
+
+.linha{
+    margin-top: 2%;
+}
+
+.item {
+    color: #E3EEFF;
+    text-align: center;
+}
+
+.medicamento {
+    text-align: center;
+    border-radius: 15px;
+
+}
+
+.medicamento,
+.quantidade {
+    color: #204776;
+}
+
+.box1 {
+    background-color: #4688D7;
+    width: 15%;
+    border-radius: 15px;
+    padding: 2%;
+
+}
+
+.box2 {
+    background-color: #E3EEFF;
+    border-radius: 15px;
+    text-align: center;
+
 }
 
 .box1 {
@@ -88,6 +127,7 @@ body {
 }
 
 .triangulo_cima {
+    position: absolute;
         position: absolute;
     bottom: -11px;
     right: -20%;
