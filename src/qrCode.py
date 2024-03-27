@@ -22,14 +22,14 @@ app = Flask(__name__)
 qr_data_lock = threading.Lock()
 medicamentos_data_lock = threading.Lock()
 
-
 def perpetually_read():
+    hasRead = False
     print("Iniciando a câmera")
     camera = cv2.VideoCapture(index=1) # 0 para câmera integrada, 1 para câmera externa
     print("Câmera iniciada")
     last_decoded_text = None  # Variável para armazenar o texto decodificado da última leitura
     try:
-        while True:
+        while hasRead == False:
             _, image = camera.read()
 
             decoded, time_taken = detect_qr_code(image)
@@ -47,17 +47,21 @@ def perpetually_read():
             with qr_data_lock: medicamentos = db.search(Query().itemId == decoded)
 
             if medicamentos and len(medicamentos) > 0:
+                global medicamento
                 medicamento = medicamentos[0]
 
                 print(f"Medicamento encontrado: {medicamento}")
 
                 # Adicionando os medicamentos ao nosso banco de dados
                 insert_or_update(medicamento)
+            
+            hasRead = True
 
     except Exception as e: raise e
     finally:
         camera.release()
         print("Câmera liberada")
+        return
 
 def detect_qr_code(frame):
     start = time.time()
@@ -81,7 +85,7 @@ def insert_or_update(medicamento):
 
 
 # Inicie a thread para ler os QR codes
-qr_thread = threading.Thread(target=perpetually_read).start()
+#qr_thread = threading.Thread(target=perpetually_read).start()
 
 @app.route('/capture')
 def get_qr_data():
