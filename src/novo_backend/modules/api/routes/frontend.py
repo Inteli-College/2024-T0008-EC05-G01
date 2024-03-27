@@ -9,10 +9,14 @@ templates = Jinja2Templates(directory="templates")
 async def read_root(request: Request):
     return templates.TemplateResponse(name="telaInicial.html", context={"request": request})
 
-@router.get("/novoKit", response_class=HTMLResponse)
+@router.get("/telaP", response_class=HTMLResponse)
 async def read_page(request: Request):
-    return templates.TemplateResponse(name="novoKit.html", context={"request": request})
+    return templates.TemplateResponse(name="telaP.html", context={"request": request})
 
 @router.get("/kit", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="kit.html", context={"request": request})
+
+@router.get("/novoKit", response_class=HTMLResponse)
+async def read_page(request: Request):
+    return templates.TemplateResponse(name="novoKit.html", context={"request": request})
