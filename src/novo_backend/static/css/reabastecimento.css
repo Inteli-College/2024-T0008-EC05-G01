@@ -28,7 +28,7 @@ body {
     /* 20px em relação à largura do contêiner pai */
     border-radius: 20px;
     cursor: pointer;
-    width: 15%;
+    width: 19%;
     font-size: 1.5em;
 }
 
@@ -58,7 +58,7 @@ body {
     color: #F0F7FF;
 }
 
-.linha{
+.linha {
     margin-top: 2%;
 }
 
@@ -83,9 +83,16 @@ body {
     width: 15%;
     border-radius: 15px;
     padding: 2%;
-
+    margin: auto;
+    /* Adiciona margens automáticas para alinhar horizontalmente */
+    display: flex;
+    flex-direction: column;
+    /* Para centralizar verticalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
 }
-
 
 .box2 {
     background-color: #E3EEFF;
