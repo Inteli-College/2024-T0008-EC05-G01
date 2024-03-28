@@ -14,13 +14,13 @@ async def add_to_queue(Nome: str):
 
 	response = Kit.select(Nome).__dict__
 	body = json.loads(response['body'].decode('utf-8'))
-	kit = body['kit']
 
 	if body['error']: return JSONResponse(content= {
 		"error" : True,
 		"message": body['message']
 	}, status_code=response['status_code'])
 
+	kit = body['kit']
 	queue.put(kit)
 
 	return JSONResponse(content={
