@@ -86,7 +86,6 @@ body {
 
 }
 
-
 .box2 {
     background-color: #E3EEFF;
     border-radius: 15px;
@@ -94,11 +93,6 @@ body {
 
 }
 
-.box1 {
-     background-color: blue;
-     width: 10%;
-     border;
-}
 .adicao {
     font-size: 7em;
     color: #F0F7FF;
@@ -129,7 +123,6 @@ body {
 
 .triangulo_cima {
     position: absolute;
-        position: absolute;
     bottom: -11px;
     right: -20%;
 }
