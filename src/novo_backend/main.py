@@ -1,28 +1,17 @@
-import uvicorn
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI
-from routes.main import router as api_router
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
+import time
 
-app = FastAPI()
+from queue import Queue
+from threading import Thread
 
-# origins = ["http://localhost:8005"]
+from classes.ApiWrapper import ApiWrapper
+from classes.RobotWrapper import RobotWrapper
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+def main():
+	queue = Queue()
+	ApiWrapper(queue).start()
+	RobotWrapper(queue).start()
 
-templates = Jinja2Templates(directory="templates")
-
-app.include_router(api_router)
-
-if __name__ == '__main__':
-    print("Running on port 3000")
-    uvicorn.run("main:app", host='0.0.0.0', port=3000, log_level="info", reload=True)
+if __name__ == "__main__":
+	main()
+	# while True: time.sleep(1)

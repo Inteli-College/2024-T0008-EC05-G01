@@ -59,6 +59,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centraliza os botões horizontalmente */
+    align-content: center;
     margin-top: 30%; /* Empurra os botões para o final do contêiner .login */
 }
 

@@ -74,18 +74,4 @@ body{
 
 }
 
-.triangulo_baixo{
-    display: flex;
-    bottom: 1px;
-    right: 1.95%;
-}
-
-.triangulo_cima{
-    display: flex;
-    bottom: 1px;
-    left: 61%;
-    margin-left: 63%;
-    transform: scaleX(-1);
-    margin-top: -45%;
-}
 
