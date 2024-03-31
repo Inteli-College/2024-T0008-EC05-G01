@@ -13,21 +13,21 @@ Um mockup de alta fidelidade é uma representação visual detalhada e próxima 
 ### Telas desenvolvidas
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela incial</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 01 - Tela Inicial</p>
+    Imagem 01 - Tela Inicial
     ![image](/img/mockup/TelaInicial.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 
 Esta será a primeira tela apresentada ao usuário ao iniciar a aplicação. Seu principal objetivo é direcionar os dois tipos de usuários para suas respectivas áreas. O usuário farmacêutico será direcionado para sua área ao clicar no botão 'Farmacologista', enquanto o auxiliar de farmácia selecionará a opção 'Auxiliar de Farmácia'. A navegação é projetada de forma simples para garantir uma experiência sem complicações para o usuário.
 
-<hr></hr>
+---
 
 <p style={{fontSize: '160%', fontWeight: 'bold' }}>Fluxo: Farmacêutico</p>
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela principal - Farmacêutico</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 02 - Tela Principal - Farmacologista</p>
+    Imagem 02 - Tela Principal - Farmacologista
     ![image](/img/mockup/TelaPrincipal.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 
 Esta tela é a primeira que o usuário do perfil farmacêutico encontrará após selecionar sua área. Os kits de emergência são apresentados em uma disposição organizada, em formato de matriz, com botões representando cada modelo disponível. Ao clicar em um kit específico, o farmacêutico será redirecionado para outra tela com informações detalhadas sobre o kit selecionado.
@@ -37,9 +37,9 @@ Além disso, um header é visível na tela, contendo uma barra de pesquisa para 
 
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela do Kit - Farmacêutico</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 03 - Tela do Kit - Farmacologista</p>
+    Imagem 03 - Tela do Kit - Farmacologista
     ![image](/img/mockup/TeladoKit.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 Após selecionar um dos modelos de kit na tela principal, o farmacêutico será redirecionado para esta tela. Aqui, ele poderá visualizar todos os itens presentes no kit, juntamente com suas quantidades. Além disso, há a opção de editar o kit caso seja identificada alguma inconformidade. Para isso, basta selecionar o botão 'Editar Kit' no header.
 
@@ -47,9 +47,9 @@ Se não houver necessidade de alterações, o usuário pode retornar à tela pri
 
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela de Edição de Kit - Farmacêutico</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 04 - Tela Edição de Kit - Farmacologista</p>
+    Imagem 04 - Tela Edição de Kit - Farmacologista
     ![image](/img/mockup/EdiçãodeKit.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 Após selecionar a opção 'Editar Kit', o usuário será redirecionado para esta tela. Embora seja muito semelhante à tela anterior, aqui é possível editar todos os itens presentes no kit. Para isso, basta clicar nos itens desejados, que estão disponíveis em uma lista.
 
@@ -59,22 +59,22 @@ Após finalizar as modificações, o usuário pode salvar suas mudanças ao clic
 
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela de Novo Kit - Farmacêutico</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 05 - Tela de Novo Kit - Farmacologista</p>
+    Imagem 05 - Tela de Novo Kit - Farmacologista
     ![image](/img/mockup/NovoKit.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 Esta tela é idêntica à tela de edição de kit, exceto pelo fato de que nenhum item está pré-registrado para edição. Portanto, todos os itens devem ser adicionados pelo usuário. O processo de adição de itens é realizado clicando no botão com o símbolo de '+'.
 
 Após selecionar os itens desejados para o novo kit, o usuário pode salvar suas mudanças ao clicar em 'Concluir Edição', botão presente no header. Se o usuário preferir cancelar a criação do novo kit, basta clicar em 'Cancelar'.
 
-<hr></hr>
+---
 
 <p style={{fontSize: '160%', fontWeight: 'bold' }}>Fluxo: Auxiliar</p>
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela Principal - Auxiliar</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 06 - Tela Principal - Auxiliar</p>
+    Imagem 06 - Tela Principal - Auxiliar
     ![image](/img/mockup/TelaPrincipal2.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 Esta tela será a primeira vista pelo usuário que selecionar a área de Auxiliar de Farmácia. Assim como na tela principal do Farmacêutico, o usuário poderá visualizar todos os modelos de kits existentes. No entanto, há uma pequena diferença: ao lado dos botões dos kits, há um pequeno botão com o símbolo de '+'. Esse botão está relacionado à funcionalidade exclusiva desta tela, a 'Fila de Espera dos Kits'. Ao clicar neste botão, o usuário pode adicionar mais kits à fila de espera, bem como removê-los.
 
@@ -82,25 +82,27 @@ Além disso, na parte superior da tela, o usuário pode acessar o armazém clica
 
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela do Kit - Auxiliar</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 07 - Tela do Kit - Auxiliar</p>
+    Imagem 07 - Tela do Kit - Auxiliar
     ![image](/img/mockup/TeladoKit2.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 Esta tela é idêntica à tela de detalhes do kit para o farmacêutico, com a exceção de que não possui a opção 'Editar Kit'. Apenas os farmacêuticos têm autorização para realizar tais ações, tornando esta tela exclusivamente para visualização dos itens do kit pelo auxiliar de farmácia.
 
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Armazém - Auxiliar</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 08 - Armazém - Auxiliar</p>
+    Imagem 08 - Armazém - Auxiliar
     ![image](/img/mockup/Armazem.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
+
 Esta tela é muito semelhante à tela de detalhes do kit. No entanto, em vez de exibir os itens de um kit de emergência, ela mostra os itens disponíveis no armazém. O botão de edição do kit é substituído por um botão 'Reabastecido', utilizado para enviar ao sistema a informação de que o estoque foi reabastecido com sucesso.
-<hr></hr>
+
+---
  
  ### Especificações dos componentes utilizados
 Nesta seção, você encontrará informações detalhadas sobre os principais componentes utilizados para a idealização do nosso mockup e, consequentemente, para o desenvolvimento da nossa interface. Aqui, exploraremos os elementos-chave que compõem a estrutura visual e funcionalidade do projeto.
  <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 09, 10, 11 - Componentes em destaque</p>
+    Imagem 09, 10, 11 - Componentes em destaque
     ![image](/img/doc_component/component1.png)
 </div>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
@@ -108,14 +110,101 @@ Nesta seção, você encontrará informações detalhadas sobre os principais co
 </div>
 <div style={{width: '40%', margin: '0 auto', textAlign: 'center'}}>
     ![image](/img/doc_component/component3.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
 
 Nesta seção, detalharemos cada elemento destacado anteriormente, descrevendo sua função, aparência e características gerais. A seguir, você encontrará uma análise minuciosa dos componentes que compõem nosso wireframe, permitindo uma compreensão abrangente de sua implementação e interação na interface.
 
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    <p>Imagem 12 - Explicação de componentes</p>
+    Imagem 12 - Explicação de componentes
     ![image](/img/doc_component/componentExplanation.png)
-    <p>Fonte: Elaborado pelos próprios autores</p>
+    Fonte: Elaborado pelos próprios autores
 </div>
-<hr></hr>
+
+---
+
+## Frontend
+
+O frontend não é nada mais que a versão final da nossa interface que será integrada à solução final e, portanto, deve ser 100% funcional. Com isso, o frontend é a parte da solução com a qual o cliente interagirá diretamente e conseguirá resolver suas dependências na plataforma. Neste tópico, iremos passar por cada tela que já começou a ser desenvolvida e abordaremos pontos específicos de cada uma delas.
+
+Observação: As telas ainda estão em processo de desenvolvimento, portanto, ainda não se apresentam em seu estado final. Além do mais a maior parte das funcionalidades das telas já foram tratadas na descrição do Mockup acima e por isso nesse tópico será tratado de forma mais específica a lógica por trás das telas.
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 13 - Frontend: armazem.html
+    ![image](/img/frontend/armazem.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta primeira tela representa a "Tela principal" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 14 - Frontend: config.html
+    ![image](/img/frontend/config.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa um modal que será aberto ao editar algum item na "tela de edição de Kit" ou "Tela de novo kit" do fluxo do farmacêutico que estão presentes no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 15 - Frontend: kit.html
+    ![image](/img/frontend/kit.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 16 - Frontend: novoKit.html
+    ![image](/img/frontend/novoKit.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela de Novo Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 17 - Frontend: reabastecimento.html
+    ![image](/img/frontend/reabastecimento.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa o "Armazém" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 18 - Frontend: telaExclusao.html
+    ![image](/img/frontend/telaExclusao.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa um modal que será aberto tentar excluir algum modelo de kit na "Tela Principal" do fluxo do Farmacêutico que esta presente no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 19 - Frontend: telaIncial.html
+    ![image](/img/frontend/telaInicial.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela Incial", que é a Tela que vem antes da divisão de fluxos entre Auxiliar e Farmacêutico, que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 20 - Frontend: telaKit.html
+    ![image](/img/frontend/telaKit.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 21 - Frontend: telaP.html
+    ![image](/img/frontend/telaP.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela Principal" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+
+<div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
+    Imagem 22 - Frontend: config.html
+    ![image](/img/frontend/visualizacaoKit.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+Esta tela representa a "Tela de kit" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
