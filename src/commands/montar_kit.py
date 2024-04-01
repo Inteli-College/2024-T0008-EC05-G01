@@ -5,6 +5,8 @@ import inquirer
 import yaspin
 import typer
 import json
+import qrCode
+
 
 
 
@@ -57,38 +59,46 @@ def montar_kit(robot = None):
 	#? Codigozinho do Rizzi
 	for medicamento in dados.get("medicamentos", []):
 		if medicamento['nome'] == respostas['kit']:
-			for i in range(len(medicamento['posicao']['x'])):
-				if(i == 1):
-					robot.tool("suction", True)
+			robot.move(float(medicamento['posicao']['x']), float(medicamento['posicao']['y']), float(medicamento['posicao']['z'] + 60), float(medicamento['posicao']['r']))
 
-				robot.move(float(medicamento['posicao']['x'][i]),float(medicamento['posicao']['y'][i]),float(medicamento['posicao']['z'][i]),float(medicamento['posicao']['r'][i]))
+			qrCode.perpetually_read()
+			if medicamento['nome'] != qrCode.medicamento['nome']:
+				printc(cstring("[&6ROBOT&f] &cMedicamento errado!"))
+				return
+			
+			robot.move(float(medicamento['posicao']['x']), float(medicamento['posicao']['y']), float(medicamento['posicao']['z']), float(medicamento['posicao']['r']))
+			robot.tool("suction", True)
 
-				if i == 5:
-					robot.tool("suction", False)
+			robot.move(float(medicamento['posicao']['x']), float(medicamento['posicao']['y']), float(medicamento['posicao']['z'] + 60), float(medicamento['posicao']['r']))
 
+			robot.move(float(robot.constants['kit']['x']), float(robot.constants['kit']['y']), float(robot.constants['kit']['z'] + 60), float(robot.constants['kit']['r']))
 
-				registros = db.all()
+			robot.move(float(robot.constants['kit']['x']), float(robot.constants['kit']['y']), float(robot.constants['kit']['z']), float(robot.constants['kit']['r']))
+			robot.tool("suction", False)
+			robot.movej_to(robot.constants['home']['x'], robot.constants['home']['y'], robot.constants['home']['z'], robot.constants['home']['r'])
 
-				# Obtém o último dado
-				ultimo_dado = registros[-1]['dado']
+			'''registros = db.all()
 
-				# Obtém o quinto dado a partir do último termo
-				quinto_dado = registros[-5]['dado']
+			# Obtém o último dado
+			ultimo_dado = registros[-1]['dado']
 
-				print(ultimo_dado)
-				print(quinto_dado)
-				cond: bool
-				if ultimo_dado > quinto_dado:
-					cond = ((ultimo_dado * 1.2) <= quinto_dado) or ((ultimo_dado * 0.8) <= quinto_dado)
-				elif ultimo_dado < quinto_dado:
-					cond = ((ultimo_dado * 1.2) >= quinto_dado) or ((ultimo_dado * 0.8) >= quinto_dado)
-				else: cond = True
+			# Obtém o quinto dado a partir do último termo
+			quinto_dado = registros[-5]['dado']
 
-				print(cond)
+			print(ultimo_dado)
+			print(quinto_dado)
+			cond: bool
+			if ultimo_dado > quinto_dado:
+				cond = ((ultimo_dado * 1.2) <= quinto_dado) or ((ultimo_dado * 0.8) <= quinto_dado)
+			elif ultimo_dado < quinto_dado:
+				cond = ((ultimo_dado * 1.2) >= quinto_dado) or ((ultimo_dado * 0.8) >= quinto_dado)
+			else: cond = True
 
-				if cond == False: 
-					print("Objeto perdido no processo")
-					break
+			print(cond)
+
+			if cond == False: 
+				print("Objeto perdido no processo")
+				break'''
 					
 
 	printc(cstring("[&6ROBOT&f] &aKit montado!"))
