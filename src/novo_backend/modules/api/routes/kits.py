@@ -31,8 +31,3 @@ async def update(Nome: str, kit: Kit):
 @router.delete('/{Nome}')
 async def delete(Nome: str):
 	return Kit.delete(Nome)
-
-
-@router.delete('/tela-inicial')
-async def chamada_tela_inicial():
-	return Kit.chamada_tela_inicial()
