@@ -36,7 +36,7 @@ async def read_page(request: Request):
 @router.get("/kit", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="kit.html", context={"request": request})
-
+                                    
 @router.get("/config", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="config.html", context={"request": request})
