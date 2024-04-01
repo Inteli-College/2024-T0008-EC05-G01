@@ -9,7 +9,7 @@ sidebar_position: 2
 
 ### Descrição
 
-Os códigos da velha implementação de controle do robô via CLI foram reutilizados e adaptados para dispor uma API RESTful que permite o controle do robô via requisições HTTP, além de fornecer informações sobre o estado do robô e informações criticas do banco de dados que armazena informações sobre os kits e medicamentos. Além disso, foi implementado uma estrutura de "threads" e "locks" para garantir a integridade dos dados e evitar problemas de concorrência enquanto os diversos módulos do sistema necessários para o funcionamento adequado do robô são executados (API, QRCODE, ROBOT).
+&emsp;Os códigos da velha implementação de controle do robô via CLI foram reutilizados e adaptados para dispor uma API RESTful que permite o controle do robô via requisições HTTP, além de fornecer informações sobre o estado do robô e informações criticas do banco de dados que armazena informações sobre os kits e medicamentos. Além disso, foi implementado uma estrutura de "threads" e "locks" para garantir a integridade dos dados e evitar problemas de concorrência enquanto os diversos módulos do sistema necessários para o funcionamento adequado do robô são executados (API, QRCODE, ROBOT).
 
 ### Arvore de Diretórios
 
@@ -109,7 +109,7 @@ Os códigos da velha implementação de controle do robô via CLI foram reutiliz
 
 ### Documentação das Rotas
 
-Além de disponibilizar uma documentação interativa da API (swagger) na rota `/docs`, segue abaixo a documentação de todas as rotas disponíveis na API, excluindo as rotas de frontend:
+&emsp;Além de disponibilizar uma documentação interativa da API (swagger) na rota `/docs`, segue abaixo a documentação de todas as rotas disponíveis na API, excluindo as rotas de frontend:
 
 ---
 
@@ -121,7 +121,7 @@ Além de disponibilizar uma documentação interativa da API (swagger) na rota `
 - **GET /medicamentos**: Retorna todos os medicamentos em forma de lista (interação com o banco de dados).
 - **POST /medicamentos**: Adiciona um novo medicamento (interação com o banco de dados), o corpo da requisição deve conter os valores do novo medicamento.
 
-Exemplo de corpo de requisição para adicionar ou atualizar um medicamento:
+&emsp;Exemplo de corpo de requisição para adicionar ou atualizar um medicamento:
 
 ```json
 {
@@ -148,7 +148,7 @@ Exemplo de corpo de requisição para adicionar ou atualizar um medicamento:
 - **GET /kits**: Retorna todos os kits em forma de lista (interação com o banco de dados).
 - **POST /kits**: Adiciona um novo kit (interação com o banco de dados), o corpo da requisição deve conter os valores do novo kit.
 
-Exemplo de corpo de requisição para adicionar ou atualizar um kit:
+&emsp;Exemplo de corpo de requisição para adicionar ou atualizar um kit:
 
 ```json
 {
@@ -179,9 +179,9 @@ Exemplo de corpo de requisição para adicionar ou atualizar um kit:
 ---
 
 ## Documentação Frontend
-O frontend não é nada mais que a versão final da nossa interface que será integrada à solução final e, portanto, deve ser 100% funcional. Com isso, o frontend é a parte da solução com a qual o cliente interagirá diretamente e conseguirá resolver suas dependências na plataforma. Neste tópico, iremos passar por cada tela que já começou a ser desenvolvida e abordaremos pontos específicos de cada uma delas.
+&emsp;O frontend é a versão final da nossa interface que será integrada à solução final e, portanto, deve ser 100% funcional. Com isso, o frontend é a parte da solução com a qual o cliente interagirá diretamente e conseguirá resolver suas dependências na plataforma. Neste tópico, iremos apresentar cada tela que já começou a ser desenvolvida e abordaremos pontos específicos de cada uma delas.
 
-**Observação**: As telas e o processo de integração da interface ao backend e ao sistema do braço robótico ainda estão em processo de desenvolvimento, portanto, ainda não se apresentam em seu estado final. Além do mais a maior parte das funcionalidades das telas já foram tratadas na descrição do Mockup acima e por isso nesse tópico será tratado apenas de forma mais específica a lógica por trás das telas.
+&emsp;**Observação**: As telas e o processo de integração da interface ao backend e ao sistema do braço robótico ainda estão em processo de desenvolvimento, portanto, ainda não se apresentam em seu estado final. Além do mais a maior parte das funcionalidades das telas já foram tratadas na descrição do Mockup acima e por isso nesse tópico será tratado apenas de forma mais específica a lógica por trás das telas.
 
 ---
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
@@ -190,7 +190,7 @@ O frontend não é nada mais que a versão final da nossa interface que será in
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta primeira tela representa a "Tela principal" do fluxo do Auxiliar que foi desenvolvida no Mockup.
+&emsp;Esta primeira tela representa a "Tela principal" do fluxo do Auxiliar que foi desenvolvida no Mockup.
 
 **Lógica**:
 - Ao clicar no botão Armazém, a rota "/reabastecimento" é chamada e o usuário é redirecionado para a tela do "Armazém" que contem todos os itens.
@@ -202,7 +202,7 @@ Esta primeira tela representa a "Tela principal" do fluxo do Auxiliar que foi de
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa um modal que será aberto ao editar algum item na "tela de edição de Kit" ou "Tela de novo kit" do fluxo do farmacêutico que estão presentes no Mockup. 
+&emsp;Esta tela representa um modal que será aberto ao editar algum item na "tela de edição de Kit" ou "Tela de novo kit" do fluxo do farmacêutico que estão presentes no Mockup. 
 
 **Lógica**:
 - Ainda não existe uma lógica de Rotas desenvolvida.
@@ -213,7 +213,7 @@ Esta tela representa um modal que será aberto ao editar algum item na "tela de 
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup.
+&emsp;Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup.
 
 **Lógica**:
 - Ao clicar no botão "Novo kit" a rota "/novoKit" é chamada e o usuário é redirecionado para a tela de "Novo Kit".
@@ -225,7 +225,7 @@ Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolv
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela de Novo Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa a "Tela de Novo Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão "Cancelar" a rota "/telaP" é chamada e o usuário retorna para a tela "Principal".
@@ -238,7 +238,7 @@ Esta tela representa a "Tela de Novo Kit" do fluxo do Farmacêutico que foi dese
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa o "Armazém" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa o "Armazém" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão "Voltar" a rota "/auxiliar" é chamada e o usuário é redirecionado para a tela de "Principal" do fluxo do Auxiliar.
@@ -249,7 +249,7 @@ Esta tela representa o "Armazém" do fluxo do Auxiliar que foi desenvolvida no M
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa um modal que será aberto tentar excluir algum modelo de kit na "Tela Principal" do fluxo do Farmacêutico que esta presente no Mockup. 
+&emsp;Esta tela representa um modal que será aberto tentar excluir algum modelo de kit na "Tela Principal" do fluxo do Farmacêutico que esta presente no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão "Voltar" a rota "/telaP" é chamada e o usuário retorna para a tela "Principal".
@@ -261,7 +261,7 @@ Esta tela representa um modal que será aberto tentar excluir algum modelo de ki
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela Incial", que é a Tela que vem antes da divisão de fluxos entre Auxiliar e Farmacêutico, que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa a "Tela Incial", que é a Tela que vem antes da divisão de fluxos entre Auxiliar e Farmacêutico, que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão "Auxiliar" a rota "/auxiliar" é chamada e o usuário retorna para a tela "Principal" do fluxo do Auxiliar.
@@ -273,7 +273,7 @@ Esta tela representa a "Tela Incial", que é a Tela que vem antes da divisão de
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ainda não existe uma lógica de Rotas desenvolvida.
@@ -284,7 +284,7 @@ Esta tela representa a "Tela de Kit" do fluxo do Farmacêutico que foi desenvolv
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela Principal" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa a "Tela Principal" do fluxo do Farmacêutico que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão do kit referente a rota do kit selecionado é chamada e o usuário é redirecionado para a tela de tal kit.
@@ -298,7 +298,11 @@ Esta tela representa a "Tela Principal" do fluxo do Farmacêutico que foi desenv
     Fonte: Elaborado pelos próprios autores
 </div>
 
-Esta tela representa a "Tela de kit" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
+&emsp;Esta tela representa a "Tela de kit" do fluxo do Auxiliar que foi desenvolvida no Mockup. 
 
 **Lógica**:
 - Ao clicar no botão "Voltar" a rota "/auxiliar" é chamada e o usuário é redirecionado para a tela de "Principal" do fluxo do Auxiliar.
+
+
+
+
