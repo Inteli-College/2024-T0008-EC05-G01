@@ -104,8 +104,8 @@ Os códigos da velha implementação de controle do robô via CLI foram reutiliz
 ### Descritivo dos Módulos
 
 - **API**: Módulo responsável por fornecer uma API RESTful, desenvolvida usando FastAPI, que permite o controle do robô via requisições HTTP, além de fornecer informações sobre o estado do robô e informações criticas do banco de dados que armazena informações sobre os kits e medicamentos. Essa API também compartilha um objeto `Queue` com o módulo ROBOT, que permite a adição de kits a serem montados pelo robô a uma fila First-In-First-Out (FIFO).
-- **QRCODE**: Módulo responsável por perpetualmente analisar e ler QRCodes na câmera do robô, futuramente servirá para verificar a autenticidade dos kits e medicamentos e garantir a integridade dos mesmos.
-- **ROBOT**: Módulo responsável por abstrair o controle do robô, permitindo a montagem de kits e a movimentação do robô de maneira segura e compatível com a API. Como dito anteriormente, esse módulo consome um objeto `Queue` compartilhado com o módulo API, permitindo a ordenação dos kits a serem montados pelo robô.
+- **QRCODE**: Módulo responsável por perpetualmente analisar e ler QRCodes na câmera do robô, futuramente servirá para verificar a autenticidade dos kits e medicamentos e garantir a integridade dos mesmos. Esse módulo atualmente encontra-se desativado e está sendo ativamente desenvolvido, com com previsão de conclusão na Sprint 5.
+- **ROBOT**: Módulo responsável por abstrair o controle do robô, permitindo a montagem de kits e a movimentação do robô de maneira segura e compatível com a API. Como dito anteriormente, esse módulo consome um objeto `Queue` compartilhado com o módulo API, permitindo a ordenação dos kits a serem montados pelo robô. Esse módulo está sujeito a mudanças na Sprint 5.
 
 ### Documentação das Rotas
 
