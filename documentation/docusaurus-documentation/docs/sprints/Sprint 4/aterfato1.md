@@ -127,7 +127,7 @@ Nesta seção, detalharemos cada elemento destacado anteriormente, descrevendo s
 
 O frontend não é nada mais que a versão final da nossa interface que será integrada à solução final e, portanto, deve ser 100% funcional. Com isso, o frontend é a parte da solução com a qual o cliente interagirá diretamente e conseguirá resolver suas dependências na plataforma. Neste tópico, iremos passar por cada tela que já começou a ser desenvolvida e abordaremos pontos específicos de cada uma delas.
 
-Observação: As telas ainda estão em processo de desenvolvimento, portanto, ainda não se apresentam em seu estado final. Além do mais a maior parte das funcionalidades das telas já foram tratadas na descrição do Mockup acima e por isso nesse tópico será tratado de forma mais específica a lógica por trás das telas.
+Observação: As telas e o processo de integração da interface ao backend e ao sistema do braço robótico ainda estão em processo de desenvolvimento, portanto, ainda não se apresentam em seu estado final. Além do mais a maior parte das funcionalidades das telas já foram tratadas na descrição do Mockup acima e por isso nesse tópico será tratado apenas de forma mais específica a lógica por trás das telas.
 
 ---
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
