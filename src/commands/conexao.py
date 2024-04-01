@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 
-db_data = TinyDB('db.json')
+db_data = TinyDB('./db.json')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
