@@ -11,6 +11,8 @@ sidebar_position: 1
 </div>
 
 ### Telas desenvolvidas
+A seguir, serão detalhadas as funcionalidades e características de cada tela, fornecendo uma visão abrangente do fluxo de interação e das principais áreas de interesse do projeto.
+
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela incial</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
     Imagem 01 - Tela Inicial
@@ -23,6 +25,9 @@ sidebar_position: 1
 ---
 
 <p style={{fontSize: '160%', fontWeight: 'bold' }}>Fluxo: Farmacêutico</p>
+
+O fluxo do farmacêutico representa a totalidade da interface à qual o usuário terá acesso ao selecionar a opção "Farmacologista" na página inicial.
+
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela principal - Farmacêutico</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
     Imagem 02 - Tela Principal - Farmacologista
@@ -71,6 +76,9 @@ sidebar_position: 1
 ---
 
 <p style={{fontSize: '160%', fontWeight: 'bold' }}>Fluxo: Auxiliar</p>
+
+O fluxo do auxiliar representa a totalidade da interface à qual o usuário terá acesso ao selecionar a opção "Auxiliar de Farmácia" na página inicial.
+
 <p style={{fontSize: '130%', fontWeight: 'bold' }}>Tela Principal - Auxiliar</p>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
     Imagem 06 - Tela Principal - Auxiliar
@@ -103,7 +111,7 @@ sidebar_position: 1
  ### Especificações dos componentes utilizados
 &emsp;Nesta seção, você encontrará informações detalhadas sobre os principais componentes utilizados para a idealização do nosso mockup e, consequentemente, para o desenvolvimento da nossa interface. Aqui, exploraremos os elementos-chave que compõem a estrutura visual e funcionalidade do projeto.
  <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    Imagem 09, 10, 11 - Componentes em destaque
+    Imagem 09 - Componentes em destaque
     ![image](/img/doc_component/component1.png)
 </div>
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
@@ -117,7 +125,13 @@ sidebar_position: 1
 &emsp;Nesta seção, detalharemos cada elemento destacado anteriormente, descrevendo sua função, aparência e características gerais. A seguir, você encontrará uma análise minuciosa dos componentes que compõem nosso wireframe, permitindo uma compreensão abrangente de sua implementação e interação na interface.
 
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    Imagem 12 - Explicação de componentes
+    Imagem 10 - Explicação de componentes
     ![image](/img/doc_component/componentExplanation.png)
     Fonte: Elaborado pelos próprios autores
 </div>
+
+---
+
+### Observação
+
+Se você deseja obter um entendimento mais profundo de como as telas do mockup foram implementadas na solução real, você pode acessar o Artefato "Backend e Frontend". Isso lhe proporcionará acesso a informações mais específicas, como quais rotas são chamadas dependendo da interação do usuário com a plataforma, entre outros detalhes relevantes.
