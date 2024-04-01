@@ -19,7 +19,7 @@
         </div>
         <input type="text" class="search-input">
         <a href="/novoKit">
-          <button class="search-button">Novo Kit</button>
+          <button class="search-button" href="/novoKit">Novo Kit</button>
         </a>
       </div>
     </nav>
@@ -28,15 +28,15 @@
   <h1>Tabela de Kits:</h1>
   <main>
     <header class="juncao">
-      <a href="/editarKit">
-        <button class="kits">
+      <a href="/editarKit.html">
+        <button class="kits" href="/telaKit.html">
           <div>
             <span class="nome-kit" id="nome-kit">Kit 3</span>
             <h2 id="nome ">Cirúrgico Cardiovascular</h2>
           </div>
         </button>
       </a>
-      <button class="delete-button" hx-get="/edit" hx-trigger="click"><img class="image-button" src="../static/img/secaoLixeira.png" />
+      <button class="delete-button" hx-get="/edit" hx-trigger="click" href="/deleteKit.html"><img class="image-button" src="../static/img/secaoLixeira.png" />
       </button>
     </header>
   </main>
