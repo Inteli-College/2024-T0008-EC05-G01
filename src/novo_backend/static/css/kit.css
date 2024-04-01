@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -59,17 +59,19 @@ body {
     bottom: 5px;
 }
 
-.linha {
-    display: flex;
-    /* Organiza os elementos na mesma linha */
-}
+
 
 .novo_kit {
     color: #F0F7FF;
 }
 
-.linha{
+.linha {
     margin-top: 2%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .item {
@@ -92,36 +94,32 @@ body {
     background-color: #4688D7;
     width: 15%;
     border-radius: 15px;
-    padding: 2%;
-
+    padding: 2% 2%;
+    width: 18%;
+    border: none;
 }
 
 
 .box2 {
     background-color: #E3EEFF;
     border-radius: 15px;
-    text-align: center;
+    text-align: right;
 
 }
 
-.box1 {
-     background-color: blue;
-     width: 10%;
-     border: none;
-}
 .adicao {
-    font-size: 7em;
+    font-size: 10em;
     color: #F0F7FF;
     background-color: #4688D7;
     border: none;
     border-radius: 10px;
-    padding: 1% 2%;
+    padding: 15% 12%;
     margin-top: 5%;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     /* Centraliza verticalmente */
-    width: 15%;
+    width: 200%;
     /* Defina a largura desejada */
     position: relative;
     left: 43%;
@@ -139,7 +137,7 @@ body {
 
 .triangulo_cima {
     position: absolute;
-        position: absolute;
+    position: absolute;
     bottom: -11px;
     right: -20%;
 }
