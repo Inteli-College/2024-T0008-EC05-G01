@@ -68,15 +68,19 @@ body {
 .linha {
     margin-top: 2%;
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* text-align: center; */
+    /* align-items: center;
+    justify-content: center; */
 
 }
 
 .item {
     color: #E3EEFF;
     text-align: center;
+    font-size: 1.5em;
 }
 
 .medicamento {
@@ -92,11 +96,13 @@ body {
 
 .box1 {
     background-color: #4688D7;
-    width: 15%;
+    /* width: 15%; */
     border-radius: 15px;
     padding: 2% 2%;
-    width: 18%;
+    /* width: 18%; */
     border: none;
+    min-width: 150px;
+    width: 200px;
 }
 
 
