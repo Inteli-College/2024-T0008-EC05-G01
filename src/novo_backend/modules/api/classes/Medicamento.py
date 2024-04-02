@@ -8,7 +8,6 @@ from database.wrapper import DB
 
 class Medicamento(pydantic.BaseModel):
 	nome: str
-	quantidade: int
 	pos: Pos
 
 	def insert(self):
