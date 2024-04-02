@@ -1,4 +1,12 @@
+function passarUrl(){
+    var url = window.location.href;
+    var url = new URL(url);
+    var kit = url.searchParams.get("kit");
 
+    window.location.href = "/config?kit=" + kit;
+}
+
+console.log("hello world");
 // Função para carregar dinamicamente as opções de medicamentos
 function carregarMedicamentos() {
     fetch('/medicamentos')
@@ -28,5 +36,4 @@ function carregarMedicamentos() {
         })
         .catch(error => console.error('Erro ao carregar medicamentos:', error));
 }
-
 carregarMedicamentos();

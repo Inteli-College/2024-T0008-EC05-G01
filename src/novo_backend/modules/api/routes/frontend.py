@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse  
 from fastapi.templating import Jinja2Templates
+from database.wrapper import DB
+from tinydb import Query
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
@@ -27,27 +29,23 @@ async def read_page(request: Request):
 
 @router.get("/kit", response_class=HTMLResponse)
 async def read_kit(request: Request):
-
-    medicamentos = [
-        {"nome": "Medicamento 1", "quantidade": "10"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 3", "quantidade": "8"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-        {"nome": "Medicamento 2", "quantidade": "5"},
-    ]
     nome_do_kit = request.query_params.get('kit', 'Nome do Kit Não Encontrado')
+    medicamentos = []  
+    
+    try:
+        with DB('database/archives/kits.json') as kits_db:
+            kits = kits_db.all()
+
+            for kit in kits:
+                if kit['nome'] == nome_do_kit:
+                    medicamentos = kit['medicamentos']
+                    break
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+    
     return templates.TemplateResponse('kit.html', {"request": request, "nome_do_kit": nome_do_kit, "medicamentos": medicamentos})
+
+
 
 
 @router.get("/novoKit", response_class=HTMLResponse)
