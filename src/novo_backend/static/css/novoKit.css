@@ -76,7 +76,6 @@ body{
     border-radius: 10px;
     padding: 1% 2%;
     margin-top: 5%;
-    display: flex;
     justify-content: center;
     align-items: center; /* Centraliza verticalmente */
     width: 15%; /* Defina a largura desejada */
