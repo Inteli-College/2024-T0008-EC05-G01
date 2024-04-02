@@ -293,7 +293,7 @@ sidebar_position: 2
 
 ---
 <div style={{width: '80%', margin: '0 auto', textAlign: 'center'}}>
-    Imagem 22 - Frontend: config.html
+    Imagem 22 - Frontend: visualizacao.html
     ![image](/img/frontend/visualizacaoKit.png)
     Fonte: Elaborado pelos próprios autores
 </div>

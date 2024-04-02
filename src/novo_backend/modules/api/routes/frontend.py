@@ -26,20 +26,38 @@ async def read_page(request: Request):
     return templates.TemplateResponse(name="telaKit.html", context={"request": request})
 
 @router.get("/kit", response_class=HTMLResponse)
-async def read_page(request: Request):
-    return templates.TemplateResponse(name="kit.html", context={"request": request})
+async def read_kit(request: Request):
+
+    medicamentos = [
+        {"nome": "Medicamento 1", "quantidade": "10"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 3", "quantidade": "8"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+        {"nome": "Medicamento 2", "quantidade": "5"},
+    ]
+    nome_do_kit = request.query_params.get('kit', 'Nome do Kit Não Encontrado')
+    return templates.TemplateResponse('kit.html', {"request": request, "nome_do_kit": nome_do_kit, "medicamentos": medicamentos})
+
 
 @router.get("/novoKit", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="novoKit.html", context={"request": request})
 
-@router.get("/kit", response_class=HTMLResponse)
-async def read_page(request: Request):
-    return templates.TemplateResponse(name="kit.html", context={"request": request})
-                                    
 @router.get("/config", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="config.html", context={"request": request})
+
 
 ############### ROTAS DO AUXILIAR ####################
 

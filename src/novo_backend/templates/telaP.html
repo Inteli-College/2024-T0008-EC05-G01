@@ -8,6 +8,7 @@
   <meta name="description" content="Tela principal do sistema">
   <link rel="stylesheet" type="text/css" href="../static/css/tp.css">
   <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+  <script src="{{ url_for('static', path='scripts/config-2.js') }}"></script>
 </head>
 
 <body>
@@ -18,8 +19,8 @@
           <img class="search-icon" src="../static/img/logo_arm copy.png" alt="Ícone de Pesquisa">
         </div>
         <input type="text" class="search-input">
-        <a href="/novoKit">
-          <button class="search-button" href="/novoKit">Novo Kit</button>
+        <a>
+          <button class="search-button" onclick="novoKit()">Novo Kit</button>
         </a>
       </div>
     </nav>
