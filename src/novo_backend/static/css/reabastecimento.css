@@ -35,10 +35,8 @@ body {
     background-color: #E3EEFF;
     font-size: 1em;
     padding: 1% 2%;
-    /* 2px 20px em relação à largura do contêiner pai */
     border: none;
     margin-right: 2%;
-    /* 20px em relação à largura do contêiner pai */
     border-radius: 20px;
     cursor: pointer;
     width: 19%;
@@ -50,7 +48,6 @@ body {
     position: relative;
     /* top: auto; */
     left: 38%;
-    /* 600px em relação à largura do contêiner pai */
     bottom: 5px;
 }
 
@@ -58,13 +55,13 @@ body {
     position: relative;
     top: auto;
     left: 40%;
-    /* 600px em relação à largura do contêiner pai */
     bottom: 5px;
 }
 
 .linha {
     display: flex;
-    /* Organiza os elementos na mesma linha */
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .novo_kit {
@@ -97,14 +94,10 @@ body {
     border-radius: 15px;
     padding: 2%;
     margin: auto;
-    /* Adiciona margens automáticas para alinhar horizontalmente */
     display: flex;
     flex-direction: column;
-    /* Para centralizar verticalmente */
     justify-content: center;
-    /* Centraliza verticalmente */
     align-items: center;
-    /* Centraliza horizontalmente */
 }
 
 .box2 {
@@ -125,12 +118,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Centraliza verticalmente */
     width: 15%;
-    /* Defina a largura desejada */
     position: relative;
     left: 43%;
-    /* Ajuste para centralizar horizontalmente */
     cursor: pointer;
 
 
