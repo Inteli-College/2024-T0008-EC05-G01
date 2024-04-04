@@ -14,7 +14,7 @@ function novoKit() {
         } else {
             break;
         }
-    }
+    }       
 
     var dados = {
         nome: nome,
@@ -40,6 +40,10 @@ function novoKit() {
 }
 
 function updateKit(kit, dados) {
+    var url = window.location.href;
+    var url = new URL(url);
+    var kit = url.searchParams.get("kit");
+
     fetch('/kits/'+ kit, {
         method: 'PUT',
         headers: {
@@ -55,6 +59,7 @@ function updateKit(kit, dados) {
     })
     .then(data => {
         console.log('Medicamento adicionado com sucesso:', data);
+        window.location.href = "/kit?kit=" + kit;
     })
     .catch(error => {
         console.error('Erro ao adicionar medicamento:', error);
@@ -70,7 +75,6 @@ function atualizarDados() {
     var quantidadeDigitada = document.getElementById("quantidadeInput").value;
 
     alert("Medicamento selecionado: " + medicamentoSelecionado + "\nQuantidade digitada: " + quantidadeDigitada + "\nKit: " + kit);
-
     
     var novo_medicamento = {
         nome: medicamentoSelecionado,
