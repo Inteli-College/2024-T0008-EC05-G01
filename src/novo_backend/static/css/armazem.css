@@ -148,3 +148,17 @@ h2 {
     max-width: 90px;
     max-height: 109px;
 }
+
+
+.config-kit-left {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.config-kit-left {
+    display: flex;
+    gap: 10px;
+    flex-wrap: right;
+}
+
