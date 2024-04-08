@@ -1,9 +1,9 @@
-function passarUrll(){
+function passarUrlReabastecimento(){
     var url = window.location.href;
     var url = new URL(url);
     var item = url.searchParams.get("item");
 
-    window.location.href = "/config?item=" + item;
+    window.location.href = "/configReabastecimento?item=" + item;
 }
 
 console.log("hello world");
@@ -38,48 +38,7 @@ function carregarMedicamentos() {
 }
 carregarMedicamentos();
 
-function novoItem() {
-    var nome;
-
-    while (true) {
-        nome = prompt("Digite o nome do kit:");
-
-        if (nome === null) {
-            console.log('Operação cancelada pelo usuário.');
-            return;
-        }
-
-        if (nome.trim() === "") {
-            alert("Por favor, preencha todos os campos.");
-        } else {
-            break;
-        }
-    }       
-
-    var dados = {
-        nome: nome,
-        medicamentos: []
-    };
-
-    fetch('/item', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dados),
-    })
-    .then(async response => {
-        if (!response.ok) {
-            throw new Error('Erro ao criar item');
-        }
-        window.location.href = "/item?item=" + nome;
-    })
-    .catch(error => {
-        console.error('Erro ao criar item:', error);
-    });
-}
-
-function updateItem(item, dados) {
+function updateKit(item, dados) {
     var url = window.location.href;
     var url = new URL(url);
     var item = url.searchParams.get("item");
@@ -99,14 +58,14 @@ function updateItem(item, dados) {
     })
     .then(data => {
         console.log('Medicamento adicionado com sucesso:', data);
-        window.location.href = "/item?/item=" + item;
+        window.location.href = "/item?item=" + item;
     })
     .catch(error => {
         console.error('Erro ao adicionar medicamento:', error);
     });
 }
 
-function atualizarDados() {
+function atualizarDadosReabastecimento() {
     var url = window.location.href;
     var url = new URL(url);
     var item = url.searchParams.get("item");
@@ -146,3 +105,71 @@ function atualizarDados() {
         console.error('Erro ao buscar kit:', error);
     });
 }
+// function novoItem() {
+//     var nome;
+
+//     while (true) {
+//         nome = "armazem";
+
+//         if (nome === null) {
+//             console.log('Operação cancelada pelo usuário.');
+//             return;
+//         }
+
+//         if (nome.trim() === "") {
+//             alert("Por favor, preencha todos os campos.");
+//         } else {
+//             break;
+//         }
+//     }       
+
+//     var dados = {
+//         nome: nome,
+//         medicamentos: []
+//     };
+
+//     fetch('/item', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(dados),
+//     })
+//     .then(async response => {
+//         if (!response.ok) {
+//             throw new Error('Erro ao criar item');
+//         }
+//         window.location.href = "/item?item=" + nome;
+//     })
+//     .catch(error => {
+//         console.error('Erro ao criar item:', error);
+//     });
+// }
+
+// function updateItem(item, dados) {
+//     var url = window.location.href;
+//     var url = new URL(url);
+//     var item = url.searchParams.get("item");
+
+//     fetch('/item/'+ item, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(dados),
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Erro ao adicionar medicamento');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         console.log('Medicamento adicionado com sucesso:', data);
+//         window.location.href = "/item?item=" + item;
+//     })
+//     .catch(error => {
+//         console.error('Erro ao adicionar medicamento:', error);
+//     });
+// }
+

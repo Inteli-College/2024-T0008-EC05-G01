@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/css/reabastecimento.css">
     <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', path='/scripts/reabastecimento.js') }}"></script>
-    <script src="{{ url_for('static', path='/scripts/config-1.js') }}"></script>
+    <!-- <script src="{{ url_for('static', path='/scripts/config-1.js') }}"></script> -->
 </head>
 
 <body>
@@ -16,15 +16,17 @@
         <img class="logo_editar" src="../static/img/logo_editar.png" alt="not found">
         <h1 class="novo_kit"> Armazém </h1>
         <button class="edicao" onclick="novoItem()">Reabastecimento</button>
-        <button class="cancelar" href="/auxiliar.html" onclick="passarUrl()">Voltar</button>
+        <a class="cancelar" href="/auxiliar">
+        <button class="cancelar" href="/auxiliar">Voltar</button>
+        </a>
     </div>
     <div class="linha">
-        <div class="box1" onclick="reabastecerArmazem()">
+        <div class="box1">
             <h1 class="item">Item ?</h1>
             <div class="box2">
                 <h2 class="medicamento">Medicamento</h2>
                 <a>
-                    <button class="adicao" onclick="passarUrll()"></button>
+                    <button class="adicao" onclick="passarUrlReabastecimento()"></button>
                 </a> 
                 <h2 class="medicamento">Quantidade:</h2>
                 <h1 class="medicamento">01X</h1>

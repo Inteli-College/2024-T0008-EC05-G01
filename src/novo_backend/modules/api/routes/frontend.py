@@ -67,3 +67,6 @@ async def read_page(request: Request):
 async def read_page(request: Request):
     return templates.TemplateResponse(name="reabastecimento.html", context={"request": request})
 
+@router.get("/configReabastecimento", response_class=HTMLResponse)
+async def read_page(request: Request):
+    return templates.TemplateResponse(name="configReabastecimento.html", context={"request": request})
