@@ -14,7 +14,7 @@ function novoKit() {
         } else {
             break;
         }
-    }
+    }       
 
     var dados = {
         nome: nome,
@@ -39,19 +39,13 @@ function novoKit() {
     });
 }
 
-function atualizarDados() {
-    var medicamentoSelecionado = document.getElementById("medicamentosSelect").value;
-    var quantidadeDigitada = document.getElementById("quantidadeInput").value;
+function updateKit(kit, dados) {
+    var url = window.location.href;
+    var url = new URL(url);
+    var kit = url.searchParams.get("kit");
 
-    alert("Medicamento selecionado: " + medicamentoSelecionado + "\nQuantidade digitada: " + quantidadeDigitada);
-
-    var dados = {
-        medicamento: medicamentoSelecionado,
-        quantidade: quantidadeDigitada
-    };
-
-    fetch('/addMedicamento', {
-        method: 'POST',
+    fetch('/kits/'+ kit, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -65,8 +59,50 @@ function atualizarDados() {
     })
     .then(data => {
         console.log('Medicamento adicionado com sucesso:', data);
+        window.location.href = "/kit?kit=" + kit;
     })
     .catch(error => {
         console.error('Erro ao adicionar medicamento:', error);
+    });
+}
+
+function atualizarDados() {
+    var url = window.location.href;
+    var url = new URL(url);
+    var kit = url.searchParams.get("kit");
+
+    var medicamentoSelecionado = document.getElementById("medicamentosSelect").value;
+    var quantidadeDigitada = document.getElementById("quantidadeInput").value;
+
+    alert("Medicamento selecionado: " + medicamentoSelecionado + "\nQuantidade digitada: " + quantidadeDigitada + "\nKit: " + kit);
+    
+    var novo_medicamento = {
+        nome: medicamentoSelecionado,
+        quantidade: quantidadeDigitada,
+        altura: 0,
+        pos: {
+            "x": 0, 
+            "y": 0, 
+            "z": 0, 
+            "r": 0
+        }
+    };
+
+    fetch('/kits/'+ kit, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao buscar kit');
+        }
+        return response.json();
+    }).then(data => {
+        let kit_db = data["kit"]
+        kit_db.medicamentos.push(novo_medicamento);
+        updateKit(kit, kit_db);
+    }).catch(error => {
+        console.error('Erro ao buscar kit:', error);
     });
 }
