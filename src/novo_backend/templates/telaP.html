@@ -31,12 +31,13 @@
   <main>
     <header class="juncao">
       <a href="/telaKit">
-        <button class="kits" href="/telaKit.html" onclick="carregarKits()">
-          <div>
+          {% for kit in kits %}
+          <div class="juncao">
             <span class="nome-kit" id="nome-kit">Kit 3</span>
-            <h2 id="nome ">Cirúrgico Cardiovascular</h2>
+            <h2 id="nome ">{{ kit.nome }}</h2>
+            <button class="kits" href="/telaKit.html" onclick="carregarKitsArmazem('{{ kit.nome }}')"></button>
           </div>
-        </button>
+          {% endfor %}
       </a>
       <button class="delete-button" hx-get="/edit" hx-trigger="click" href="/deleteKit.html"><img class="image-button" src="../static/img/secaoLixeira.png" />
       </button>

@@ -1,7 +1,6 @@
-function carregarKits(){
-    var url = window.location.href;
-    var url = new URL(url);
-    var kit = url.searchParams.get("kit");
+function carregarKitsArmazem(nomeKit){
+    console.log(nomeKit, "cheguei" )
+    var kit = nomeKit
     
     fetch('/kits/'+ kit, {
         method: 'GET',

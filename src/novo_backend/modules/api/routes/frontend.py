@@ -13,7 +13,15 @@ async def read_root(request: Request):
 
 @router.get("/telaP", response_class=HTMLResponse)
 async def read_page(request: Request):
-    return templates.TemplateResponse(name="telaP.html", context={"request": request})
+    kits = []
+
+    try:
+        with DB('database/archives/kits.json') as kits_db:
+            kits = kits_db.all()
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
+    return templates.TemplateResponse("telaP.html", {"request": request, "kits": kits})
 
 @router.get("/deleteKit", response_class=HTMLResponse)
 async def read_page(request: Request):
