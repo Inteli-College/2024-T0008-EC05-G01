@@ -38,7 +38,48 @@ function carregarMedicamentos() {
 }
 carregarMedicamentos();
 
-function updateKit(item, dados) {
+function novoItemRuim() {
+    var nome;
+
+    while (true) {
+        nome = prompt("Digite o nome do item:");
+
+        if (nome === null) {
+            console.log('Operação cancelada pelo usuário.');
+            return;
+        }
+
+        if (nome.trim() === "") {
+            alert("Por favor, preencha todos os campos.");
+        } else {
+            break;
+        }
+    }       
+
+    var dados = {
+        nome: nome,
+        medicamentos: []
+    };
+
+    fetch('/item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dados),
+    })
+    .then(async response => {
+        if (!response.ok) {
+            throw new Error('Erro ao criar item');
+        }
+        window.location.href = "/item?item=" + nome;
+    })
+    .catch(error => {
+        console.error('Erro ao criar item:', error);
+    });
+}
+
+function updateItem(item, dados) {
     var url = window.location.href;
     var url = new URL(url);
     var item = url.searchParams.get("item");
