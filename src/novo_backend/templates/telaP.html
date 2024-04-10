@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../static/css/tp.css">
   <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
   <script src="{{ url_for('static', path='scripts/config-2.js') }}"></script>
+  <script src="../static/scripts/telaExclusao.js"></script>
   <script src="{{ url_for('static', path='scripts/armazem.js') }}"></script>
 </head>
 
@@ -26,7 +27,7 @@
       </div>
     </nav>
   </header>
-  <hr> 
+  <hr>
   <h1>Tabela de Kits:</h1>
   <main>
     {% for kit in kits %}
