@@ -6,6 +6,10 @@ function passarUrl(){
     window.location.href = "/config?kit=" + kit;
 }
 
+function concluir(){
+    window.location.href = "/telaP";
+}
+
 console.log("hello world");
 // Função para carregar dinamicamente as opções de medicamentos
 function carregarMedicamentos() {

@@ -4,3 +4,7 @@ function carregarKitsArmazem(nomeKit){
 
     window.location.href = '/telaKit?kit=' + kit;
 }
+
+function voltar(){
+    window.location.href = "/telaP";
+}

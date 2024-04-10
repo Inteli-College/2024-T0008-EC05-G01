@@ -37,7 +37,7 @@
                 <span class="nome-kit" id="nome-kit">Kit 3</span>
                 <h2 id="nome ">{{ kit.nome }}</h2>
               </button>
-              <button class="delete-button" hx-get="/edit" hx-trigger="click" href="/deleteKit.html"><img class="image-button" src="../static/img/secaoLixeira.png" /></button>
+              <button class="delete-button" onclick="deletarKit('{{ kit.nome }}')"><img class="image-button" src="../static/img/secaoLixeira.png" /></button>
             </div>
       </header>
     {% endfor %}
