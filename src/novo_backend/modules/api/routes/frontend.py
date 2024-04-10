@@ -80,9 +80,19 @@ async def read_page(request: Request):
 
 @router.get("/auxiliar", response_class=HTMLResponse)
 async def read_page(request: Request):
-    return templates.TemplateResponse(name="armazem.html", context={"request": request})
+
+    try:
+        with DB('database/archives/kits.json') as kits_db:
+            kits = kits_db.all()
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
+    print(kits)
+
+    return templates.TemplateResponse("armazem.html", {"request": request, "kits": kits})
 
 @router.get("/reabastecimento", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse(name="reabastecimento.html", context={"request": request})
+
 
