@@ -63,17 +63,18 @@ body {
 }
 
 .linha {
+    margin-top: 2%;
     display: flex;
-    /* Organiza os elementos na mesma linha */
+    gap: 10px;
+    flex-wrap: wrap;
+  
+
 }
 
 .novo_kit {
     color: #F0F7FF;
 }
 
-.linha{
-    margin-top: 2%;
-}
 
 .item {
     color: #E3EEFF;
