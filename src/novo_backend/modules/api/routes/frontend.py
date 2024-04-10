@@ -2,10 +2,17 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse  
 from fastapi.templating import Jinja2Templates
 from database.wrapper import DB
-from tinydb import Query
+from tinydb import Query, TinyDB
+from pydantic import BaseModel
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
+
+db = TinyDB('database/archives/item.json')
+
+class Item(BaseModel):
+    nome: str
+    quantidade: int
 
 @router.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -75,7 +82,6 @@ async def read_page(request: Request):
 async def read_page(request: Request):
     return templates.TemplateResponse(name="config.html", context={"request": request})
 
-
 ############### ROTAS DO AUXILIAR ####################
 
 @router.get("/auxiliar", response_class=HTMLResponse)
@@ -83,6 +89,20 @@ async def read_page(request: Request):
     return templates.TemplateResponse(name="armazem.html", context={"request": request})
 
 @router.get("/reabastecimento", response_class=HTMLResponse)
-async def read_page(request: Request):
-    return templates.TemplateResponse(name="reabastecimento.html", context={"request": request})
+async def read_item(request: Request):
+    items = []
 
+    try:
+            with DB('database/archives/item.json') as items_db:
+                items = items_db.all()
+
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
+    return templates.TemplateResponse('reabastecimento.html', {"request": request, "items": items})
+
+@router.post("/item")
+async def create_item(item: Item):
+    # Inserir os dados no banco de dados
+    db.insert({'nome': item.nome, 'quantidade': item.quantidade})
+    return {"message": "Item criado com sucesso"}
