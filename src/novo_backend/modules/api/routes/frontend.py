@@ -61,11 +61,10 @@ async def read_medicamentos(request: Request):
             for kit in kits:
                 if kit['nome'] == nome_do_kit:
                     medicamentos = kit['medicamentos']
-                    print("oi", medicamentos)
                     break
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
-
+    print(nome_do_kit, medicamentos)
     return templates.TemplateResponse('telaKit.html', {"request": request, "nome_do_kit": nome_do_kit, "medicamentos": medicamentos})   
 
 @router.get("/novoKit", response_class=HTMLResponse)
