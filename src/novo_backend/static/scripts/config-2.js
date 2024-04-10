@@ -39,6 +39,8 @@ function novoKit() {
     });
 }
 
+
+
 function updateKit(kit, dados) {
     var url = window.location.href;
     var url = new URL(url);
@@ -102,6 +104,49 @@ function atualizarDados() {
         let kit_db = data["kit"]
         kit_db.medicamentos.push(novo_medicamento);
         updateKit(kit, kit_db);
+    }).catch(error => {
+        console.error('Erro ao buscar kit:', error);
+    });
+}
+
+function deletarKit(){
+    var url = window.location.href;
+    var url = new URL(url);
+    var kit = url.searchParams.get("kit");
+
+    fetch('/kits/'+ kit, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao deletar kit');
+        }
+        window.location.href = "/kits";
+    }).catch(error => {
+        console.error('Erro ao deletar kit:', error);
+    });
+
+}
+
+function carregarKits(){
+    kit = ""
+    console.log("Carregando kits...");
+
+    fetch('/kits/',{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao buscar kit');
+        }
+        return response.json();
+    }).then(data => {
+        data.kits.forEach(kit => {
+            console.log(kit.nome)});
     }).catch(error => {
         console.error('Erro ao buscar kit:', error);
     });
