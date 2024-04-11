@@ -181,7 +181,6 @@ class Kit(pydantic.BaseModel):
 				if len(medicamentos_db.search(Query().nome == medicamento.nome)) <= 0:
 					raise Exception(f"Medicamento {medicamento.nome} não cadastrado")
 
-
 	def toDict(self):
 		return {
 			"nome": self.nome,
