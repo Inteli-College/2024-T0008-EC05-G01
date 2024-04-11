@@ -117,10 +117,14 @@ Para concluir, digite ```npm start``` para iniciar a documentação, e aguarde a
 
 ## 🗃 Histórico de lançamentos
 
-* Versão 3.0 - 11/04/2024
+* Versão 4.0 - 11/04/2024
     * Interface navegável;
     * Interface frontend e backend do sistema;
     * Hardware periférico com o sistema do robô;
+   
+* Versão 3.0 - 01/04/2024
+    * Telas e mockup;
+    * Periféricos.
 
 * Versão 2.0 - 01/03/2024
     * Mapeamento do Fluxo de Utilização da Solução;
