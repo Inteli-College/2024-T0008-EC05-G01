@@ -1,5 +1,6 @@
 from tinydb import Query
 import time
+from threading import Thread
 
 from pubsub import pub
 
@@ -14,6 +15,7 @@ class KitAssembler:
 
 	def __init__(self):
 		self.should_stop = False
+		self.assembling = False
 		pub.subscribe(self.stop_during, "sensor_data")
 		pass
 
@@ -68,6 +70,8 @@ class KitAssembler:
 
 					# the same applies to put_pos, you must register it as the position without any medication (table height) and it will automatically rise to match the height of the current tower that is stacking
 				)
+				while self.assembling: time.sleep(0.1)
+				print("PASS")
 
 		self.robot.home()
 
@@ -77,18 +81,30 @@ class KitAssembler:
 		"""
 			Recebe um medicamento e monta ele
 		"""
+		self.assembling = True
 		print(f"Montando medicamento {put_pos.x} {put_pos.y} {put_pos.z} {put_pos.r} | {get_pos.x} {get_pos.y} {get_pos.z} {get_pos.r}")
 		self.robot.move_safe(get_pos.x, get_pos.y, get_pos.z)
 
 		self.should_stop = True
+
+		pub.subscribe(self.after_qrcode, "camera_data")
 
 		self.robot.move_safe(put_pos.x, put_pos.y, put_pos.z)
 		self.should_stop = False
 
 		self.robot.tool("suction", False)
 
-		self.robot.move(put_pos.x, put_pos.y, 80)
+		self.robot.move_safe(put_pos.x, put_pos.y, 80)
+
+	def after_qrcode(self, data: str):
+		print(f"QRCODE RECEIVED, CONTINUING ASSEMBLY: {data}")
+
 		self.robot.tool("suction", True)
+
+		pub.unsubscribe(self.after_qrcode, "camera_data")
+
+		self.assembling = False
+
 
 
 	def stop_during(self, data: str):

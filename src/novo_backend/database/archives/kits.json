@@ -1,12 +1,12 @@
 {
 	"_default": {
 		"1": {
-			"nome": "Kit #1",
+			"nome": "Kit-1",
 			"medicamentos": [
 				{
 					"nome": "Luvas Cirurgicas Esterilizadas",
 					"quantidade": 4,
-					"altura": 5,
+					"altura": 4,
 					"pos": {
 						"x": 93.0,
 						"y": 240.5,

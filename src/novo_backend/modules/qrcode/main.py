@@ -1,6 +1,7 @@
 import time
 
 import cv2
+from pubsub import pub
 from qreader import QReader
 from tinydb import Query
 
@@ -31,6 +32,7 @@ def perpetually_read():
             last_decoded_text = decoded
 
             print(f"QR code decodificado: {decoded}")
+            pub.sendMessage("camera_data", data=decoded)
 
             # Acha todos os medicamentos com o itemId igual ao QR code decodificado
             with DB("database/archives/qrcode/db_completo.json") as db:
