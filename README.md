@@ -41,22 +41,62 @@
 
 ```
 .
-├── .github
-│   └── workflows
-├── documentation
-│   └── docusaurus-documentation
-│       ├── blog
-│       ├── docs
-│       │   └── sprints
-│       ├── src
-│       └── static
-│           └── img
-├── src
-│   ├── classes
-│   ├── commands
-│   ├── kits
-│   └── pydobot
-└── README.md
+├───.github
+│   └───workflows
+├───documentation
+│   └───docusaurus-documentation
+│       ├───blog
+│       ├───docs
+│       │   └───sprints
+│       │       ├───Sprint 1
+│       │       ├───Sprint 2
+│       │       ├───Sprint 3
+│       │       ├───Sprint 4
+│       │       └───Sprint 5
+│       ├───src
+│       │   ├───components
+│       │   │   └───HomepageFeatures
+│       │   ├───css
+│       │   └───pages
+│       └───static
+│           └───img
+│               ├───doc_component
+│               ├───frontend
+│               ├───integrantes
+│               ├───mockup
+│               └───wireframe
+├───src
+│    ├───classes
+│    ├───commands
+│    │   └───templates
+│    ├───conexaoHTTP
+│    │   └───embarcado
+│    ├───lib
+│    │   └───pydobot
+│    │       └───enums
+│    ├───novo_backend
+│    │   ├───classes
+│    │   ├───database
+│    │   │   └───archives
+│    │   │       └───qrcode
+│    │   ├───modules
+│    │   │   ├───api
+│    │   │   │   ├───classes
+│    │   │   │   └───routes
+│    │   │   ├───qrcode
+│    │   │   └───robot
+│    │   │       ├───classes
+│    │   │       ├───lib
+│    │   │       │   └───pydobot
+│    │   │       │       └───enums
+│    │   │       └───utils
+│    │   ├───static
+│    │   │   ├───css
+│    │   │   ├───img
+│    │   │   └───scripts
+│    │   └───templates
+│    └───utils
+└───README.md
 ```
 
 &emsp;&emsp;Dentre os arquivos e pastas presentes na raiz do projeto, define-se:
@@ -71,12 +111,17 @@
 
 ## 🔧 Instalação
 
-Para iniciar a documentação do projeto, instale o repositório no dispositivo. Abra o Prompt de Comando e digite ```cd .\documentation\docusaurus-documentation``` para entrar na pasta da documentação.
+Para iniciar a documentação do projeto, faça upload do repositório no computador ou notebook. Abra o Prompt de Comando e digite ```cd .\documentation\docusaurus-documentation``` para entrar na pasta da documentação.
 Digite ```npm i``` para instalar todas dependências e aguarde enquanto a instalação é feita.
 Para concluir, digite ```npm start``` para iniciar a documentação, e aguarde até a página ser carregada.
 
 ## 🗃 Histórico de lançamentos
 
+* Versão 4.0 - 11/04/2024
+    * Interface navegável;
+    * Interface frontend e backend do sistema;
+    * Hardware periférico com o sistema do robô;
+   
 * Versão 3.0 - 01/04/2024
     * Telas e mockup;
     * Periféricos.

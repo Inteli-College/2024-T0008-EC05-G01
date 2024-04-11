@@ -60,28 +60,29 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ---
 
-# Análise Financeira
+## Análise Financeira
 
 &emsp;A análise financeira é fundamental para avaliar a viabilidade de investimento em um projeto considerando os custos, o consumo de tempo e a mudança na qualidade enquanto compara com outras alternativas disponíveis. Nesse estudo, foi feita uma análise comparando o braço mecânico MG400 com o método tradicional e manual de montagem dos kits.
 
-## Análise do custo do método Arm
+### Análise do custo do método Arm
 
-<p align="center"><b> Tabela 2 - Análise do custo do método Arm </b> </p>
+<p align="center"><b> Tabela 2 - Análise do custo anual do método Arm </b> </p>
 
 <p align="center">
 
-| **Componente** | **Preço** |
-| :-------------: | :--------: |
-| Braço mecânico - MG400 | R$ 32000,00 |
-| Desenvolvedor Front-end | R$ 4704,00 |
-| Desenvolvedor Back-end | R$ 7807,00 |
-| Engenheiro da Computação | R$ 8052,00 |
-| Programador de Automação Industrial | R$ 5800,00 |
-| Product Owner (PO) | R$ 13818,00 |
-| Manutenção (mensal) | R$ 1600,00 |
-| Raspeberry Pi Pico W | R$ 49,90 |
-| Instalação do MG400 | R$ 1000,00 |
-| Auxiliar De Farmácia Hospitalar | R$ 1932 |
+| **Componente** | **Custo em 5 meses** | **Custo do mês 6 ao 12** |
+| :-------------: | :--------: | :----: |
+| Braço mecânico - MG400 | R$ 32000,00 | 0 |
+| Desenvolvedor Front-end | R$ 23520,00 | 0 | 
+| Desenvolvedor Back-end | R$ 39035,00 | 0 |
+| Engenheiro da Computação | R$ 40260,00 | 0 | 
+| Programador de Automação Industrial | R$ 29000,00 | 0 | 
+| Product Owner (PO) | R$ 69090,00 | 0 | 
+| Manutenção | R$ 8000,00 | R$ 11200,00 | 
+| Raspeberry Pi Pico W | R$ 49,90 | 0 |
+| Instalação do MG400 | R$ 1000,00 | 0 | 
+| Auxiliar De Farmácia Hospitalar | R$ 9660,00 | R$ 13524,00 | 
+| TOTAL | R$ 262814,90 | R$ 24724,00 | 
 
 </p>
 
@@ -89,7 +90,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Foi identificado que o responsável pela montagem dos kits de emergência é o Auxiliar de Farmácia hospitalar, que desempenha outras atividades além dessa e custa ao hospital, em média, dois mil reais por mês. Com a automação utilizando um braço robótico, o auxiliar ainda será necessário, mas apenas para configurar a montagem do kit. Dessa forma, o auxiliar terá mais tempo para realizar outras tarefas que dependem de suas habilidades e experiência, direcionando suas atividades no hospital para aquelas em que a presença humana seja realmente essencial.
 
-&emsp;Apesar do custo inicial de R$75.626,00 e um custo mensal posterior de R$2.100, compreendemos que essa não é uma solução economicamente vantajosa. No entanto, a utilização de um braço mecânico na montagem dos kits trará mais segurança hospitalar, reduzindo as chances de contaminação, e maior precisão durante o processo, resultando em escolhas de medicamentos mais acertadas pelos médicos em situações de emergência.
+&emsp;Para uma melhor estimativa dos custos do projeto, a análise financeira foi realizada para os primeiros 5 meses, considerando os gastos fixos, como o braço mecânico, o Raspberry Pi Pico W e o custo de instalação, somados aos custos mensais (multiplicados pelos meses em que esse gasto é necessário). Dado esse contexto do cálculo, os primeiros 5 meses de utilização da solução seria de R$ 262814,90. Nos 7 meses posteriores, é estimado que gastos como desenvolvedores do projeto, braço mecânico e outros custos iniciais não se repitam, por isso o cálculo leva em consideração apenas manutenção e o salário do auxiliar de farmácia, chegando a um custo de R$24724,00. É importante ressaltar que os valores nessa análise correspondem aos valores de abril de 2024 e devem ser ajustados conforme a inflação nos anos posteriores de existência do projeto para maior precisão na previsão dos gastos com o mesmo.
+
+&emsp;Com o custo inicial de R$ 262814,90 e o custo de R$ 24724,00 nos últimos 7 meses do primeiro ano de operação do projeto, compreendemos que essa não é uma solução economicamente vantajosa. No entanto, a utilização de um braço mecânico na montagem dos kits trará mais segurança hospitalar, reduzindo as chances de contaminação, e maior precisão durante o processo, resultando em escolhas de medicamentos mais acertadas pelos médicos em situações de emergência.
 
 
 &emsp;É importante notar que os ganhos do projeto impactam diretamente que os benefícios do projeto repercutem diretamente em um atendimento mais eficiente aos pacientes, proporcionando maior satisfação. Esses ganhos também têm impacto nos processos legais que o hospital poderia enfrentar devido a erros médicos, conferindo uma maior segurança para evitar gastos imprevistos nesse sentido.

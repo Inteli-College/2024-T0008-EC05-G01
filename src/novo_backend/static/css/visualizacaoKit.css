@@ -30,8 +30,8 @@ body {
 
 .logo_editar {
     display: inline-block;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 50%;
+    /* margin-left: 5px; */
     margin-top: 0.38em;
     height: 48px;
     width: 48px;
@@ -68,7 +68,9 @@ body {
 .cancelar {
     position: relative;
     top: auto;
-    left: 40%;
+    left: 2%;
+    border-radius: 30px;
+    padding: 1% ;
     /* 600px em relação à largura do contêiner pai */
     bottom: 5px;
 }
@@ -80,6 +82,7 @@ body {
 
 .novo_kit {
     color: #F0F7FF;
+    margin-right: 20%;
 }
 
 .linha {

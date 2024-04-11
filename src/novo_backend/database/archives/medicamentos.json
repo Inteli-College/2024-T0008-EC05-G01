@@ -2,7 +2,6 @@
 	"_default": {
 		"2": {
 			"nome": "Fentanyl",
-			"quantidade": 0,
 			"pos": {
 				"x": -46.31,
 				"y": -267.4,
@@ -12,7 +11,6 @@
 		},
 		"3": {
 			"nome": "Paracetamol",
-			"quantidade": 5,
 			"pos": {
 				"x": 136.88,
 				"y": -239.35,

@@ -172,3 +172,4 @@ class Kit(pydantic.BaseModel):
 			for medicamento in medicamentos:
 				if len(medicamentos_db.search(Query().nome == medicamento.nome)) <= 0:
 					raise Exception(f"Medicamento {medicamento.nome} não cadastrado")
+		

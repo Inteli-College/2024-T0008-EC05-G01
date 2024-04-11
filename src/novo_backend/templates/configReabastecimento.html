@@ -20,14 +20,12 @@
             <div>
                 <h1 class="item">Item</h1>
                 <!-- Lista suspensa para mostrar medicamentos disponíveis -->
-                <select class="selecao" id="medicamentosSelect" name="medicamentos">
-                    <option value="" selected disabled>Selecione um medicamento</option>
-                </select>
+                <input type="text" class="search-input">
             </div>
             <div>
                 <h1 class="quantidade_title">Quantidade</h1>
                 <input class="quantidade" type="text" id="quantidadeInput">
-                <button class="atualizar" onclick="atualizarDados()">Atualizar</button>
+                <button class="atualizar" onclick="atualizarDadosReabastecimento()">Atualizar</button>
             </div>
         </div>
         <div class="half">
