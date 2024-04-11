@@ -20,6 +20,18 @@ sidebar_position: 2
 
 &emsp;Os passos descritos acima seriam os necessários para executar o sistema sem erros.
 
+## Vídeo de demostração do Sistema
+
+&emsp;Nos vídeos a seguir, foi demonstrado o funcionamento do sistema para os dois usuarios do sistema, o Farmaceutico e o Auxiliar de farmacia. No vídeo do farmaceutico, demonstramos o processo de criação e vizualização de um kit. Já no video do auxiliar de farmacia, demonstramos o processo de adicionar um kit a fila de montagem e a execução da montagem dos kits já cadastrados pelo farmaceutico.
+
+&emsp;Vídeo de Demonstração do Frontend do Farmacêutico:
+https://youtu.be/2Cefl5E2oxQ?si=pr2wgZgoAYr4vMHx
+
+&emsp;Auxiliar de farmacia:
+https://youtu.be/B6E2OsWIQC8?si=Wfx7uIBzEiGgnlar
+
+
+
 
 
 

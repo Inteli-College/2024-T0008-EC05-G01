@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
   <script src="../static/scripts/telaExclusao.js"></script>
   <script src="{{ url_for('static', path='scripts/armazem.js') }}"></script>
 </head>
-
 <body>
   <header>
     <nav>
@@ -34,7 +32,7 @@
       <header class="juncao">
             <div class="juncao">
               <button class="kits" onclick="carregarKitsArmazem('{{ kit.nome }}')">
-                <span class="nome-kit" id="nome-kit">Kit 3</span>
+                <span class="nome-kit" id="nome-kit">Kit {{ loop.index }}</span>
                 <h2 id="nome ">{{ kit.nome }}</h2>
               </button>
               <button class="delete-button" onclick="deletarKit('{{ kit.nome }}')"><img class="image-button" src="../static/img/secaoLixeira.png" /></button>
@@ -43,5 +41,4 @@
     {% endfor %}
   </main>
 </body>
-
 </html>
