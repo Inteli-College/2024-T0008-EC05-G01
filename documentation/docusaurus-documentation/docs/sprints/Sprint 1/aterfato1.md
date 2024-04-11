@@ -94,7 +94,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Com o custo inicial de R$ 262814,90 e o custo de R$ 24724,00 nos últimos 7 meses do primeiro ano de operação do projeto, compreendemos que essa não é uma solução economicamente vantajosa. No entanto, a utilização de um braço mecânico na montagem dos kits trará mais segurança hospitalar, reduzindo as chances de contaminação, e maior precisão durante o processo, resultando em escolhas de medicamentos mais acertadas pelos médicos em situações de emergência.
 
-
 &emsp;É importante notar que os ganhos do projeto impactam diretamente que os benefícios do projeto repercutem diretamente em um atendimento mais eficiente aos pacientes, proporcionando maior satisfação. Esses ganhos também têm impacto nos processos legais que o hospital poderia enfrentar devido a erros médicos, conferindo uma maior segurança para evitar gastos imprevistos nesse sentido.
 
 ---
