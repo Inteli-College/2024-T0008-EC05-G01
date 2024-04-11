@@ -1,7 +1,5 @@
-function deletarKit() {
-    var url = window.location.href;
-    var url = new URL(url);
-    var kit = url.searchParams.get("kit");
+function deletarKit(nomeKit) {
+    var kit = nomeKit
 
     fetch('/kits/' + kit, {
         method: 'DELETE',

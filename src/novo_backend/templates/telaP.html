@@ -30,22 +30,17 @@
   <hr>
   <h1>Tabela de Kits:</h1>
   <main>
-    <header class="juncao">
-      <a href="/telaKit">
-        {% for kit in kits %}
-        <div class="juncao">
-          <span class="nome-kit" id="nome-kit">Kit 3</span>
-          <h2 id="nome">{{ kit.nome }}</h2>
-          <button class="kits" href="/telaKit.html" onclick="carregarKitsArmazem('{{ kit.nome }}')"></button>
-        </div>
-        {% endfor %}
-      </a>
-      <a>
-        <button class="delete-button" onclick="passarKit()">
-          <img class="image-button" src="../static/img/secaoLixeira.png" />
-        </button>
-      </a>
-    </header>
+    {% for kit in kits %}
+      <header class="juncao">
+            <div class="juncao">
+              <button class="kits" onclick="carregarKitsArmazem('{{ kit.nome }}')">
+                <span class="nome-kit" id="nome-kit">Kit 3</span>
+                <h2 id="nome ">{{ kit.nome }}</h2>
+              </button>
+              <button class="delete-button" onclick="deletarKit('{{ kit.nome }}')"><img class="image-button" src="../static/img/secaoLixeira.png" /></button>
+            </div>
+      </header>
+    {% endfor %}
   </main>
 </body>
 

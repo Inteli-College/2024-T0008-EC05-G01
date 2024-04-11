@@ -8,6 +8,7 @@
     <meta name="description" content="Tela principal do sistema">
     <link rel="stylesheet" type="text/css" href="../static/css/tp.css">
     <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+    <script src="{{ url_for('static', path='/scripts/fila.js') }}"></script>
 </head>
 
 <body>
@@ -18,7 +19,9 @@
                     <img class="search-icon" src="../static/img/logo_arm.png" alt="Ícone de Pesquisa">
                 </div>
                 <input type="text" class="search-input">
-                <button class="search-button" hx-get="/" hx-trigger="click" href="//reabastecimento.html">Armazem</button>
+                <a  href="/reabastecimento">
+                    <button class="search-button">Armazem</button>
+                </a>
             </div>
         </nav>
     </header>
@@ -29,10 +32,11 @@
             <!-- Conteúdo da primeira coluna -->
             <header class="juncao">
                 <button class="kits">
-                    <div class="config-kit-left">
-                        <span class="nome-kit-left" id="nome-kit">Kit 3</span>
-                        <h2 id="nome ">Cirúrgico Cardiovascular</h2>
-                    </div>
+                    {% for kit in kits %}
+                        <div class="config-kit-left">
+                            <h1>{{ kit.nome }}</h1>
+                        </div>
+                    {% endfor %}
                 </button>
                 <button class="delete-button" hx-get="/edit" hx-trigger="click"><img class="image-button"
                         src="../static/img/simbolo_mais.png" />
@@ -40,15 +44,8 @@
             </header>
             <div class="right-column">
                 <h1>Fila de Kits: </h1>
-                <header class="juncao">
-                    <button class="kits">
-                        <div class="config-kit-right">
-                            <span class="nome-kit" id="nome-kit">Kit 3</span>
-                            <h2 id="nome ">Cirúrgico Cardiovascular</h2>
-                        </div>
-                    </button>
-                    <button class="delete-button" hx-get="/edit" hx-trigger="click"><img class="image-button"
-                            src="../static/img/simbolo_mais.png" />
+                    <button class="BotaoFila" onclick="adicionar()">
+                        <img class="image-button" src="../static/img/simbolo_mais.png" />
                     </button>
             </div>
         </div>

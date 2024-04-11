@@ -1,13 +1,9 @@
-function passarUrl(){
+function passarUrlReabastecimento(){
     var url = window.location.href;
     var url = new URL(url);
-    var kit = url.searchParams.get("kit");
+    var item = url.searchParams.get("item");
 
-    window.location.href = "/config?kit=" + kit;
-}
-
-function concluir(){
-    window.location.href = "/telaP";
+    window.location.href = "/configReabastecimento?item=" + item;
 }
 
 console.log("hello world");
