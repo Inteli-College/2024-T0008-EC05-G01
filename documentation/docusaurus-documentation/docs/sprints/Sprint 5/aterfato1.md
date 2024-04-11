@@ -30,4 +30,18 @@ sidebar_position: 1
     Fonte: Elaborado pelos próprios autores
 </div>
 
+## Planilha de Tarefas Sprint
 
+&emsp;Segue abaixo a planilha de tarefas da sprint 5. Ela mostra os dias em que cada tarefa foi desenvolvida durante esta sprint
+
+<div style={{width: '100%', margin: '0 auto', textAlign: 'center'}}>
+    Equipe Arm
+    ![image](/img/sprint5tarefas.png)
+    Fonte: Elaborado pelos próprios autores
+</div>
+
+## Apresentação Sprint 5
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSWFWS8ERZ6HiCxevCvMGdT-eSikUnjkok83DNGyBb8iLus36vcS2c8ac4rSPZ07iKkBYoLFrvuK-3J/embed?start=false&loop=false&delayms=3000" frameborder="0" width="75%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}></iframe>
+
+<p><b>Fonte:</b> elaborado por Arm </p>
