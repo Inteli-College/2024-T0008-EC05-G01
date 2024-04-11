@@ -1,11 +1,8 @@
-import sys
-import glob
-import serial
 from serial.tools import list_ports
 
 def serial_ports():
     """
-        Lista os dispositivos seriais disponíveis no sistema
+        Lista os dispositivos seriais disponíveis no sistema que se identificam como Dobot Magician Lite
 
         :raises EnvironmentError:
             Em caso de erro na detecção do sistema operacional
@@ -13,23 +10,13 @@ def serial_ports():
             Uma lista de portas seriais disponíveis
     """
 
-    #? Windows
-    if sys.platform.startswith('win'): ports = [port.device for port in list_ports.comports()]
+    ports = list_ports.comports()
 
-    #? Linux
-    elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
-        # Exclude terminal device (/dev/tty)
-        ports = glob.glob('/dev/tty[A-Za-z]*')
-    elif sys.platform.startswith('darwin'): ports = glob.glob('/dev/tty.*')
-    else: raise EnvironmentError('Unsupported platform')
+    dobot_ports = [
+        port for port in ports if (
+            port.vid == 1155
+            and port.pid == 22352
+        )
+    ]
 
-    result = []
-    for port in ports:
-        try:
-            s = serial.Serial(port)
-            s.close()
-            result.append(port)
-        except (OSError, serial.SerialException):
-            pass
-
-    return result
+    return [port.device for port in dobot_ports]

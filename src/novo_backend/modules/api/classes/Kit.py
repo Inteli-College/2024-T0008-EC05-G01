@@ -14,6 +14,14 @@ class Kit(pydantic.BaseModel):
 		altura: float
 		pos: Pos
 
+		def toDict(self):
+			return {
+				"nome": self.nome,
+				"quantidade": self.quantidade,
+				"altura": self.altura,
+				"pos": self.pos.toDict()
+			}
+
 	nome: str
 	medicamentos: List[Medicamento]
 
@@ -28,7 +36,7 @@ class Kit(pydantic.BaseModel):
 
 				self.check_medicamentos(self.medicamentos)
 
-				kits_db.insert(self.dict()) #! aqui
+				kits_db.insert(self.toDict()) # type: ignore
 
 		except Exception as error:
 			return JSONResponse(content={
@@ -52,7 +60,7 @@ class Kit(pydantic.BaseModel):
 
 				self.check_medicamentos(self.medicamentos)
 
-				kits_db.update(self.dict(), Query().nome == nome) #! aqui
+				kits_db.update(self.toDict(), Query().nome == nome) # type: ignore
 
 		except Exception as error:
 			return JSONResponse(content={
@@ -151,8 +159,8 @@ class Kit(pydantic.BaseModel):
 
 		try:
 			with DB('database/archives/medicamentos.json') as medicamentos_db:
-				for index, medicamento in enumerate(kit['medicamentos']):
-					medicamento_completo = medicamentos_db.search(Query().nome == medicamento['nome'])[0]
+				for index, medicamento in enumerate(kit['medicamentos']): # type: ignore
+					medicamento_completo = medicamentos_db.search(Query().nome == medicamento['nome'])[0] # type: ignore
 					kit['medicamentos'][index]['estoque'] = medicamento_completo
 
 		except Exception as error:
@@ -172,3 +180,9 @@ class Kit(pydantic.BaseModel):
 			for medicamento in medicamentos:
 				if len(medicamentos_db.search(Query().nome == medicamento.nome)) <= 0:
 					raise Exception(f"Medicamento {medicamento.nome} não cadastrado")
+
+	def toDict(self):
+		return {
+			"nome": self.nome,
+			"medicamentos": [medicamento.toDict() for medicamento in self.medicamentos]
+		}

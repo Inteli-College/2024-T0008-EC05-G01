@@ -4,24 +4,24 @@
 			"nome": "Kit #1",
 			"medicamentos": [
 				{
-					"nome": "Fentanyl",
-					"quantidade": 3,
-					"altura": 10,
+					"nome": "Luvas Cirurgicas Esterilizadas",
+					"quantidade": 4,
+					"altura": 5,
 					"pos": {
-						"x": 229.84,
-						"y": 177.75,
-						"z": -40.0,
+						"x": 93.0,
+						"y": 240.5,
+						"z": -30.0,
 						"r": 0.0
 					}
 				},
 				{
-					"nome": "Paracetamol",
+					"nome": "Needle Guide Kit",
 					"quantidade": 0,
-					"altura": 5.35,
+					"altura": 10,
 					"pos": {
-						"x": 15.42,
-						"y": 264.77,
-						"z": -40.0,
+						"x": 130.0,
+						"y": 235.0,
+						"z": 57.5,
 						"r": 0.0
 					}
 				}

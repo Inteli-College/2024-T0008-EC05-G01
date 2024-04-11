@@ -3,8 +3,9 @@ import signal
 from queue import Queue
 
 from classes.ApiWrapper import ApiWrapper
-# from classes.RobotWrapper import RobotWrapper
-# from classes.QRCodeWrapper import QRCodeWrapper
+from classes.RobotWrapper import RobotWrapper
+from classes.QRCodeWrapper import QRCodeWrapper
+from classes.SensorWrapper import SensorWrapper
 
 wrappers = []
 
@@ -13,8 +14,9 @@ def main():
 	queue = Queue()
 
 	wrappers.append(ApiWrapper(queue))
-	# wrappers.append(RobotWrapper(queue))
-	# wrappers.append(QRCodeWrapper())
+	wrappers.append(RobotWrapper(queue))
+	wrappers.append(SensorWrapper())
+	wrappers.append(QRCodeWrapper())
 
 	list(map(lambda wrapper: wrapper.start(), wrappers))
 

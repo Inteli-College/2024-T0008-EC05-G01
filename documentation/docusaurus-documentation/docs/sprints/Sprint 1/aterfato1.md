@@ -70,18 +70,19 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 <p align="center">
 
-| **Componente** | **Preço** | **Meses no ano 1** | **Meses nos anos posteriores** |
-| :-------------: | :--------: | :----: | :----: |
-| Braço mecânico - MG400 | R$ 32.000,00 | 1 | 0 |
-| Desenvolvedor Front-end | R$ 4.704,00 | 5 | 0 |
-| Desenvolvedor Back-end | R$ 7.807,00 | 5 | 0 |
-| Engenheiro da Computação | R$ 8.052,00 | 5 | 0 |
-| Programador de Automação Industrial | R$ 5.800,00 | 5 | 0 |
-| Product Owner (PO) | R$ 13.818,00 | 5 | 0 |
-| Manutenção | R$ 1.600,00 | 12 | 12 |
-| Raspeberry Pi Pico W | R$ 49,90 | 1 | 0 |
-| Instalação do MG400 | R$ 1.000,00 | 1 | 0 |
-| Auxiliar De Farmácia Hospitalar | R$ 1.932,00 | 12 | 12 |
+| **Componente** | **Custo em 5 meses** | **Custo do mês 6 ao 12** |
+| :-------------: | :--------: | :----: |
+| Braço mecânico - MG400 | R$ 32000,00 | 0 |
+| Desenvolvedor Front-end | R$ 23520,00 | 0 | 
+| Desenvolvedor Back-end | R$ 39035,00 | 0 |
+| Engenheiro da Computação | R$ 40260,00 | 0 | 
+| Programador de Automação Industrial | R$ 29000,00 | 0 | 
+| Product Owner (PO) | R$ 69090,00 | 0 | 
+| Manutenção | R$ 8000,00 | R$ 11200,00 | 
+| Raspeberry Pi Pico W | R$ 49,90 | 0 |
+| Instalação do MG400 | R$ 1000,00 | 0 | 
+| Auxiliar De Farmácia Hospitalar | R$ 9660,00 | R$ 13524,00 | 
+| TOTAL | R$ 262814,90 | R$ 24724,00 | 
 
 </p>
 
@@ -89,10 +90,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 &emsp;Foi identificado que o responsável pela montagem dos kits de emergência é o Auxiliar de Farmácia hospitalar, que desempenha outras atividades além dessa e custa ao hospital, em média, dois mil reais por mês. Com a automação utilizando um braço robótico, o auxiliar ainda será necessário, mas apenas para configurar a montagem do kit. Dessa forma, o auxiliar terá mais tempo para realizar outras tarefas que dependem de suas habilidades e experiência, direcionando suas atividades no hospital para aquelas em que a presença humana seja realmente essencial.
 
-&emsp;Para uma melhor estimativa dos custos do projeto, a análise financeira foi realizada para o primeiro ano, considerando os gastos fixos, como o braço mecânico, o Raspberry Pi Pico W e o custo de instalação, somados aos custos mensais (multiplicados pelos meses em que esse gasto é necessário). Dado esse contexto do cálculo, o custo do primeiro ano de utilização da solução seria de R$ 273.138,00. Nos anos posteriores, é estimado que gastos como desenvolvedores do projeto, braço mecânico e outros custos iniciais não se repitam, por isso o cálculo leva em consideração apenas manutenção e o salário do auxiliar de farmácia, chegando a um custo anual de R$ 42.384,00. É importante ressaltar que os valores nessa análise correspondem aos valores de abril de 2024 e devem ser ajustados conforme a inflação nos anos posteriores de existência do projeto para maior precisão na previsão dos gastos com o mesmo.
+&emsp;Para uma melhor estimativa dos custos do projeto, a análise financeira foi realizada para os primeiros 5 meses, considerando os gastos fixos, como o braço mecânico, o Raspberry Pi Pico W e o custo de instalação, somados aos custos mensais (multiplicados pelos meses em que esse gasto é necessário). Dado esse contexto do cálculo, os primeiros 5 meses de utilização da solução seria de R$ 262814,90. Nos 7 meses posteriores, é estimado que gastos como desenvolvedores do projeto, braço mecânico e outros custos iniciais não se repitam, por isso o cálculo leva em consideração apenas manutenção e o salário do auxiliar de farmácia, chegando a um custo de R$24724,00. É importante ressaltar que os valores nessa análise correspondem aos valores de abril de 2024 e devem ser ajustados conforme a inflação nos anos posteriores de existência do projeto para maior precisão na previsão dos gastos com o mesmo.
 
-&emsp;Analisando o custo inicial no primeiro ano de R$ 273.138,00 e um custo anual nos anos seguintes de R$ 42.384,00, compreendemos que essa não é uma solução economicamente vantajosa. No entanto, a utilização de um braço mecânico na montagem dos kits trará mais segurança hospitalar, reduzindo as chances de contaminação, e maior precisão durante o processo, resultando em escolhas de medicamentos mais acertadas pelos médicos em situações de emergência.
-
+&emsp;Com o custo inicial de R$ 262814,90 e o custo de R$ 24724,00 nos últimos 7 meses do primeiro ano de operação do projeto, compreendemos que essa não é uma solução economicamente vantajosa. No entanto, a utilização de um braço mecânico na montagem dos kits trará mais segurança hospitalar, reduzindo as chances de contaminação, e maior precisão durante o processo, resultando em escolhas de medicamentos mais acertadas pelos médicos em situações de emergência.
 
 &emsp;É importante notar que os ganhos do projeto impactam diretamente que os benefícios do projeto repercutem diretamente em um atendimento mais eficiente aos pacientes, proporcionando maior satisfação. Esses ganhos também têm impacto nos processos legais que o hospital poderia enfrentar devido a erros médicos, conferindo uma maior segurança para evitar gastos imprevistos nesse sentido.
 

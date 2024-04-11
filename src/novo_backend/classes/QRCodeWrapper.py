@@ -1,11 +1,9 @@
 import threading
 
-from queue import Queue
-
 from modules.qrcode.main import perpetually_read
 
 class QRCodeWrapper:
-	def __init__(self, timeout: int =0.25):
+	def __init__(self, timeout: float = 0.25):
 		self.thread = threading.Thread(target=perpetually_read)
 		self.timeout = timeout
 
