@@ -39,6 +39,32 @@ sidebar_position: 2
 
 ---
 
+#### Rotas relacionadas ao auxiliar
+- **GET /edit**: Retorna a edição de um kit na tabela de kits.
+- **POST /fila**: Adiciona um novo kit à fila de kits
+&emsp;Exemplo de corpo de requisição para adicionar ou atualizar um medicamento:
+```json
+{
+    "nome": "Kit-1",
+}
+```
+---
+
+#### Rotas relacionadas a tela do kit
+- **GET /telaKit/\{Nome}**: Retorna a tela de um kit.
+- **POST /kits**: Adiciona um novo kit à tela de kits.
+- **GET /kit?kit=\{Nome}**: Retorna a edição de um kit na tela de kits.
+
+&emsp;Exemplo de corpo de requisição para adicionar ou atualizar um medicamento:
+```json
+{
+    
+    "nome": "Kit-1", "medicamentos": [{"nome": "Fentanyl", "quantidade": 3, "altura": 10, "pos": {"x": 229.84, "y": 177.75, "z": -40.0, "r": 0.0}}, {"nome": "Paracetamol", "quantidade": 0, "altura": 5.35, "pos": {"x": 15.42, "y": 264.77, "z": -40.0, "r": 0.0}}]
+
+}
+```
+---
+
 &emsp;Também é importante reforçar que as características da comunicação dos dados através das requisições HTTP existentes na solução, destacadas na anteriormente na documentação da Sprint 4, seguem com um mesmo princípio. O frontend comunica com o backend através de requisições HTTP para realizar operações CRUD, enquanto o backend fornece endpoints para essas ações, o que permite a manipulação dos dados.
 
 &emsp;Dessa forma, é possível apresentar os principais elementos da arquitetura geral do projeto, junto com a integração frontend e backend, em que residem um sistema coeso e eficiente, o que foi crucial para o desenvolvimento desta aplicação web. Também, as novas rotas representaram novas possibilidades para a solução, o que resultou em um projeto com uma maior qualidade.
