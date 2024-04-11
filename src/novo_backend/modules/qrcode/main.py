@@ -1,8 +1,8 @@
 import time
-import cv2
 
-from tinydb import Query
+import cv2
 from qreader import QReader
+from tinydb import Query
 
 from database.wrapper import DB
 
@@ -28,7 +28,7 @@ def perpetually_read():
 
             if decoded is None: continue # Se nao existir um QR code, continue
             if last_decoded_text == decoded: continue # Se o QR code for o mesmo que o último, continue
-            last_decoded_text = decoded # Atualize o último QR code decodificado
+            last_decoded_text = decoded
 
             print(f"QR code decodificado: {decoded}")
 
@@ -49,7 +49,7 @@ def perpetually_read():
         camera.release()
         print("Câmera liberada")
 
-def detect_qr_code(frame):
+def detect_qr_code(frame: cv2.typing.MatLike):
     start = time.time()
     decoded_text = qreader.detect_and_decode(image=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
     if decoded_text and len(decoded_text) > 0 and decoded_text[0] is not None and len(decoded_text[0]) > 0:

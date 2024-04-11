@@ -1,23 +1,23 @@
-import time
-import os
-
 from serial.serialutil import SerialException
 
-from modules.robot.utils.text import cstring, printc
-from modules.robot.utils.ports import serial_ports
-from modules.robot.lib.pydobot.dobot import Dobot
 from modules.robot.lib import pydobot
+from modules.robot.lib.pydobot.dobot import Dobot
+from modules.robot.utils.ports import serial_ports
+from modules.robot.utils.text import printc
 
 
 class RobotWrapper:
 	def __init__(self, auto_init: bool = False):
 		printc("[&6ROBOT&f] &bInstanciando classe do robô...")
-		# with open("constants.json", "r") as f:
-		# 	self.constants = json.load(f)
 
 		self.initialized = False
 
 		if auto_init: self.init()
+
+		self.x: float
+		self.y: float
+		self.z: float
+		self.r: float
 
 
 	def init(self):
@@ -54,12 +54,12 @@ class RobotWrapper:
 				return port
 			except SerialException as e:
 				if ("Permission denied" in str(e)):
-					printc(f"[&6ROBOT&f] &cErro de permissão, tente rodar o programa como administrador.")
-					os._exit(1)
-				else: continue
+					printc("[&6ROBOT&f] &cErro de permissão, tente rodar o programa como administrador.")
+					exit(1)
+				continue
 
 		printc("[&6ROBOT&f] &cNenhum robô foi encontrado, por favor, verifique a conexão ou conecte um robô para prosseguir.")
-		os._exit(1)
+		exit(1)
 
 
 	def update_pos(self) -> None:
@@ -91,30 +91,27 @@ class RobotWrapper:
 		y: float | None = None,
 		z: float | None = None,
 	) -> None:
-		# move z first (irl y) to avoid collisions, then move x and y
-		curr = self.current()
-		# if curr['z'] > z:
-		# 	self.move(x=x, y=y)
-		# 	time.sleep(0.25)
-		# 	self.move(z=z)
-		# else:
-		# 	self.move(z=z)
-		# 	time.sleep(0.25)
-		# 	self.move(x=x, y=y)
-		self.move(z=150)
-
+		self.move(z=80)
 		self.move(x=x, y=y)
-
 		self.move(z=z)
+		# self.move(x=x, y=y, z=z)
 
-
-	def movej_to(self, x, y, z, r, wait=True):
-		self.robot._set_ptp_cmd(x, y, z, r, mode=pydobot.enums.PTPMode.MOVJ_XYZ, wait=wait)
+	def movej_to(self,
+		x: float,
+		y: float,
+		z: float,
+		r: float,
+		wait: bool = True
+	):
+		self.robot._set_ptp_cmd(
+			x, y, z, r,
+			mode=pydobot.enums.PTPMode.MOVJ_XYZ, # type: ignore
+			wait=wait
+		)
 
 	def current(self) -> dict[str, float]:
 		self.update_pos()
 		return { "x": round(self.x, 2), "y": round(self.y, 2), "z": round(self.z, 2) }
-
 
 	def tool(self, tool: str, state: bool) -> None:
 		if not self.initialized: self.init()
@@ -123,17 +120,19 @@ class RobotWrapper:
 
 		match tool:
 			case "suction":
-				self.robot.suck(state)
+				self.robot.suck(state) # type: ignore
 			case "gripper":
-				self.robot.grip(state)
+				self.robot.grip(state) # type: ignore
 			case _:
-				printc(f"[&6ROBOT&f] &cFerramenta &5{tool} &cnão encontrada.")
+				printc(f"[&6ROBOT&f] &cFerramenta &5{tool}&c não encontrada.")
 				return
 
 		printc(f"[&6ROBOT&f] &bFerramenta &5{tool} &b{'ligada' if state else 'desligada'}")
 
-
-
 	def home(self):
 		if not self.initialized: self.init()
 		self.move_safe(250, 0, 150)
+
+
+	def stop(self):
+		self.robot._set_queued_cmd_stop_exec()

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse  
+from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from database.wrapper import DB
 from tinydb import Query, TinyDB
@@ -30,12 +30,13 @@ async def read_page(request: Request):
 
     return templates.TemplateResponse("telaP.html", {"request": request, "kits": kits})
 
+
 @router.get("/deleteKit", response_class=HTMLResponse)
-async def read_page(request: Request):
+async def read_deleteKit(request: Request):
     return templates.TemplateResponse(name="telaExclusao.html", context={"request": request})
 
 @router.get("/visualizacaoKit", response_class=HTMLResponse)
-async def read_page(request: Request):
+async def read_visualizacaoKit(request: Request):
     return templates.TemplateResponse(name="visualizacaoKit.html", context={"request": request})
 
 @router.get("/kit", response_class=HTMLResponse)
@@ -75,11 +76,11 @@ async def read_medicamentos(request: Request):
     return templates.TemplateResponse('telaKit.html', {"request": request, "nome_do_kit": nome_do_kit, "medicamentos": medicamentos})   
 
 @router.get("/novoKit", response_class=HTMLResponse)
-async def read_page(request: Request):
+async def read_novoKit(request: Request):
     return templates.TemplateResponse(name="novoKit.html", context={"request": request})
 
 @router.get("/config", response_class=HTMLResponse)
-async def read_page(request: Request):
+async def read_config(request: Request):
     return templates.TemplateResponse(name="config.html", context={"request": request})
 
 ############### ROTAS DO AUXILIAR ####################
@@ -102,14 +103,14 @@ async def read_item(request: Request):
     items = []
 
     try:
-            with DB('database/archives/item.json') as items_db:
-                items = items_db.all()
+          with DB('database/archives/item.json') as items_db:
+              items = items_db.all()
 
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
 
     return templates.TemplateResponse('reabastecimento.html', {"request": request, "items": items})
-
+  
 @router.post("/item")
 async def create_item(item: Item):
     # Inserir os dados no banco de dados

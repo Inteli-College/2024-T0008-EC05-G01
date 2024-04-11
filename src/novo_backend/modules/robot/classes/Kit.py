@@ -3,7 +3,6 @@ from typing import List
 from modules.robot.classes.Pos import Pos
 
 class Kit:
-
 	class Medicamento:
 		def __init__(self, nome: str, quantidade: int, altura: float, pos: Pos):
 			self.nome = nome
@@ -11,7 +10,7 @@ class Kit:
 			self.altura = altura
 			self.pos = pos
 
-	def __init__(self, kit:dict):
+	def __init__(self, kit: dict):
 		try:
 			self.nome = kit['nome']
 			self.medicamentos = []
