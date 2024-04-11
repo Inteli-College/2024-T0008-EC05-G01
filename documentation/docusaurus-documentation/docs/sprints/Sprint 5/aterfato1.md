@@ -10,15 +10,15 @@ sidebar_position: 1
 
 &emsp;Durante as entregas de cada sprint, aprimoramos o projeto tecnicamente, bem como desenvolvemos nossos conhecimentos em cada área do projeto através de planejamentos nos quais todos os membros da equipe trabalhavam e aprendiam sobre os diferentes aspectos do projeto. Trabalhar com diversas ferramentas e compartilhar conhecimento entre os membros possibilitou o desenvolvimento de habilidades de comunicação, trabalho em equipe e conhecimentos técnicos. Mesmo enfrentando dificuldades e imprevistos, o grupo manteve-se comprometido com o objetivo de entregar valor e qualidade ao projeto, realizando entregas que demonstravam o esforço de cada um.
 
-&emsp;Durante a última Sprint de desenvolvimento do projeto, finalizamos a integração do sistema, desenvolvemos o frontend, aprimoramos a documentação, o hardware e o código dos dispositivos embarcados com o objetivo de tornar a solução aplicável a testes de MVP no Hospital Sírio-Libanês. Isso não implica que o projeto deva ser encerrado; pelo contrário, é o início de um projeto com grande potencial para melhorar a segurança e otimizar o tempo no setor de farmácia do hospital.
+&emsp;Durante a última Sprint de desenvolvimento do projeto, finalizamos a integração do sistema, desenvolvemos o frontend, aprimoramos a documentação, o hardware e o código dos dispositivos embarcados com o objetivo de tornar a solução aplicável a testes de MVP no Hospital Sírio-Libanês. Isso não implica que o projeto deva ser encerrado, pelo contrário, é o início de um projeto com grande potencial para melhorar a segurança e otimizar o tempo no setor de farmácia do hospital.
 
 &emsp;Para dar continuidade ao desenvolvimento do projeto, recomendamos:
 
-&emsp;Utilização de metodologias ágeis, principalmente o Scrum, para manter a eficiência e flexibilidade no desenvolvimento e implementação.
+- Utilização de metodologias ágeis, principalmente o Scrum, para manter a eficiência e flexibilidade no desenvolvimento e implementação.
 
-&emsp;Leitura da documentação, principalmente as instruções de execução do sistema (encontradas na Sprint 5).
+- Leitura da documentação, principalmente as instruções de execução do sistema (encontradas na Sprint 5).
 
-&emsp;Implementação do roadmap.
+- Implementação do roadmap.
 
 &emsp;Destacamos o valor agregado à instituição com a melhoria da eficiência operacional, o aprimoramento da qualidade na montagem dos kits direcionados aos pacientes e, consequentemente, a melhoria no atendimento ao paciente, tudo isso por meio do braço robótico, dispositivos embarcados e interface de controle. Isso comprova que o MVP entregue atende aos requisitos e necessidades do cliente.
 
