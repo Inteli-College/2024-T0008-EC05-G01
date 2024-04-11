@@ -1,11 +1,11 @@
 import threading
-
 from queue import Queue
 
 from modules.api.main import start_api
 
+
 class ApiWrapper:
-	def __init__(self, queue: Queue, timeout: int =0.25):
+	def __init__(self, queue: Queue, timeout: float = 0.25):
 		self.thread = threading.Thread(target=start_api, args=(queue,))
 		self.timeout = timeout
 

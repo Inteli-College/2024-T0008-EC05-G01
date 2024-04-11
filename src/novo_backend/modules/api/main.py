@@ -1,14 +1,13 @@
-import uvicorn
-
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI
 from queue import Queue
+
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 from modules.api.routes.main import router as api_router
 from modules.api.shared import SharedQueue
-
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 

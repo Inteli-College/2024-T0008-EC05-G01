@@ -20,7 +20,7 @@ class Medicamento(pydantic.BaseModel):
 						"message": "Medicamento já cadastrado"
 					}, status_code=409)
 
-				medicamentos_db.insert(self.dict())
+				medicamentos_db.insert(self.toDict()) # type: ignore
 
 		except Exception as error:
 			return JSONResponse(content={
@@ -53,13 +53,13 @@ class Medicamento(pydantic.BaseModel):
 					with DB('database/archives/kits.json') as kits_db:
 						kits = kits_db.search(Query().medicamentos.any(Query().nome == nome))
 						for kit in kits:
-							medicamentos = kit['medicamentos']
-							for medicamento in medicamentos:
+							medicamentos = kit['medicamentos'] # type: ignore
+							for medicamento in medicamentos: # type: ignore
 								if medicamento['nome'] == nome: medicamento['nome'] = self.nome
-							kits_db.update(kit, Query().nome == kit['nome'])
+							kits_db.update(kit, Query().nome == kit['nome']) # type: ignore
 
 
-				medicamentos_db.update(self.dict(), Query().nome == nome)
+				medicamentos_db.update(self.toDict(), Query().nome == nome) # type: ignore
 
 		except Exception as error:
 			return JSONResponse(content={
@@ -85,10 +85,10 @@ class Medicamento(pydantic.BaseModel):
 				with DB('database/archives/kits.json') as kits_db:
 					kits_com_medicamento = kits_db.search(Query().medicamentos.any(Query().nome == Nome))
 					if len(kits_com_medicamento) > 0:
-						nomes_kits = [kit['nome'] for kit in kits_com_medicamento]
+						nomes_kits = [kit['nome'] for kit in kits_com_medicamento] # type: ignore
 						return JSONResponse(content={
 							"error": True,
-							"message": "O medicamento está nos kits: " + ", ".join(nomes_kits) + ", por favor, remova-o(s) do(s) kit(s) antes de deletá-lo"
+							"message": "O medicamento está nos kits: " + ", ".join(nomes_kits) + ", por favor, remova-o(s) do(s) kit(s) antes de deletá-lo" # type: ignore
 						}, status_code=409)
 
 				medicamentos_db.remove(Query().nome == Nome)
@@ -146,3 +146,10 @@ class Medicamento(pydantic.BaseModel):
 			"message": "Medicamentos encontrados com sucesso",
 			"medicamentos": medicamentos
 		}, status_code=200)
+
+	def toDict(self):
+		return {
+			"nome": self.nome,
+			"quantidade": self.quantidade,
+			"pos": self.pos.toDict()
+		}

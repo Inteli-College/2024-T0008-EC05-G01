@@ -32,7 +32,7 @@ async def update(Nome: str, kit: Kit):
 async def delete(Nome: str):
 	return Kit.delete(Nome)
 
-
-@router.delete('/tela-inicial')
-async def chamada_tela_inicial():
-	return Kit.chamada_tela_inicial()
+#? Nao sei da onde veio esse código mas ta errado - Gustavo
+# @router.delete('/tela-inicial')
+# async def chamada_tela_inicial():
+# 	return Kit.chamada_tela_inicial()

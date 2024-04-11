@@ -1,4 +1,7 @@
 from tinydb import Query
+import time
+
+from pubsub import pub
 
 from modules.robot.classes.robot import RobotWrapper
 from modules.robot.classes.Kit import Kit
@@ -10,6 +13,8 @@ class KitAssembler:
 	robot = RobotWrapper(auto_init=True)
 
 	def __init__(self):
+		self.should_stop = False
+		pub.subscribe(self.stop_during, "sensor_data")
 		pass
 
 
@@ -23,14 +28,14 @@ class KitAssembler:
 		"""
 			Recebe um kit e monta ele
 		"""
-		try: kit = Kit(kit)
+		try: kit_obj = Kit(kit)
 		except Exception as e: raise Exception(f"Erro ao criar o kit: {e}")
 
 		with DB('database/archives/kits.json') as kits_db:
-			if len(kits_db.search(Query().nome == kit.nome)) <= 0:
+			if len(kits_db.search(Query().nome == kit_obj.nome)) <= 0:
 				raise Exception("Kit não cadastrado")
 
-		for medicamento in kit.medicamentos:
+		for medicamento in kit_obj.medicamentos:
 			with DB('database/archives/medicamentos.json') as medicamentos_db:
 				medicamento_estoque = medicamentos_db.search(Query().nome == medicamento.nome)
 
@@ -55,9 +60,13 @@ class KitAssembler:
 			for i in range(0, medicamento.quantidade):
 				print(f"Montando {medicamento.nome} {i + 1}/{medicamento.quantidade}")
 				self.assemble_medication(
-					put_pos.offset_z(i * medicamento.altura),
-					# look forward, get_pos is the pos of the last one so that one should be offset_z 0
-					get_pos.offset_z(medicamento.quantidade-i * medicamento.altura)
+					# consider n the quantity of the medicamento (how many will be assembled)
+					put_pos.offset_z(i * medicamento.altura), # positive offset multiplied by the index (starts at 0, ends at n)
+					get_pos.offset_z(medicamento.quantidade-i * medicamento.altura) # negative offset multiplied by the index (starts at n, ends at 0)
+
+					# this script effectively turns the final get_pos into the one in the config, and the first ones are offset, so the get pos must be obtained thru a empty tower and not a full one
+
+					# the same applies to put_pos, you must register it as the position without any medication (table height) and it will automatically rise to match the height of the current tower that is stacking
 				)
 
 		self.robot.home()
@@ -68,10 +77,20 @@ class KitAssembler:
 		"""
 			Recebe um medicamento e monta ele
 		"""
+		print(f"Montando medicamento {put_pos.x} {put_pos.y} {put_pos.z} {put_pos.r} | {get_pos.x} {get_pos.y} {get_pos.z} {get_pos.r}")
 		self.robot.move_safe(get_pos.x, get_pos.y, get_pos.z)
 
-		self.robot.tool("suction", True)
+		self.should_stop = True
 
 		self.robot.move_safe(put_pos.x, put_pos.y, put_pos.z)
+		self.should_stop = False
 
 		self.robot.tool("suction", False)
+
+		self.robot.move(put_pos.x, put_pos.y, 80)
+		self.robot.tool("suction", True)
+
+
+	def stop_during(self, data: str):
+		print(data)
+		# if self.should_stop: x
