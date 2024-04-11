@@ -3,6 +3,7 @@ title: Artefato - Documentação
 sidebar_position: 2
 ---
 
+
 ## Integração
 
 &emsp;A integração entre frontend e backend é fundamental para o desenvolvimento de aplicações web modernas, eficientes e que também ofereçam uma experiência de usuário suave e intuitiva. Essa integração permite que as informações sejam consistentes e atualizadas, melhorando a performance da aplicação e facilitando a manutenção e o desenvolvimento contínuo.
